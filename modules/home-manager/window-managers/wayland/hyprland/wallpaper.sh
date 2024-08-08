@@ -16,7 +16,7 @@ daemon_wallpaper() {
 	while true
 	do
 		update_wallpaper "$img"
-		sleep "$INTERVAL_SECONDS"
+		sleep "$INTERVAL_SECONDS" || true
 	done
 }
 
