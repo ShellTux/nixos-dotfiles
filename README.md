@@ -4,4 +4,4 @@ NixOS Configuration files
 
 ## Demo
 
-![demo.mp4](/assets/demo.mp4)
+![demo.gif](/assets/demo.gif)
