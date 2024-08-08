@@ -94,6 +94,7 @@ in
 	qbittorrent
 	slack
 	stremio
+	translate-shell
 	unar
 	webcord
   ];
