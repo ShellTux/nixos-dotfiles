@@ -17,7 +17,7 @@ in
 			matchBlocks = {
 				"github.com" = {
 					user = "git";
-					identityFile = "${sshDir}/github-shelltux";
+					identityFile = "${sshDir}/github";
 				};
 			};
 		};
