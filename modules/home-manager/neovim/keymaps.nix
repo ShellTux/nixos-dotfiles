@@ -49,8 +49,8 @@
 	key = "<C-S-PageUp>";
 }
 {
-	action = "vim.cmd.nohlsearch";
-	key = "<C-h>";
+	action = "<cmd>nohlsearch<cr>";
+	key = "<leader>h";
 }
 {
 	action = "<gv";
