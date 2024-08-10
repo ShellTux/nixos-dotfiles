@@ -7,9 +7,11 @@ let
 in
 {
 	options = {
-		neovim.enable = lib.mkEnableOption "Enable neovim module";
-		nixvim.enable = lib.mkEnableOption "Enable neovim configuration through nixvim" // {
-			default = true;
+		neovim = {
+			enable = lib.mkEnableOption "Enable neovim module";
+			nixvim.enable = lib.mkEnableOption "Enable neovim configuration through nixvim" // {
+				default = true;
+			};
 		};
 		# TODO: Option to enable clipboard managers x11/wayland
 		# TODO: Option to enable installing neovim external tools
@@ -20,7 +22,7 @@ in
 			"codeium"
 		];
 
-		programs.nixvim = lib.mkIf config.nixvim.enable {
+		programs.nixvim = lib.mkIf config.neovim.nixvim.enable {
 			enable = true;
 
 			clipboard.providers = {
@@ -36,7 +38,7 @@ in
 			keymaps = keymaps;
 		};
 
-		programs.neovim = lib.mkIf (config.nixvim.enable == false) {
+		programs.neovim = lib.mkIf (config.neovim.nixvim.enable == false) {
 			enable = true;
 
 			defaultEditor = true;
