@@ -138,6 +138,8 @@ in
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  # TODO: Enable this for nixvim (Telescope man-pages) https://github.com/nix-community/nixvim/issues/1517
+  documentation.man.generateCaches = true;
 
   # Install firefox.
   programs = {

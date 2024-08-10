@@ -8,6 +8,7 @@ let
 	indent-blankline = import ./indent-blankline.nix { };
 	lastplace = import ./lastplace.nix { };
 	lsp = import ./lsp.nix { };
+	telescope = import ./telescope.nix { };
 in
 {
 	nixvim = {
@@ -34,7 +35,7 @@ in
 		nvim-snippets.enable = true;
 		rustaceanvim.enable = true;
 		surround.enable = true;
-		telescope.enable = true;
+		telescope = telescope;
 		tmux-navigator.enable = true;
 		todo-comments.enable = true;
 		transparent.enable = true;
