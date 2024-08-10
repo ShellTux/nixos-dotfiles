@@ -71,8 +71,11 @@
 {
 	action = "<cmd>CHADopen<cr>";
 	key = "<leader>pv";
-	options = {
-		desc = "CHADTree Open";
-	};
+	options.desc = "CHADTree Open";
+}
+{
+	action = "<cmd>CHADopen<cr>";
+	key = "<leader>e";
+	options.desc = "CHADTree Open";
 }
 ]
