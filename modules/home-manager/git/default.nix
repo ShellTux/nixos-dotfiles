@@ -50,6 +50,7 @@
 				put = "push --set-upstream origin";
 				serve = "daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/";
 				showconfig = "config --list";
+				sp = "stage --patch";
 				s = "status --short";
 				stats = "show --stat";
 				st = "status";
