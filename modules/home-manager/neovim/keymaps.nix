@@ -67,4 +67,12 @@
 	key = "jj";
 	mode = "i";
 }
+# TODO: Toggle this keybind according to chadtree
+{
+	action = "<cmd>CHADopen<cr>";
+	key = "<leader>pv";
+	options = {
+		desc = "CHADTree Open";
+	};
+}
 ]
