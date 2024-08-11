@@ -13,16 +13,26 @@
 					})
 		'';
 		snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
-		sources.__raw = ''
-				cmp.config.sources({
-						{ name = 'nvim_lsp' },
-						{ name = 'vsnip' },
-						{ name = 'luasnip' },
-						-- { name = 'ultisnips' },
-						-- { name = 'snippy' },
-						}, {
-						{ name = 'buffer' },
-						})
-			'';
+		sources = [
+		{
+			name = "nvim_lsp";
+		}
+		{
+			name = "vsnip";
+		}
+		{
+			name = "luasnip";
+		}
+		{
+			name = "path";
+		}
+		{
+			name = "buffer";
+		}
+		];
+		# window.__raw = ''
+		# 	completion = cmp.config.window.bordered(),
+		# 	documentation = cmp.config.window.bordered()
+		# '';
 	};
 }
