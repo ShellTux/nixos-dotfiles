@@ -2,12 +2,15 @@
 let
 	bufferline = import ./bufferline.nix { };
 	cloak = import ./cloak.nix { };
+	cmp = import ./cmp.nix { };
 	codeium-vim = import ./codeium-vim.nix { inherit lib; };
 	codesnap = import ./codesnap.nix { };
 	gitsigns = import ./gitsigns.nix { };
 	indent-blankline = import ./indent-blankline.nix { };
 	lastplace = import ./lastplace.nix { };
 	lsp = import ./lsp.nix { };
+	luasnip = import ./luasnip.nix { };
+	nvim-snippets = import ./nvim-snippets.nix { };
 	telescope = import ./telescope.nix { };
 in
 {
@@ -16,7 +19,7 @@ in
 		bufferline = bufferline;
 		chadtree.enable = true;
 		cloak = cloak;
-		cmp.enable = true;
+		cmp = cmp;
 		codeium-vim = codeium-vim;
 		codesnap = codesnap;
 		friendly-snippets.enable = true;
@@ -27,12 +30,12 @@ in
 		lsp = lsp;
 		lsp-format.enable = true;
 		lualine.enable = true;
-		luasnip.enable = true;
+		luasnip = luasnip;
 		markdown-preview.enable = true;
 		noice.enable = true;
 		notify.enable = true;
 		nvim-autopairs.enable = true;
-		nvim-snippets.enable = true;
+		nvim-snippets = nvim-snippets;
 		rustaceanvim.enable = true;
 		surround.enable = true;
 		telescope = telescope;
