@@ -13,22 +13,22 @@
 		{
 			action = "<CMD>LspStop<Enter>";
 			key = "<leader>Lsto";
-			desc = "Lsp Stop";
+			options.desc = "Lsp Stop";
 		}
 		{
 			action = "<CMD>LspStart<Enter>";
 			key = "<leader>Lsta";
-			desc = "Lsp Start";
+			options.desc = "Lsp Start";
 		}
 		{
 			action = "<CMD>LspRestart<Enter>";
 			key = "<leader>Lr";
-			desc = "Lsp Restart";
+			options.desc = "Lsp Restart";
 		}
 		{
 			action = "<CMD>LspInfo<Enter>";
 			key = "<leader>Li";
-			desc = "Lsp Info";
+			options.desc = "Lsp Info";
 		}
 		{
 			key = "gd";
