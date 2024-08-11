@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ lib, config, ... }:
 let
 	historySize = 999999999;
 in
@@ -17,6 +17,8 @@ in
 				"~"
 				"~/.local/src"
 				"~/.local/bin"
+				"~/.local"
+				"/etc"
 			];
 			defaultKeymap = "emacs";
 			dirHashes = {
