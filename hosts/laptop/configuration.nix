@@ -12,6 +12,7 @@ in
 
       ../../modules/nixos/users.nix
       ../../modules/nixos/hyprland.nix
+      ../../modules/nixos/plymouth.nix
     ];
 
   boot = {
@@ -21,6 +22,8 @@ in
 	  };
 	  initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device = "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
   };
+
+  plymouth.enable = false;
 
 
   # Enable networking
