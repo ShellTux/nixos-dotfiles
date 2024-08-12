@@ -36,7 +36,7 @@
 			options.desc = "Telescope Git Status";
 		};
 		"<leader>pM" = {
-			action = "man_pages sections=0p,1,2,3,3p,3type,7";
+			action = "man_pages sections=0p,1,2,3,3p,3type,5,7";
 			options.desc = "Telescope Man Pages";
 		};
 	};
