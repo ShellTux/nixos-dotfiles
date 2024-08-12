@@ -45,6 +45,7 @@ in
   	(path + "/tealdeer.nix")
   	(path + "/tmux.nix")
   	(path + "/vim.nix")
+  	(path + "/wezterm/default.nix")
   	(path + "/window-managers/wayland/hyprland/default.nix")
   	(path + "/yt-dlp.nix")
   	(path + "/zathura.nix")
@@ -71,6 +72,7 @@ in
   tealdeer.enable = true;
   tmux.enable = true;
   vim.enable = true;
+  wezterm.enable = true;
   yt-dlp.enable = true;
   zathura.enable = true;
   zsh.enable = true;
