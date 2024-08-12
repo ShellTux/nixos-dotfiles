@@ -93,6 +93,7 @@ in
 				exec = [
 					''${pkgs.swww}/bin/swww-daemon --format xrgb''
 					''${wallpaperScript} daemon''
+					''${pkgs.syncthingtray}/bin/syncthingtray --wait''
 				];
 
 			decoration = {
@@ -411,6 +412,7 @@ in
 			pwvucontrol
 			qpwgraph
 			swww
+			syncthing
 			wofi
 		];
 	};
