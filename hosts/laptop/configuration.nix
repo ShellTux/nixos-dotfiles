@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ lib, inputs, pkgs, ... }:
 let
 	user = "luisgois";
 in
@@ -44,13 +44,14 @@ in
 			ip46tables -t mangle -D nixos-fw-rpfilter -p udp -m udp --dport 51820 -j RETURN || true
 			'';
 	};
-	extraHosts =
-		''
-		192.168.1.105 goislinuxhomeserver
-		# TODO Solve VPN hosts dns
-		192.168.1.128 homeapps
-		192.168.1.129 homedash
-		'';
+	stevenblack = {
+		enable = true;
+
+		block = [
+			"fakenews"
+			"gambling"
+		];
+	};
   };
 
   # Set your time zone.

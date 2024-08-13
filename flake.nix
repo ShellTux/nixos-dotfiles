@@ -1,6 +1,7 @@
 {
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		hosts.url = "github:StevenBlack/hosts";
 
 		home-manager = {
 			url = "github:nix-community/home-manager";

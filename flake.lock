@@ -205,6 +205,24 @@
         "type": "github"
       }
     },
+    "hosts": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1723398989,
+        "narHash": "sha256-gv40Hfe8Lk/flQp+SPwGws4eZ0umjF1qwX0HdHF9Xe4=",
+        "owner": "StevenBlack",
+        "repo": "hosts",
+        "rev": "89e14e76ab0b71c7961dae6f3cc181bf0953b070",
+        "type": "github"
+      },
+      "original": {
+        "owner": "StevenBlack",
+        "repo": "hosts",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -227,6 +245,18 @@
       }
     },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 0,
+        "narHash": "sha256-QOS0ykELUmPbrrUGmegAUlpmUFznDQeR4q7rFhl8eQg=",
+        "path": "/nix/store/qxf6anli54ij0q1sdlnlgx9hyl658a4v-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1722062969,
         "narHash": "sha256-QOS0ykELUmPbrrUGmegAUlpmUFznDQeR4q7rFhl8eQg=",
@@ -296,7 +326,8 @@
       "inputs": {
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "hosts": "hosts",
+        "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim"
       }
     },
