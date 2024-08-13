@@ -47,6 +47,7 @@ in
   	(path + "/vim.nix")
   	(path + "/wezterm/default.nix")
   	(path + "/window-managers/wayland/hyprland/default.nix")
+  	(path + "/yazi.nix")
   	(path + "/yt-dlp.nix")
   	(path + "/zathura.nix")
   	(path + "/zsh.nix")
@@ -73,6 +74,7 @@ in
   tmux.enable = true;
   vim.enable = true;
   wezterm.enable = true;
+  yazi.enable = true;
   yt-dlp.enable = true;
   zathura.enable = true;
   zsh.enable = true;
