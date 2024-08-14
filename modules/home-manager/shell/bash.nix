@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ lib, config, ... }:
 {
 	options = {
 		bash.enable = lib.mkEnableOption "Enable bash module";

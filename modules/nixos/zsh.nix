@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ lib, config, ... }:
 let
 	historySize = 999999999;
 in

@@ -28,7 +28,6 @@ in
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   imports = let path = ../../modules/home-manager; in [
-  	(path + "/bash.nix")
   	(path + "/bat.nix")
   	(path + "/btop.nix")
   	(path + "/direnv.nix")
@@ -40,6 +39,7 @@ in
   	(path + "/kitty.nix")
   	(path + "/mpv.nix")
   	(path + "/neovim/default.nix")
+  	(path + "/shell/default.nix")
   	(path + "/ssh.nix")
   	(path + "/starship.nix")
   	(path + "/tealdeer.nix")
@@ -50,7 +50,6 @@ in
   	(path + "/yazi.nix")
   	(path + "/yt-dlp.nix")
   	(path + "/zathura.nix")
-  	(path + "/zsh.nix")
   ] ++ [
       inputs.nixvim.homeManagerModules.nixvim
   ];
