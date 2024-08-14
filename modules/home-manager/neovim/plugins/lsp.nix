@@ -82,6 +82,7 @@
 		};
 	};
 	servers = {
+		bashls.enable = true;
 		clangd.enable = true;
 		dockerls.enable = true;
 		gopls.enable = true;
