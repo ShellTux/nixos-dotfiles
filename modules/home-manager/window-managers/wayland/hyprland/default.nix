@@ -174,6 +174,8 @@ in
 			swww
 			syncthing
 			wofi
+
+			(import ./wallpaper.nix { inherit pkgs; })
 		];
 	};
 }
