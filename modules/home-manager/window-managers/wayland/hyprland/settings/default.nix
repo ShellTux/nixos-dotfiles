@@ -5,7 +5,7 @@ let
 	decoration = import ./decoration.nix { };
 	input = import ./input.nix { };
 	bindm = import ./bindm.nix { };
-	bind = import ./bind.nix { };
+	bind = import ./bind.nix { inherit pkgs; };
 	windowrule = import ./windowrule.nix { };
 in
 {

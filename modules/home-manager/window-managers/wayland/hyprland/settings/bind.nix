@@ -1,4 +1,7 @@
-{}:
+{ pkgs }:
+let
+	brightnessScript = import ../brightness.nix { inherit pkgs; };
+in 
 [
 	"$mainMod, Return, exec, $TERMINAL"
 	"$mainMod, C, killactive, "
@@ -58,6 +61,6 @@
 	", XF86AudioMute, exec, volume toggle-mute"
 
 	# Brightness
-	# ",XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
-	# ",XF86MonBrightnessDown,  exec, ${brightnessScript}/bin/brightness 5 -"
+	",XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
+	",XF86MonBrightnessDown,  exec, ${brightnessScript}/bin/brightness 5 -"
 ]
