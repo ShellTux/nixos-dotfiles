@@ -11,11 +11,13 @@ usage() {
 
 [ "$#" -lt 1 ] && usage
 
-nixpath="$(nix build "nixpkgs#$1" --print-out-paths --no-link)"
-eza \
-	--color=auto \
-	--color-scale all \
-	--icons \
-	--tree \
-	--git-ignore \
-	"$nixpath"
+for dir in $(nix build "nixpkgs#$1" --print-out-paths --no-link)
+do
+	eza \
+		--color=auto \
+		--color-scale all \
+		--icons \
+		--tree \
+		--git-ignore \
+		"$dir"
+done

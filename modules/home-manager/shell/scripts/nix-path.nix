@@ -3,8 +3,9 @@ pkgs.writeShellApplication {
 	name = "nix-path";
 
 	runtimeInputs = with pkgs; [
-		nix
+		coreutils
 		eza
+		nix
 	];
 
 	text = builtins.readFile ./nix-path.sh;
