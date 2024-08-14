@@ -71,7 +71,7 @@ fi
 in
 {
 	imports = let path = ../../..; in [
-		(path + "/waybar.nix")
+		(path + "/waybar/default.nix")
 	];
 
 	options = {
