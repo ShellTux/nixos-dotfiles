@@ -1,6 +1,7 @@
 { pkgs }:
 let
 	brightnessScript = import ../brightness.nix { inherit pkgs; };
+	volumeScript = import ../volume.nix { inherit pkgs; };
 in 
 [
 	"$mainMod, Return, exec, $TERMINAL"
@@ -54,11 +55,11 @@ in
 	"$super, backslash, exec, sleep .4 && [ \"$(hyprctl monitors -j | jq '.[]|select(.name==\"eDP-1\").dpmsStatus')\" = true ] && hyprctl dispatch dpms off eDP-1 || hyprctl dispatch dpms on eDP-1"
 
 	# Volume
-	", XF86AudioRaiseVolume, exec, volume 5 +"
-	", XF86AudioLowerVolume, exec, volume 5 -"
-	"SHIFT, XF86AudioRaiseVolume, exec, volume 1 +"
-	"SHIFT, XF86AudioLowerVolume, exec, volume 1 -"
-	", XF86AudioMute, exec, volume toggle-mute"
+	", XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 5 +"
+	", XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 5 -"
+	"SHIFT, XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 1 +"
+	"SHIFT, XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 1 -"
+	", XF86AudioMute, exec, ${volumeScript}/bin/volume toggle-mute"
 
 	# Brightness
 	",XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
