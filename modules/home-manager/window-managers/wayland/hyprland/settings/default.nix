@@ -12,7 +12,6 @@ in
 	exec-once = [
 		"${pkgs.firewalld-gui}/bin/firewall-applet"
 		"${pkgs.qpwgraph}/bin/qpwgraph --minimized"
-		"${pkgs.dunst}/bin/dunst"
 		"${pkgs.networkmanagerapplet}/bin/nm-applet"
 		"${pkgs.gammastep}/bin/gammastep-indicator"
 	];
