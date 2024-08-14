@@ -18,7 +18,7 @@ in
 	];
 	exec = [
 		''${wallpaperScript}/bin/wallpaperd daemon''
-		''${pkgs.syncthingtray}/bin/syncthingtray --wait''
+		''${pkgs.syncthingtray}/bin/syncthingtray --single-instance --wait''
 	];
 
 	decoration = decoration;
