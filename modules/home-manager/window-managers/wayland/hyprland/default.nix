@@ -18,6 +18,8 @@ in
 	imports = let path = ../../..; in [
 		(path + "/waybar/default.nix")
 		(path + "/dunst.nix")
+	] ++ [
+		./pyprland/default.nix
 	];
 
 	options = {
@@ -28,6 +30,7 @@ in
 	config = lib.mkIf config.hyprland.enable {
 		waybar.enable = true;
 		dunst.enable = true;
+		pyprland.enable = true;
 
 		wayland.windowManager.hyprland =  {
 			enable = true;

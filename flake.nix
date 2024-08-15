@@ -23,9 +23,11 @@
 		# 	inputs.nixpkgs.follows = "nixpkgs";
 		# };
 
+		pyprland.url = "github:hyprland-community/pyprland";
+
 	};
 
-	outputs = { self, nixpkgs, ... }@inputs:
+	outputs = { self, nixpkgs, pyprland, ... }@inputs:
 		let
 		system = "x86_64-linux";
 	pkgs = {

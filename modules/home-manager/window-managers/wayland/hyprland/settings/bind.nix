@@ -50,10 +50,6 @@ in
 	"$superControlShift, left, movetoworkspace, e-1"
 	# SUPER, Tab, movetoworkspace, previous
 
-	# Turn off main monitor
-	# FIX: https://github.com/hyprwm/Hyprland/issues/2845
-	''$super, backslash, exec, sleep .4 && [ "$(hyprctl monitors -j | jq '.[]|select(.name=="eDP-1").dpmsStatus')" = true ] && hyprctl dispatch dpms off eDP-1 || hyprctl dispatch dpms on eDP-1''
-
 	# Volume
 	", XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 5 +"
 	", XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 5 -"
