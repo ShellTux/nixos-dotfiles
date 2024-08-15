@@ -64,4 +64,9 @@ in
 	# Brightness
 	",XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
 	",XF86MonBrightnessDown,  exec, ${brightnessScript}/bin/brightness 5 -"
+
+	# Screenshots
+	", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=output"
+	"$mainMod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=window"
+	"$superShift, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=region"
 ]
