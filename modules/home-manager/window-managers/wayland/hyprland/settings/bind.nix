@@ -52,7 +52,7 @@ in
 
 	# Turn off main monitor
 	# FIX: https://github.com/hyprwm/Hyprland/issues/2845
-	"$super, backslash, exec, sleep .4 && [ \"$(hyprctl monitors -j | jq '.[]|select(.name==\"eDP-1\").dpmsStatus')\" = true ] && hyprctl dispatch dpms off eDP-1 || hyprctl dispatch dpms on eDP-1"
+	''$super, backslash, exec, sleep .4 && [ "$(hyprctl monitors -j | jq '.[]|select(.name=="eDP-1").dpmsStatus')" = true ] && hyprctl dispatch dpms off eDP-1 || hyprctl dispatch dpms on eDP-1''
 
 	# Volume
 	", XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 5 +"
@@ -69,4 +69,18 @@ in
 	", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=output"
 	"$mainMod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=window"
 	"$superShift, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=region"
+
+	# Emojis
+	# TODO: Add rofi emoji
+	# "$mainMod, period, exec, rofi -show emoji"
+
+	# wlogout
+	"$mainMod, F4, exec, ${pkgs.wlogout}/bin/wlogout --protocol layer-shell"
+
+	# Pin Window (Sticky)
+	"$mainMod ALT, S, pin, active"
+
+	# Monocle
+	"$mainMod, m, exec, hyprctl dispatch fullscreen 1"
+
 ]
