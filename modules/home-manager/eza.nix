@@ -20,5 +20,9 @@
 				"--header"
 			];
 		};
+
+		home.shellAliases = {
+			tree = "eza --color=auto --color-scale all --icons --tree --git-ignore";
+		};
 	};
 }

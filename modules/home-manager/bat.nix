@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, ... }:
 {
 	options = {
 		bat.enable = lib.mkEnableOption "Enable bat module";
@@ -29,6 +29,11 @@
 				batpipe
 				batwatch
 			];
+		};
+
+		home.shellAliases = {
+			bathelp = "bat --plain --language=help";
+			man = "batman";
 		};
 	};
 }

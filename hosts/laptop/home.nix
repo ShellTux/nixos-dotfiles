@@ -117,7 +117,6 @@ in
 
   home.shellAliases = lib.mkMerge [
   {
-	  bathelp = "bat --plain --language=help";
 	  cd1 = "cd ..";
 	  cd2 = "cd ../../";
 	  cd3 = "cd ../../../";
@@ -136,7 +135,7 @@ in
 	  install = "install --verbose";
 	  ip = "ip --color=auto";
 	  kernel = "uname --kernel-release";
-	  lower = "tr \"[:upper:]\" \"[:lower:]\"";
+	  lower = ''tr "[:upper:]" "[:lower:]"'';
 	  lsblk-label = "lsblk -o name,fstype,mountpoint,label,partlabel,size";
 	  mkdir = "mkdir --parents --verbose";
 	  more = "less";
@@ -146,20 +145,16 @@ in
 	  port = "netstat --tcp --udp --listening --all --numeric --program --wide";
 	  procs = "procs --watch-interval=.5 --watch";
 	  progress = "progress --wait-delay .5 --monitor-continuously";
-	  publicIP = "printf '%s\n' \"$(curl --ipv4 --silent ifconfig.me)\"";
+	  publicIP = ''printf '%s\n' "$(${pkgs.curl}/bin/curl --ipv4 --silent ifconfig.me)"'';
 	  ":q" = "exit";
-	  randomcolor = "printf \"#$(openssl rand -hex 3 | tr \"[:lower:]\" \"[:upper:]\")\n\"";
+	  randomcolor = ''printf "#$(${pkgs.openssl}/bin/openssl rand -hex 3 | tr "[:lower:]" "[:upper:]")\n"'';
 	  rmdir = "rmdir --verbose --parents";
-	  rm = "rm --verbose --one-file-system --no-preserve-root --interactive=once";
+	  rm = "rm --verbose --one-file-system --interactive=once";
 	  shred = "shred --verbose";
-	  silicon = "silicon --theme OneHalfDark --font \"FiraCode Nerd Font\"";
-	  ssh-agentd = "eval $(ssh-agent -s)";
-	  sshfs = "sshfs -o \"compression=yes,reconnect\"";
-	  suvim = "doas vim";
-	  tree = "eza --color=auto --color-scale all --icons --tree --git-ignore";
+	  silicon = ''silicon --theme OneHalfDark --font "FiraCode Nerd Font"'';
+	  sshfs = ''sshfs -o "compression=yes,reconnect"'';
 	  upper = "tr \"[:lower:]\" \"[:upper:]\"";
 	  watch = "watch --color --interval 1";
-	  ytdownload = "yt-dlp --embed-subs --all-subs --embed-thumbnail --embed-metadata --embed-chapters --format \"bestvideo[height<=1440]+bestaudio/best\"";
   }
   (genCdAliases 20)
   ];
