@@ -43,6 +43,8 @@ in
 		# only).
 		# You can look up preexec for bash: https://github.com/rcaloras/bash-preexec
 		swallow_exception_regex = "^(wev|ueberzugpp_.*|ranger)$";
+		mouse_move_enables_dpms = true;
+		key_press_enables_dpms = true;
 	};
 	binds = {
 		workspace_back_and_forth = true;
