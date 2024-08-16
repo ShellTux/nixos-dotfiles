@@ -27,47 +27,22 @@
 
 	};
 
-	outputs = { self, nixpkgs, pyprland, ... }@inputs:
-		let
+	outputs = { self, nixpkgs, ... }@inputs:
+	let
 		system = "x86_64-linux";
-	pkgs = {
-		inherit system;
-
-		config = {
-			allowUnfree = true;
+		specialArgs = { inherit inputs; };
+		mkNixosConfig = configFile: nixpkgs.lib.nixosSystem {
+			inherit system specialArgs;
+			modules = [
+				configFile
+			];
 		};
-	};
 	in
 	{
 		nixosConfigurations = {
-			default = nixpkgs.lib.nixosSystem {
-				modules = [
-					./hosts/default/configuration.nix
-				];
-				extraSpecialArgs = {inherit inputs;};
-			};
-			desktop = nixpkgs.lib.nixosSystem {
-				system = "x86_64-linux";
-				modules = [
-					./hosts/desktop/configuration.nix
-				];
-				specialArgs = {inherit inputs;};
-			};
-			laptop = nixpkgs.lib.nixosSystem {
-				system = "x86_64-linux";
-				modules = [
-					./hosts/laptop/configuration.nix
-				];
-				specialArgs = {inherit inputs;};
-			};
-			virtual-machine = nixpkgs.lib.nixosSystem {
-				system = "x86_64-linux";
-				modules = [
-					./hosts/virtual-machine/configuration.nix
-						inputs.home-manager.nixosModules.default
-				];
-				specialArgs = { inherit inputs system; };
-			};
+			desktop = mkNixosConfig ./hosts/desktop/configuration.nix;
+			laptop = mkNixosConfig ./hosts/laptop/configuration.nix;
+			virtual-machine = mkNixosConfig ./hosts/virtual-machine/configuration.nix;
 		};
 	};
 }
