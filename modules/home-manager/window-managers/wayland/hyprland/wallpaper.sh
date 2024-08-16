@@ -71,6 +71,7 @@ daemon_SIGTERM() {
 }
 
 daemon_signals() {
+	trap 'daemon_exit' EXIT
 	trap 'daemon_SIGINT' INT
 	trap 'daemon_SIGTERM' TERM
 }
@@ -92,7 +93,10 @@ next() {
 [ "$#" -lt 1 ] && usage
 
 case "$1" in
-	daemon) daemon_wallpaper ;;
+	daemon)
+		daemon_signals
+		daemon_wallpaper
+		;;
 	next) next ;;
 esac
 
