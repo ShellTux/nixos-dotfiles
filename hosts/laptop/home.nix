@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, lib, pkgs, username, ... }:
 let
   genCdAliases = len:
     let
@@ -15,8 +15,8 @@ let
     genCdAliases0 len {};
 in
 {
-  home.username = "luisgois";
-  home.homeDirectory = "/home/luisgois";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -103,9 +103,6 @@ in
 	unar
 	webcord
   ];
-
-  home.file = {
-  };
 
   home.sessionVariables = {
     EDITOR = "nvim";

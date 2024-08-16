@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-	user = "luisgois";
+	username = "luisgois";
 in
 {
   imports =
@@ -225,16 +225,18 @@ in
   # };
 
   home-manager = {
-	  extraSpecialArgs = {inherit inputs;};
+	  extraSpecialArgs = {
+		  inherit inputs username;
+	  };
 	  users = {
-		  ${user} = import ./home.nix;
+		  ${username} = import ./home.nix;
 	  };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
 	  motd = null;
-	  users.${user} = {
+	  users.${username} = {
 		  isNormalUser = true;
 		  initialPassword = "123456";
 		  description = "Luís Góis";
