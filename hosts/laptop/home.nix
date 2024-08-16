@@ -34,6 +34,7 @@ in
   	(path + "/eza.nix")
   	(path + "/fd.nix")
   	(path + "/firefox.nix")
+  	(path + "/fzf.nix")
   	(path + "/git/default.nix")
   	(path + "/htop.nix")
   	(path + "/kitty.nix")
@@ -61,6 +62,7 @@ in
   eza.enable = true;
   fd.enable = true;
   firefox.enable = true;
+  fzf.enable = true;
   git.enable = true;
   htop.enable = true;
   hyprland.enable = true;
@@ -129,7 +131,6 @@ in
 	  diff = "diff --color=auto";
 	  du = "du --human-readable";
 	  free = "free --human --wide --total";
-	  fzf = ''fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'';
 	  gdb = "gdb --tui";
 	  grep = "grep --colour=auto";
 	  install = "install --verbose";
