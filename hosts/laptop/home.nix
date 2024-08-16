@@ -135,12 +135,6 @@ in
 	  grep = "grep --colour=auto";
 	  install = "install --verbose";
 	  ip = "ip --color=auto";
-	  ipa= ''
-	  echo -e "IPv4:\n-----------------"
-	  ip -oneline address show | cut --delimiter=' ' --fields=2,7 | grep --invert-match : | column --table
-	  echo -e "\nIPv6:\n-----------------"
-	  ip -oneline address show | cut --delimiter=' ' --fields=2,7 | grep : | column --table
-	  '';
 	  kernel = "uname --kernel-release";
 	  lower = "tr \"[:upper:]\" \"[:lower:]\"";
 	  lsblk-label = "lsblk -o name,fstype,mountpoint,label,partlabel,size";
