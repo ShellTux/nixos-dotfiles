@@ -9,7 +9,7 @@
 			enable = true;
 
 			config = {
-				pager = "less -FR";
+				pager = "less -R";
 				theme = "TwoDark";
 				map-syntax = [
 					"*.ino:C++"
