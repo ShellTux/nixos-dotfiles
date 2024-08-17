@@ -15,150 +15,152 @@ let
     genCdAliases0 len {};
 in
 {
-  home.username = username;
-  home.homeDirectory = "/home/${username}";
+	home = {
+		username = username;
+		homeDirectory = "/home/${username}";
 
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+		packages = with pkgs; [
+			ani-cli
+			anki
+			ffmpeg-full
+			jellyfin-media-player
+			libqalculate
+			mediainfo
+			nemo
+			nvtopPackages.intel
+			procs
+			qbittorrent
+			slack
+			stremio
+			translate-shell
+			unar
+			webcord
+		];
 
-  imports = let path = ../../modules/home-manager; in [
-  	(path + "/bat.nix")
-  	(path + "/btop.nix")
-  	(path + "/direnv.nix")
-  	(path + "/eza.nix")
-  	(path + "/fd.nix")
-  	(path + "/firefox.nix")
-  	(path + "/fzf.nix")
-  	(path + "/git/default.nix")
-  	(path + "/htop.nix")
-  	(path + "/kitty.nix")
-  	(path + "/mpv.nix")
-  	(path + "/neovim/default.nix")
-  	(path + "/shell/default.nix")
-  	(path + "/ssh.nix")
-  	(path + "/starship.nix")
-  	(path + "/tealdeer.nix")
-  	(path + "/tmux.nix")
-  	(path + "/vim.nix")
-  	(path + "/wezterm/default.nix")
-  	(path + "/window-managers/wayland/hyprland/default.nix")
-  	(path + "/yazi.nix")
-  	(path + "/yt-dlp.nix")
-  	(path + "/zathura.nix")
-  ] ++ [
-      inputs.nixvim.homeManagerModules.nixvim
-  ];
+		sessionVariables = {
+			EDITOR = "nvim";
+		};
 
-  bash.enable = true;
-  bat.enable = true;
-  btop.enable = true;
-  direnv.enable = true;
-  eza.enable = true;
-  fd.enable = true;
-  firefox.enable = true;
-  fzf.enable = true;
-  git.enable = true;
-  htop.enable = true;
-  hyprland.enable = true;
-  kitty.enable = true;
-  mpv.enable = true;
-  neovim.enable = true;
-  ssh.enable = true;
-  starship.enable = true;
-  tealdeer.enable = true;
-  tmux.enable = true;
-  vim.enable = true;
-  wezterm.enable = true;
-  yazi.enable = true;
-  yt-dlp.enable = true;
-  zathura.enable = true;
-  zsh.enable = true;
+		sessionPath = [
+			"$HOME/.local/bin"
+		];
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-	  builtins.elem (lib.getName pkg) [
-	  "codeium"
-	  "slack"
-	  ];
+		shellAliases = lib.mkMerge [
+		{
+			cd1 = "cd ..";
+			cd2 = "cd ../../";
+			cd3 = "cd ../../../";
+			cd4 = "cd ../../../../";
+			cd5 = "cd ../../../../../";
+			chmod = "chmod --changes";
+			chown = "chown --changes";
+			clang-format = "clang-format --verbose";
+			cp = "cp --interactive --verbose";
+			df = "df --human-readable";
+			diff = "diff --color=auto";
+			du = "du --human-readable";
+			free = "free --human --wide --total";
+			gdb = "gdb --tui";
+			grep = "grep --colour=auto";
+			install = "install --verbose";
+			ip = "ip --color=auto";
+			kernel = "uname --kernel-release";
+			lower = ''tr "[:upper:]" "[:lower:]"'';
+			lsblk-label = "lsblk -o name,fstype,mountpoint,label,partlabel,size";
+			mkdir = "mkdir --parents --verbose";
+			more = "less";
+			nix-env = ''nix-env --command "$SHELL"'';
+			mv = "mv --verbose";
+			np = "nano --nowrap PKGBUILD";
+			open = "xdg-open";
+			port = "netstat --tcp --udp --listening --all --numeric --program --wide";
+			procs = "procs --watch-interval=.5 --watch";
+			progress = "progress --wait-delay .5 --monitor-continuously";
+			publicIP = ''printf '%s\n' "$(${pkgs.curl}/bin/curl --ipv4 --silent ifconfig.me)"'';
+			":q" = "exit";
+			randomcolor = ''printf "#$(${pkgs.openssl}/bin/openssl rand -hex 3 | tr "[:lower:]" "[:upper:]")\n"'';
+			rmdir = "rmdir --verbose --parents";
+			rm = "rm --verbose --one-file-system --interactive=once";
+			shred = "shred --verbose";
+			silicon = ''silicon --theme OneHalfDark --font "FiraCode Nerd Font"'';
+			sshfs = ''sshfs -o "compression=yes,reconnect"'';
+			upper = "tr \"[:lower:]\" \"[:upper:]\"";
+			watch = "watch --color --interval 1";
+		}
+		(genCdAliases 20)
+		];
 
-  home.packages = with pkgs; [
-	ani-cli
-	anki
-	ffmpeg-full
-	jellyfin-media-player
-	libqalculate
-	mediainfo
-	nemo
-	nvtopPackages.intel
-	procs
-	qbittorrent
-	slack
-	stremio
-	translate-shell
-	unar
-	webcord
-  ];
+		# This value determines the Home Manager release that your configuration is
+		# compatible with. This helps avoid breakage when a new Home Manager release
+		# introduces backwards incompatible changes.
+		#
+		# You should not change this value, even if you update Home Manager. If you do
+		# want to update the value, then make sure to first check the Home Manager
+		# release notes.
+		stateVersion = "24.05"; # Please read the comment before changing.
+	};
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+	imports = let path = ../../modules/home-manager; in [
+		(path + "/bat.nix")
+		(path + "/btop.nix")
+		(path + "/direnv.nix")
+		(path + "/eza.nix")
+		(path + "/fd.nix")
+		(path + "/firefox.nix")
+		(path + "/fzf.nix")
+		(path + "/git/default.nix")
+		(path + "/htop.nix")
+		(path + "/kitty.nix")
+		(path + "/mpv.nix")
+		(path + "/neovim/default.nix")
+		(path + "/shell/default.nix")
+		(path + "/ssh.nix")
+		(path + "/starship.nix")
+		(path + "/tealdeer.nix")
+		(path + "/tmux.nix")
+		(path + "/vim.nix")
+		(path + "/wezterm/default.nix")
+		(path + "/window-managers/wayland/hyprland/default.nix")
+		(path + "/yazi.nix")
+		(path + "/yt-dlp.nix")
+		(path + "/zathura.nix")
+	] ++ [
+		inputs.nixvim.homeManagerModules.nixvim
+	];
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
+	bash.enable = true;
+	bat.enable = true;
+	btop.enable = true;
+	direnv.enable = true;
+	eza.enable = true;
+	fd.enable = true;
+	firefox.enable = true;
+	fzf.enable = true;
+	git.enable = true;
+	htop.enable = true;
+	hyprland.enable = true;
+	kitty.enable = true;
+	mpv.enable = true;
+	neovim.enable = true;
+	ssh.enable = true;
+	starship.enable = true;
+	tealdeer.enable = true;
+	tmux.enable = true;
+	vim.enable = true;
+	wezterm.enable = true;
+	yazi.enable = true;
+	yt-dlp.enable = true;
+	zathura.enable = true;
+	zsh.enable = true;
 
-  home.shellAliases = lib.mkMerge [
-  {
-	  cd1 = "cd ..";
-	  cd2 = "cd ../../";
-	  cd3 = "cd ../../../";
-	  cd4 = "cd ../../../../";
-	  cd5 = "cd ../../../../../";
-	  chmod = "chmod --changes";
-	  chown = "chown --changes";
-	  clang-format = "clang-format --verbose";
-	  cp = "cp --interactive --verbose";
-	  df = "df --human-readable";
-	  diff = "diff --color=auto";
-	  du = "du --human-readable";
-	  free = "free --human --wide --total";
-	  gdb = "gdb --tui";
-	  grep = "grep --colour=auto";
-	  install = "install --verbose";
-	  ip = "ip --color=auto";
-	  kernel = "uname --kernel-release";
-	  lower = ''tr "[:upper:]" "[:lower:]"'';
-	  lsblk-label = "lsblk -o name,fstype,mountpoint,label,partlabel,size";
-	  mkdir = "mkdir --parents --verbose";
-	  more = "less";
-	  mv = "mv --verbose";
-	  nix-shell = ''nix-shell --command "$SHELL"'';
-	  np = "nano --nowrap PKGBUILD";
-	  open = "xdg-open";
-	  port = "netstat --tcp --udp --listening --all --numeric --program --wide";
-	  procs = "procs --watch-interval=.5 --watch";
-	  progress = "progress --wait-delay .5 --monitor-continuously";
-	  publicIP = ''printf '%s\n' "$(${pkgs.curl}/bin/curl --ipv4 --silent ifconfig.me)"'';
-	  ":q" = "exit";
-	  randomcolor = ''printf "#$(${pkgs.openssl}/bin/openssl rand -hex 3 | tr "[:lower:]" "[:upper:]")\n"'';
-	  rmdir = "rmdir --verbose --parents";
-	  rm = "rm --verbose --one-file-system --interactive=once";
-	  shred = "shred --verbose";
-	  silicon = ''silicon --theme OneHalfDark --font "FiraCode Nerd Font"'';
-	  sshfs = ''sshfs -o "compression=yes,reconnect"'';
-	  upper = "tr \"[:lower:]\" \"[:upper:]\"";
-	  watch = "watch --color --interval 1";
-  }
-  (genCdAliases 20)
-  ];
+	nixpkgs.config.allowUnfreePredicate = pkg:
+		builtins.elem (lib.getName pkg) [
+		"codeium"
+		"slack"
+	];
 
-  services.ssh-agent.enable = true;
+	services.ssh-agent.enable = true;
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+	# Let Home Manager install and manage itself.
+	programs.home-manager.enable = true;
 }
