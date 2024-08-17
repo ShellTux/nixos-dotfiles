@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ lib, config, inputs, username, ... }:
 let
 	lock-false = {
 		Value = false;
@@ -48,7 +48,7 @@ in
 				};
 			};
 
-			profiles.luisgois = {
+			profiles.${username} = {
 				extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
 					bitwarden
 					darkreader
@@ -70,9 +70,9 @@ in
 					#"mousewheel.default.delta_multiplier_y" = 20;
 					#"mousewheel.default.delta_multiplier_z" = 20;
 
-# Firefox 75+ remembers the last workspace it was opened on as part of its session management.
-# This is annoying, because I can have a blank workspace, click Firefox from the launcher, and
-# then have Firefox open on some other workspace.
+					# Firefox 75+ remembers the last workspace it was opened on as part of its session management.
+					# This is annoying, because I can have a blank workspace, click Firefox from the launcher, and
+					# then have Firefox open on some other workspace.
 					"widget.disable-workspace-management" = true;
 				};
 
