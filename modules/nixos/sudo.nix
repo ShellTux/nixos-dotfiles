@@ -28,9 +28,12 @@
 
 			extraConfig = lib.mkMerge [
 				(lib.mkIf config.sudo.disableTimeout "Defaults passwd_timeout=0")
-				(lib.mkIf config.sudo.enableBellPrompt ''Defaults passprompt="[sudo] password for %p: "'')
+				# NOTE: sudo has --bell flag that preserves the localized prompt while triggering the bell sound
+				# (lib.mkIf config.sudo.enableBellPrompt ''Defaults passprompt="[sudo] password for %p: "'')
 				(lib.mkIf config.sudo.enableInsults "Defaults insults")
 			];
 		};
+
+		environment.shellAliases.sudo = lib.mkIf config.sudo.enableBellPrompt "sudo --bell";
 	};
 }
