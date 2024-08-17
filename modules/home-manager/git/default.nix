@@ -1,4 +1,7 @@
 { pkgs, lib, config, ... }:
+let
+	fshow = import ./fshow.nix { inherit pkgs; };
+in
 {
 	options = {
 		git.enable = lib.mkEnableOption "Enable git module";
@@ -37,8 +40,7 @@
 				forget = "update-index --assume-unchanged";
 				graph = "log --graph";
 				h = "history";
-				# FIX: history alias
-				history = "!~/.config/git/fshow";
+				history = "!${fshow}/bin/fshow";
 				ignore = "!curl -sL https://www.toptal.com/developers/gitignore/api/$@";
 				last = "!git log -1 HEAD";
 				lg1 = ''log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all'';
