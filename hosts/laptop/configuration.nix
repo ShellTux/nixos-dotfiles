@@ -14,7 +14,7 @@ in
       ../../modules/nixos/networkmanager/default.nix
       ../../modules/nixos/plymouth.nix
       ../../modules/nixos/sudo.nix
-      ../../modules/nixos/users.nix
+      (import ../../modules/nixos/users.nix { inherit pkgs username; })
     ];
 
   boot = {
@@ -234,17 +234,6 @@ in
 	  };
 	  users = {
 		  ${username} = import ./home.nix;
-	  };
-  };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users = {
-	  motd = null;
-	  users.${username} = {
-		  isNormalUser = true;
-		  initialPassword = "123456";
-		  description = "Luís Góis";
-		  extraGroups = [ "networkmanager" "wheel" ];
 	  };
   };
 
