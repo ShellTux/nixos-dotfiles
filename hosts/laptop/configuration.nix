@@ -13,6 +13,7 @@ in
       ../../modules/nixos/hyprland.nix
       ../../modules/nixos/networkmanager/default.nix
       ../../modules/nixos/plymouth.nix
+      ../../modules/nixos/sudo.nix
       ../../modules/nixos/users.nix
     ];
 
@@ -26,6 +27,7 @@ in
 
   plymouth.enable = false;
   networkmanager.enable = true;
+  sudo.enable = true;
 
 
   # Enable networking
