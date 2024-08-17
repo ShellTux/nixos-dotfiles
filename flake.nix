@@ -27,22 +27,34 @@
 
 	};
 
-	outputs = { self, nixpkgs, ... }@inputs:
+	outputs = { self, nixpkgs, home-manager, ... }@inputs:
 	let
 		system = "x86_64-linux";
 		specialArgs = { inherit inputs; };
+		extraSpecialArgs = {
+			inherit inputs;
+			isServer = false;
+			isDarwin = false;
+			isLinux = true;
+		};
 		mkNixosConfig = configFile: nixpkgs.lib.nixosSystem {
 			inherit system specialArgs;
-			modules = [
-				configFile
-			];
+			modules = [ configFile ];
+		};
+		mkHomeManagerConfig = configFile: system: home-manager.lib.homeManagerConfiguration {
+			inherit extraSpecialArgs;
+			pkgs = nixpkgs.legacyPackages.${system};
+			modules = [ configFile ];
 		};
 	in
 	{
 		nixosConfigurations = {
-			desktop = mkNixosConfig ./hosts/desktop/configuration.nix;
-			laptop = mkNixosConfig ./hosts/laptop/configuration.nix;
-			virtual-machine = mkNixosConfig ./hosts/virtual-machine/configuration.nix;
+			nixos-desktop = mkNixosConfig ./hosts/desktop/configuration.nix;
+			nixos-laptop = mkNixosConfig ./hosts/laptop/configuration.nix;
+			nixos-virtual-machine = mkNixosConfig ./hosts/virtual-machine/configuration.nix;
+		};
+		homeConfigurations = {
+			laptop = mkHomeManagerConfig ./hosts/laptop/home.nix system;
 		};
 	};
 }
