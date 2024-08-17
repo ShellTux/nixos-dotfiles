@@ -54,6 +54,7 @@
 			nixos-virtual-machine = mkNixosConfig ./hosts/virtual-machine/configuration.nix;
 		};
 		homeConfigurations = {
+			desktop = mkHomeManagerConfig ./hosts/desktop/home.nix system;
 			laptop = mkHomeManagerConfig ./hosts/laptop/home.nix system;
 		};
 	};
