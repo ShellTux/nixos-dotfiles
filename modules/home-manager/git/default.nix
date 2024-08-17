@@ -32,7 +32,7 @@ in
 				co = "checkout";
 				conflict = "diff --name-only --diff-filter=U";
 				cp = "cherry-pick";
-				diff-copy = ''!git diff-staged | ([ "$XDG_SESSION_TYPE" = "x11" ] && xclip -selection clipboard || wl-copy)'';
+				diff-copy = ''!git diff-staged | ([ "$XDG_SESSION_TYPE" = "x11" ] && ${pkgs.xclip}/bin/xclip -selection clipboard || ${pkgs.wl-clipboard}/bin/wl-copy)'';
 				diff-last = "!git diff HEAD~1 HEAD";
 				diff-staged = "diff --staged";
 				diff-summary = "diff --stat";
