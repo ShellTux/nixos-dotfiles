@@ -69,7 +69,7 @@ in
 			lsblk-label = "lsblk -o name,fstype,mountpoint,label,partlabel,size";
 			mkdir = "mkdir --parents --verbose";
 			more = "less";
-			nix-env = ''nix-env --command "$SHELL"'';
+			nix-shell = ''nix-shell --command "$SHELL"'';
 			mv = "mv --verbose";
 			np = "nano --nowrap PKGBUILD";
 			open = "xdg-open";
