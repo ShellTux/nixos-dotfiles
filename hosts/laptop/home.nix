@@ -137,6 +137,7 @@ in
 	  mkdir = "mkdir --parents --verbose";
 	  more = "less";
 	  mv = "mv --verbose";
+	  nix-shell = ''nix-shell --command "$SHELL"'';
 	  np = "nano --nowrap PKGBUILD";
 	  open = "xdg-open";
 	  port = "netstat --tcp --udp --listening --all --numeric --program --wide";
