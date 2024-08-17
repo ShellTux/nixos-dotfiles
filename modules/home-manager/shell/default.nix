@@ -2,7 +2,7 @@
 {
 	imports = [
 		./bash.nix
-		./zsh.nix
+		./zsh/default.nix
 
 		./scripts/default.nix
 	];
