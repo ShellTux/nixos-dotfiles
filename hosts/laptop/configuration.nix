@@ -10,9 +10,10 @@ in
       inputs.home-manager.nixosModules.home-manager
       inputs.nixvim.nixosModules.nixvim
 
-      ../../modules/nixos/users.nix
       ../../modules/nixos/hyprland.nix
+      ../../modules/nixos/networkmanager/default.nix
       ../../modules/nixos/plymouth.nix
+      ../../modules/nixos/users.nix
     ];
 
   boot = {
@@ -24,6 +25,7 @@ in
   };
 
   plymouth.enable = false;
+  networkmanager.enable = true;
 
 
   # Enable networking
