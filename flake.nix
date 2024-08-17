@@ -18,10 +18,10 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# sop-nix = {
-		# 	url = "github:Mic92/sops-nix";
-		# 	inputs.nixpkgs.follows = "nixpkgs";
-		# };
+		sop-nix = {
+			url = "github:Mic92/sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		pyprland.url = "github:hyprland-community/pyprland";
 
