@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, username, ... }:
+{ inputs, lib, pkgs, username, users, ... }:
 let
   genCdAliases = len:
     let
@@ -17,7 +17,7 @@ in
 {
 	home = {
 		username = username;
-		homeDirectory = "/home/${username}";
+		homeDirectory = users.${username}.home;
 
 		packages = with pkgs; [
 			ani-cli
