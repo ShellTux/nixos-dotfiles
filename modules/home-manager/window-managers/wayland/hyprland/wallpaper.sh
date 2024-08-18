@@ -2,9 +2,10 @@
 set -e
 
 BASENAME="$(basename "$0")"
-WALLPAPER_LOCK="/tmp/$BASENAME.lock"
-WALLPAPER_HOMEDIR="${WALLPAPER_HOMEDIR:-$HOME/Wallpapers/Imagens}"
 INTERVAL_SECONDS=600
+LOG_FILE="$HOME/.local/state/$BASENAME/$(date +%Y-%m-%d).log"
+WALLPAPER_HOMEDIR="${WALLPAPER_HOMEDIR:-$HOME/Wallpapers/Imagens}"
+WALLPAPER_LOCK="/tmp/$BASENAME.lock"
 
 usage() {
 	echo "$BASENAME <subcommand>"
@@ -28,6 +29,9 @@ update_wallpaper() {
 }
 
 daemon_wallpaper() {
+	mkdir --parents "$(dirname "$LOG_FILE")"
+	exec > "$LOG_FILE" 2>&1
+
 	if [ -f "$WALLPAPER_LOCK" ]
 	then
 		echo "lock file is present ($WALLPAPER_LOCK), Do you have another instance running? If not you can manually delete it."
