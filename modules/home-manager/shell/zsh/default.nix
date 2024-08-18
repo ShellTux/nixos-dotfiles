@@ -50,7 +50,8 @@ in
 				size = historySize;
 			};
 			initExtra = lib.mkMerge [
-				(lib.mkIf config.zsh.enablePowerlevel10k "source ${./.p10k.zsh}")
+				(lib.mkIf config.zsh.enablePowerlevel10k "source ${./p10k.zsh}")
+				(lib.mkIf config.zsh.enablePowerlevel10k "source ${./p10k.glyphs.zsh}")
 				"${pkgs.fastfetch}/bin/fastfetch"
 			];
 			localVariables = {
