@@ -110,6 +110,7 @@ in
 		(path + "/fzf.nix")
 		(path + "/git/default.nix")
 		(path + "/htop.nix")
+		(path + "/imv.nix")
 		(path + "/kitty.nix")
 		(path + "/mpv.nix")
 		(path + "/neovim/default.nix")
@@ -139,6 +140,7 @@ in
 	git.enable = true;
 	htop.enable = true;
 	hyprland.enable = true;
+	imv.enable = true;
 	kitty.enable = true;
 	mpv.enable = true;
 	neovim.enable = true;
