@@ -1,4 +1,4 @@
-{ lib, config, inputs, username, ... }:
+{ pkgs, lib, config, inputs, username, ... }:
 let
 	lock-false = {
 		Value = false;
@@ -14,8 +14,14 @@ let
 	};
 in
 {
-	options = {
-		firefox.enable = lib.mkEnableOption "Enable firefox module";
+	options.firefox = {
+		enable = lib.mkEnableOption "Enable firefox module";
+
+		enableFf2mpv = lib.mkOption {
+			description = "Wether to enable the ff2mpv extension.";
+			type = lib.types.bool;
+			default = true;
+		};
 	};
 
 	config = lib.mkIf config.firefox.enable {
@@ -25,6 +31,10 @@ in
 			languagePacks = [
 				"pt-PT"
 				"en-US"
+			];
+
+			nativeMessagingHosts = with pkgs; [
+				(lib.mkIf config.firefox.enableFf2mpv ff2mpv)
 			];
 
 			policies = {
@@ -52,7 +62,9 @@ in
 				extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
 					bitwarden
 					darkreader
+					(lib.mkIf config.firefox.enableFf2mpv ff2mpv)
 					return-youtube-dislikes
+					search-by-image
 					sponsorblock
 					tridactyl
 					ublock-origin
