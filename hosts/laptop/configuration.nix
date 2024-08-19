@@ -56,6 +56,7 @@ in
 			"gambling"
 		];
 	};
+	extraHosts = builtins.readFile ./hosts;
   };
 
   # Set your time zone.
