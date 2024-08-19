@@ -126,6 +126,7 @@ in
 		(path + "/yazi.nix")
 		(path + "/yt-dlp.nix")
 		(path + "/zathura.nix")
+		(path + "/zellij.nix")
 	] ++ [
 		inputs.nixvim.homeManagerModules.nixvim
 	];
@@ -155,6 +156,7 @@ in
 	yazi.enable = true;
 	yt-dlp.enable = true;
 	zathura.enable = true;
+	zellij.enable = false;
 	zsh.enable = true;
 
 	nixpkgs.config.allowUnfreePredicate = pkg:
