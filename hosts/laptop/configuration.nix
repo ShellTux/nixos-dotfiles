@@ -3,19 +3,33 @@ let
 	username = "luisgois";
 in
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+	imports = [
+		# Include the results of the hardware scan.
+		./hardware-configuration.nix
+	] ++ (with inputs.home-manager.nixosModules; [
+		home-manager
+	]) ++ (with inputs.nixvim.nixosModules; [
+		nixvim
+	]) ++ (with inputs.sops-nix.nixosModules; [
+		sops
+	]) ++ (let path = ../../modules/nixos; in [
+		(path + "/hyprland.nix")
+		(path + "/networkmanager/default.nix")
+		(path + "/plymouth.nix")
+		(path + "/sudo.nix")
+		(import (path + "/users.nix") { inherit pkgs username; })
+	]);
 
-      inputs.home-manager.nixosModules.home-manager
-      inputs.nixvim.nixosModules.nixvim
+	sops = {
+		defaultSopsFile = ../../secrets/secrets.yaml;
+		defaultSopsFormat = "yaml";
+		age = {
+			keyFile = "/var/lib/sops-nix/age/keys.txt";
+			generateKey = true;
+		};
 
-      ../../modules/nixos/hyprland.nix
-      ../../modules/nixos/networkmanager/default.nix
-      ../../modules/nixos/plymouth.nix
-      ../../modules/nixos/sudo.nix
-      (import ../../modules/nixos/users.nix { inherit pkgs username; })
-    ];
+		secrets = { };
+	};
 
   boot = {
 	  loader = {

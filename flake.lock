@@ -464,10 +464,10 @@
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "pyprland": "pyprland",
-        "sop-nix": "sop-nix"
+        "sops-nix": "sops-nix"
       }
     },
-    "sop-nix": {
+    "sops-nix": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
