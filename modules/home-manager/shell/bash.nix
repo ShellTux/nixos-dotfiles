@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 {
 	options = {
 		bash.enable = lib.mkEnableOption "Enable bash module";
@@ -41,9 +41,9 @@
 				"checkjobs"
 				"autocd"
 			];
-			initExtra = ''
-			fastfetch
-			'';
+			initExtra = lib.mkMerge [
+				"${pkgs.fastfetch}/bin/fastfetch"
+			];
 		};
 	};
 }

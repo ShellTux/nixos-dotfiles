@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let
 	historySize = 999999999;
 in
@@ -14,9 +14,9 @@ in
 			enableBashCompletion = true;
 			enableCompletion = true;
 			histSize = historySize;
-			interactiveShellInit = ''
-			fastfetch
-			'';
+			interactiveShellInit = lib.mkMerge [
+				"${pkgs.fastfetch}/bin/fastfetch"
+			];
 			syntaxHighlighting = {
 				enable = true;
 				highlighters = [
