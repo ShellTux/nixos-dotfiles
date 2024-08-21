@@ -23,7 +23,10 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		pyprland.url = "github:hyprland-community/pyprland";
+		pyprland = {
+			url = "github:hyprland-community/pyprland";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 	};
 
