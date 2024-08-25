@@ -15,6 +15,7 @@ in
 		sops
 	]) ++ (let path = ../../modules/nixos; in [
 		(path + "/hyprland.nix")
+		(path + "/locate.nix")
 		(path + "/networkmanager/default.nix")
 		(path + "/plymouth.nix")
 		(path + "/sudo.nix")
@@ -40,8 +41,9 @@ in
 		initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device = "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
 	};
 
-	plymouth.enable = false;
+	locate = { enable = true; pruneNixStore = false; };
 	networkmanager.enable = true;
+	plymouth.enable = false;
 	sudo.enable = true;
 
 
@@ -147,12 +149,6 @@ in
 		};
 
 		fail2ban.enable = true;
-
-		locate = {
-			enable = true;
-			package = pkgs.plocate;
-			localuser = null;
-		};
 	};
 
 	# Configure console keymap
