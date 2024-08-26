@@ -114,6 +114,7 @@ in
 		(path + "/kitty.nix")
 		(path + "/mpd/default.nix")
 		(path + "/mpv.nix")
+		(path + "/ncmpcpp.nix")
 		(path + "/neovim/default.nix")
 		(path + "/newsboat.nix")
 		(path + "/shell/default.nix")
@@ -147,6 +148,7 @@ in
 	kitty.enable = true;
 	mpd.enable = true;
 	mpv.enable = true;
+	ncmpcpp.enable = true;
 	neovim.enable = true;
 	newsboat.enable = true;
 	ssh.enable = true;
