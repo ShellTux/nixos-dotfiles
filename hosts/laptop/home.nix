@@ -112,6 +112,7 @@ in
 		(path + "/htop.nix")
 		(path + "/imv.nix")
 		(path + "/kitty.nix")
+		(path + "/mpd/default.nix")
 		(path + "/mpv.nix")
 		(path + "/neovim/default.nix")
 		(path + "/newsboat.nix")
@@ -144,6 +145,7 @@ in
 	hyprland.enable = true;
 	imv.enable = true;
 	kitty.enable = true;
+	mpd.enable = true;
 	mpv.enable = true;
 	neovim.enable = true;
 	newsboat.enable = true;
