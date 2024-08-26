@@ -4,7 +4,7 @@ let
 in
 {
 	users = {
-		motd = null;
+		motd = "";
 		users = {
 			"${username}" = {
 				isNormalUser = true;
