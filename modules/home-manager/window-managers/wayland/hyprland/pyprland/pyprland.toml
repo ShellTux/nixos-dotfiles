@@ -77,6 +77,14 @@ size = "40% 90%"
 unfocus = "hide"
 lazy = true
 
+[scratchpads.ncmpcpp]
+animation = "fromRight"
+command = "ncmpcpp"
+class = "kitty-dropterm"
+size = "40% 90%"
+unfocus = "hide"
+lazy = true
+
 [scratchpads.btop]
 animation = "fromBottom"
 class = "kitty-dropterm"
