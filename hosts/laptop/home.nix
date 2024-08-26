@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, username, users, ... }:
+{ inputs, lib, pkgs, config, username, users, ... }:
 let
   genCdAliases = len:
     let
@@ -166,6 +166,29 @@ in
 	];
 
 	services.ssh-agent.enable = true;
+
+	xdg = {
+		enable = true;
+
+		userDirs = let
+			homeDirectory = config.home.homeDirectory;
+		in {
+			enable = true;
+
+			createDirectories = true;
+
+			desktop = "${homeDirectory}/Área de Trabalho";
+			documents = "${homeDirectory}/Documentos";
+			download = "${homeDirectory}/Transferências";
+			music = "${homeDirectory}/Música";
+			pictures = "${homeDirectory}/Imagens";
+			publicShare = "${homeDirectory}/Público";
+			templates = "${homeDirectory}/Modelos";
+			videos = "${homeDirectory}/Vídeos";
+		};
+
+		configFile."user-dirs.locale".text = "pt_PT";
+	};
 
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
