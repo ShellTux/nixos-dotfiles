@@ -11,6 +11,7 @@ let
 	lsp = import ./lsp.nix { };
 	luasnip = import ./luasnip.nix { };
 	nvim-snippets = import ./nvim-snippets.nix { };
+	rustaceanvim = import ./rustaceanvim.nix { };
 	telescope = import ./telescope.nix { };
 in
 {
@@ -27,6 +28,7 @@ in
 			lsp
 			luasnip
 			nvim-snippets
+			rustaceanvim
 			telescope
 			;
 
