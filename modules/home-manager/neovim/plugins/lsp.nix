@@ -89,14 +89,11 @@
 		jsonls.enable = true;
 		lua-ls.enable = true;
 		marksman.enable = true;
-		nil-ls.enable = true;
-		pyright.enable = true;
-		rust-analyzer = {
+		nil-ls = {
 			enable = true;
-
-			installCargo = true;
-			installRustc = true;
+			settings.nix.flake.autoArchive = true;
 		};
+		pyright.enable = true;
 		texlab.enable = true;
 		tsserver.enable = true;
 		yamlls.enable = true;
