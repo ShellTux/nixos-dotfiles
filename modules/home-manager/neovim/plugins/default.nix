@@ -15,30 +15,32 @@ let
 in
 {
 	nixvim = {
+		inherit
+			bufferline
+			cloak
+			cmp
+			codeium-vim
+			codesnap
+			gitsigns
+			indent-blankline
+			lastplace
+			lsp
+			luasnip
+			nvim-snippets
+			telescope
+			;
+
 		auto-save.enable = true;
-		bufferline = bufferline;
 		chadtree.enable = true;
-		cloak = cloak;
-		cmp = cmp;
-		codeium-vim = codeium-vim;
-		codesnap = codesnap;
 		friendly-snippets.enable = true;
 		fugitive.enable = true;
-		gitsigns = gitsigns;
-		indent-blankline = indent-blankline;
-		lastplace = lastplace;
-		lsp = lsp;
 		lsp-format.enable = true;
 		lualine.enable = true;
-		luasnip = luasnip;
 		markdown-preview.enable = true;
 		noice.enable = true;
 		notify.enable = true;
 		nvim-autopairs.enable = true;
-		nvim-snippets = nvim-snippets;
-		rustaceanvim.enable = true;
 		surround.enable = true;
-		telescope = telescope;
 		tmux-navigator.enable = true;
 		todo-comments.enable = true;
 		transparent.enable = true;
