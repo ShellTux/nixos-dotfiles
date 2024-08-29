@@ -4,8 +4,7 @@ let
 
 	decoration = import ./decoration.nix { };
 	input = import ./input.nix { };
-	bindm = import ./bindm.nix { };
-	bind = import ./bind.nix { inherit pkgs; };
+	binds = import ./bind.nix { inherit pkgs; };
 	windowrule = import ./windowrule.nix { };
 in
 {
@@ -61,7 +60,7 @@ in
 	"$BROWSER" = "firefox";
 	"$SCRATCHPAD" = "kitty";
 
-	bindm = bindm;
-	bind = bind;
 	windowrule = windowrule;
+} // {
+	inherit binds;
 }
