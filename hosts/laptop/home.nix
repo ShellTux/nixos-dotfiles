@@ -160,7 +160,7 @@ in
 	yazi.enable = true;
 	yt-dlp.enable = true;
 	zathura.enable = true;
-	zellij.enable = false;
+	zellij.enable = true;
 	zsh.enable = true;
 
 	nixpkgs.config.allowUnfreePredicate = pkg:
