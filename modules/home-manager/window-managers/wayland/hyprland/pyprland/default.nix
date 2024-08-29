@@ -1,8 +1,6 @@
 { lib, config, pkgs, ... }:
 {
-	options = {
-		pyprland.enable = lib.mkEnableOption "Enable pyprland module";
-	};
+	options.pyprland.enable = lib.mkEnableOption "Enable pyprland module";
 
 	config = lib.mkIf config.pyprland.enable {
 		home.packages = with pkgs; [
@@ -10,6 +8,11 @@
 			htop
 			hyprpicker
 			libqalculate
+			(ncmpcpp.override {
+				visualizerSupport = true;
+				clockSupport = true;
+				taglibSupport = true;
+			})
 			pyprland
 			yazi
 		];
