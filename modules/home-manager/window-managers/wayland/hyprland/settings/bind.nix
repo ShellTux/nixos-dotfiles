@@ -57,22 +57,6 @@ in
 		"$superControlShift, left, movetoworkspace, e-1"
 		# SUPER, Tab, movetoworkspace, previous
 
-		# Volume
-		", XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 5 +"
-		", XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 5 -"
-		"SHIFT, XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 1 +"
-		"SHIFT, XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 1 -"
-		", XF86AudioMute, exec, ${volumeScript}/bin/volume toggle-mute"
-
-		# Music
-		", XF86AudioPlay, exec, ${pkgs.mpc-cli}/bin/mpc toggle"
-		", XF86AudioPrev, exec, ${pkgs.mpc-cli}/bin/mpc prev"
-		", XF86AudioNext, exec, ${pkgs.mpc-cli}/bin/mpc next"
-
-		# Brightness
-		", XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
-		", XF86MonBrightnessDown,  exec, ${brightnessScript}/bin/brightness 5 -"
-
 		# Screenshots
 		", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=output"
 		"$mainMod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=window"
@@ -98,5 +82,25 @@ in
 
 		# Center floating window
 		"$mainMod, mouse:274, centerwindow"
+	];
+
+	bindl = [
+		# Music
+		", XF86AudioPlay, exec, ${pkgs.mpc-cli}/bin/mpc toggle"
+		", XF86AudioPrev, exec, ${pkgs.mpc-cli}/bin/mpc prev"
+		", XF86AudioNext, exec, ${pkgs.mpc-cli}/bin/mpc next"
+	];
+
+	bindle = [
+		# Volume
+		", XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 5 +"
+		", XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 5 -"
+		"SHIFT, XF86AudioRaiseVolume, exec, ${volumeScript}/bin/volume 1 +"
+		"SHIFT, XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 1 -"
+		", XF86AudioMute, exec, ${volumeScript}/bin/volume toggle-mute"
+
+		# Brightness
+		", XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
+		", XF86MonBrightnessDown,  exec, ${brightnessScript}/bin/brightness 5 -"
 	];
 }
