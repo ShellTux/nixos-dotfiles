@@ -8,6 +8,8 @@ let
 	windowrule = import ./windowrule.nix { };
 in
 {
+	inherit decoration input windowrule;
+	
 	exec-once = [
 		"${pkgs.firewalld-gui}/bin/firewall-applet"
 		"${pkgs.qpwgraph}/bin/qpwgraph --minimized"
@@ -19,8 +21,6 @@ in
 		''${pkgs.syncthingtray}/bin/syncthingtray --single-instance --wait''
 	];
 
-	decoration = decoration;
-	input = input;
 	gestures = {
 		workspace_swipe = "on";
 		workspace_swipe_fingers = 3;
@@ -59,8 +59,6 @@ in
 	"$TERMINAL" = "kitty";
 	"$BROWSER" = "firefox";
 	"$SCRATCHPAD" = "kitty";
-
-	windowrule = windowrule;
 } // {
 	inherit binds;
 }
