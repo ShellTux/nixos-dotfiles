@@ -60,9 +60,9 @@ in
 	"$superAlt" = "SUPER ALT";
 	"$superControlShift" = "SUPER CONTROL SHIFT";
 	"$superShift" = "SUPER SHIFT";
-	"$TERMINAL" = "kitty";
-	"$BROWSER" = "firefox";
-	"$SCRATCHPAD" = "kitty";
+	"$TERMINAL" = "${pkgs.kitty}";
+	"$BROWSER" = "${pkgs.firefox}";
+	"$SCRATCHPAD" = "${pkgs.kitty}";
 } // {
 	inherit binds;
 }
