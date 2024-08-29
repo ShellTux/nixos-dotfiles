@@ -21,6 +21,10 @@ in
 		''${pkgs.syncthingtray}/bin/syncthingtray --single-instance --wait''
 	];
 
+	env = [
+		"XCURSOR_SIZE,72"
+		"HYPRCURSOR_SIZE,24"
+	];
 	gestures = {
 		workspace_swipe = "on";
 		workspace_swipe_fingers = 3;
