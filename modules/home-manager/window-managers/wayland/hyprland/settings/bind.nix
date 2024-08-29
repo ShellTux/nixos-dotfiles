@@ -57,6 +57,11 @@ in
 	"SHIFT, XF86AudioLowerVolume, exec, ${volumeScript}/bin/volume 1 -"
 	", XF86AudioMute, exec, ${volumeScript}/bin/volume toggle-mute"
 
+	# Music
+	", XF86AudioPlay, exec, mpc toggle"
+	", XF86AudioPrev, exec, mpc prev"
+	", XF86AudioNext, exec, mpc next"
+
 	# Brightness
 	",XF86MonBrightnessUp,    exec, ${brightnessScript}/bin/brightness 5 +"
 	",XF86MonBrightnessDown,  exec, ${brightnessScript}/bin/brightness 5 -"
