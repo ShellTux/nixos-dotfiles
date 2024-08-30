@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ lib, config, ... }:
 {
 	options = {
 		btop.enable = lib.mkEnableOption "Enable btop module";
