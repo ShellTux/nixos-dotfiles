@@ -38,7 +38,15 @@ in
 			systemd.enable = true;
 			xwayland.enable = true;
 
-			settings = settings;
+			inherit settings;
+
+			extraConfig = ''
+binds {
+	workspace_back_and_forth = true
+	allow_workspace_cycles = false
+	focus_preferred_method = 0
+}
+			'';
 		};
 
 		programs.hyprlock = {

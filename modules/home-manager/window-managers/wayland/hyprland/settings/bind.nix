@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 let
 	brightnessScript = import ../brightness.nix { inherit pkgs; };
 	volumeScript = import ../volume.nix { inherit pkgs; };

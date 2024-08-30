@@ -4,12 +4,15 @@ let
 
 	decoration = import ./decoration.nix { };
 	input = import ./input.nix { };
-	binds = import ./bind.nix { inherit pkgs; };
 	windowrule = import ./windowrule.nix { };
 in
 {
 	inherit decoration input windowrule;
-	
+
+	imports = [
+		(import ./bind.nix { inherit pkgs; })
+	];
+
 	exec-once = [
 		"${pkgs.firewalld-gui}/bin/firewall-applet"
 		"${pkgs.qpwgraph}/bin/qpwgraph --minimized"
@@ -49,11 +52,6 @@ in
 		mouse_move_enables_dpms = true;
 		key_press_enables_dpms = true;
 	};
-	binds = {
-		workspace_back_and_forth = true;
-		allow_workspace_cycles = false;
-		focus_preferred_method = 0;
-	};
 
 	"$altMod" = "ALT";
 	"$mainMod" = "SUPER";
@@ -63,6 +61,4 @@ in
 	"$TERMINAL" = "${pkgs.kitty}/bin/kitty";
 	"$BROWSER" = "${pkgs.firefox}/bin/firefox";
 	"$SCRATCHPAD" = "${pkgs.kitty}/bin/kitty";
-} // {
-	inherit binds;
 }
