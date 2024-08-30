@@ -79,10 +79,9 @@ lazy = true
 
 [scratchpads.ncmpcpp]
 animation = "fromRight"
-command = "ncmpcpp"
+command = "[TERMINAL_CLASSED] -e ncmpcpp --slave-screen visualizer"
 class = "kitty-dropterm"
-size = "40% 90%"
-unfocus = "hide"
+size = "90% 65%"
 lazy = true
 
 [scratchpads.btop]
