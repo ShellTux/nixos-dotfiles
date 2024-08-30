@@ -32,6 +32,7 @@
 				"$mainMod, E, exec, pypr toggle yazi"
 				"$mainMod, M, exec, pypr toggle ncmpcpp"
 				"$mainMod, R, exec, pypr toggle htop"
+				"$mainMod, N, exec, pypr toggle nvtop"
 				"$mainMod, S, exec, pypr toggle term"
 				"$mainMod, X, exec, pypr toggle qalc"
 

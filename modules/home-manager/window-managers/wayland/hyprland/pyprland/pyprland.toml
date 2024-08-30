@@ -104,6 +104,16 @@ size = "75% 70%"
 unfocus = "hide"
 lazy = true
 
+[scratchpads.nvtop]
+animation = "fromBottom"
+class = "kitty-dropterm"
+command = "[TERMINAL_CLASSED] -e nvtop"
+margin = 50
+max_size = "1920px 100%"
+size = "75% 70%"
+unfocus = "hide"
+lazy = true
+
 [scratchpads.yazi]
 animation = "fromLeft"
 class = "kitty-dropterm"
