@@ -90,7 +90,7 @@ class = "kitty-dropterm"
 command = "[TERMINAL_CLASSED] -e btop"
 margin = 50
 max_size = "1920px 100%"
-size = "75% 70%"
+size = "95% 70%"
 unfocus = "hide"
 lazy = true
 
