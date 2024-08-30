@@ -32,11 +32,17 @@ in
 				co = "checkout";
 				conflict = "diff --name-only --diff-filter=U";
 				cp = "cherry-pick";
+				dc = "diff-copy";
+				d = "diff";
 				diff-copy = ''!git diff-staged | ([ "$XDG_SESSION_TYPE" = "x11" ] && ${pkgs.xclip}/bin/xclip -selection clipboard || ${pkgs.wl-clipboard}/bin/wl-copy)'';
 				diff-last = "!git diff HEAD~1 HEAD";
 				diff-staged = "diff --staged";
 				diff-summary = "diff --stat";
 				diff-word = "diff --word-diff --color-words";
+				dl = "diff-last";
+				dst = "diff-staged";
+				dsu = "diff-summary";
+				dw = "diff-word";
 				forget = "update-index --assume-unchanged";
 				graph = "log --graph";
 				h = "history";
