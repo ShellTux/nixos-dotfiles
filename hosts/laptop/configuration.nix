@@ -18,6 +18,7 @@ in
 		(path + "/locate.nix")
 		(path + "/networkmanager/default.nix")
 		(path + "/plymouth.nix")
+		(path + "/sddm/default.nix")
 		(path + "/sudo.nix")
 		(import (path + "/users.nix") { inherit pkgs username; })
 	]);
@@ -44,6 +45,7 @@ in
 	locate = { enable = true; pruneNixStore = false; };
 	networkmanager.enable = true;
 	plymouth.enable = false;
+	sddm.enable = true;
 	sudo.enable = true;
 
 
@@ -107,8 +109,9 @@ in
 			};
 		};
 
-		# Enable the KDE Plasma Desktop Environment.
 		displayManager.sddm.enable = true;
+
+		# Enable the KDE Plasma Desktop Environment.
 		desktopManager.plasma6.enable = true;
 
 		spice-vdagentd.enable = true;

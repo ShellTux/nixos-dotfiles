@@ -45,6 +45,11 @@ in
 			"$HOME/.local/bin"
 		];
 
+		file.".face.icon".source = builtins.fetchurl {
+			url = "https://avatars.githubusercontent.com/u/115948079?v=4";
+			sha256 = "a948791457c13ff836a81195c785e4f41c85b1204b19b9764424f8bc0b506a5d";
+		};
+
 		shellAliases = lib.mkMerge [
 		{
 			cd1 = "cd ..";
