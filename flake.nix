@@ -1,6 +1,9 @@
 {
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixpkgs-stable.url = "github:NixOs/nixpkgs/nixos-24.05";
+		nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
 		hosts.url = "github:StevenBlack/hosts";
 
 		home-manager = {
@@ -30,7 +33,7 @@
 
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }@inputs:
+	outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, ... }@inputs:
 	let
 		system = "x86_64-linux";
 		specialArgs = { inherit inputs; };
@@ -47,6 +50,7 @@
 		mkHomeManagerConfig = configFile: system: home-manager.lib.homeManagerConfiguration {
 			inherit extraSpecialArgs;
 			pkgs = nixpkgs.legacyPackages.${system};
+			pkgs-stable = nixpkgs-stable.legacyPackages.${system};
 			modules = [ configFile ];
 		};
 	in
