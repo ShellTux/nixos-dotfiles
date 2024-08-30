@@ -23,6 +23,7 @@ in
 			ani-cli
 			anki
 			ffmpeg-full
+			gtkhash
 			jellyfin-media-player
 			libqalculate
 			mediainfo
