@@ -77,8 +77,8 @@ in
 			#media-session.enable = true;
 
 			extraConfig.pipewire = {
-				"30-rnnoise" = lib.mkIf config.pipewire.enableNoiseReduction noise-reduction;
 				"92-low-latency" = lib.mkIf config.pipewire.enableLowLatency low-latency;
+				"99-noise-supression" = lib.mkIf config.pipewire.enableNoiseReduction noise-reduction;
 			};
 		};
 	};
