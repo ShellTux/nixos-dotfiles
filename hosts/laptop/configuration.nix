@@ -17,6 +17,7 @@ in
 		(path + "/hyprland.nix")
 		(path + "/locate.nix")
 		(path + "/networkmanager/default.nix")
+		(path + "/pipewire.nix")
 		(path + "/plymouth.nix")
 		(path + "/sddm/default.nix")
 		(path + "/sudo.nix")
@@ -44,6 +45,7 @@ in
 
 	locate = { enable = true; pruneNixStore = false; };
 	networkmanager.enable = true;
+	pipewire.enable = true;
 	plymouth.enable = false;
 	sddm.enable = true;
 	sudo.enable = true;
