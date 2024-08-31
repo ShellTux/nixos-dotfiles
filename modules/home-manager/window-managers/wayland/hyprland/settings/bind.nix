@@ -14,7 +14,7 @@ in
 		"$mainMod, Return, exec, $TERMINAL"
 		"$mainMod, C, killactive, "
 		"$mainMod, P, exec, ${pkgs.wofi}/bin/wofi --allow-images --show drun"
-		"$superShift, Q, exec, pkill waybar; hyprctl dispatch exit"
+		"$superShift, Q, exec, hyprctl dispatch exit"
 
 		"$mainMod, Space, togglefloating, "
 		"$altMod, Tab, cyclenext, "
