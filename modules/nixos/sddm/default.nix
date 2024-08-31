@@ -1,6 +1,18 @@
 { lib, config, pkgs, ... }:
 let
 	sddm-themes = pkgs.callPackage ./themes {};
+	packages = with pkgs; [
+		bibata-cursors
+		sddm
+		sddm-themes
+	] ++ (with pkgs.libsForQt5.qt5; [
+		qtgraphicaleffects
+		qtmultimedia
+		qtquickcontrols
+	]) ++ (with pkgs.gst_all_1; [
+		gst-plugins-good
+		gst-plugins-bad
+	]);
 in
 {
 	options.sddm = {
@@ -25,10 +37,6 @@ in
 			};
 		};
 
-		environment.systemPackages = with pkgs; [
-			bibata-cursors
-			sddm
-			sddm-themes
-		];
+		environment.systemPackages = packages;
 	};
 }

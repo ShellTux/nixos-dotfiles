@@ -11,9 +11,6 @@ in
 pkgs.symlinkJoin {
 	name = "sddm-themes";
 	paths = [ 
-		pkgs.qt5.qtgraphicaleffects
-		pkgs.qt5.qtmultimedia
-
 		abstractdark 
 		aerial
 		chili
@@ -21,5 +18,12 @@ pkgs.symlinkJoin {
 		rokin05 # multiple themes: adapta, arc, goodnight, mount, sober, zune
 		slice
 		sugar-dark 
-	];
+	] ++ (with pkgs.libsForQt5.qt5; [
+		qtgraphicaleffects
+		qtmultimedia
+		qtquickcontrols
+	]) ++ (with pkgs.gst_all_1; [
+		gst-plugins-good
+		gst-plugins-bad
+	]);
 }
