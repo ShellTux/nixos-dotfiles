@@ -134,7 +134,7 @@ in
 		(path + "/yazi.nix")
 		(path + "/yt-dlp.nix")
 		(path + "/zathura.nix")
-		(path + "/zellij.nix")
+		(path + "/zellij/default.nix")
 	] ++ [
 		inputs.nixvim.homeManagerModules.nixvim
 	];
