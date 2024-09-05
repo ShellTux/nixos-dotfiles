@@ -33,7 +33,6 @@ in
 			qbittorrent
 			slack
 			stremio
-			translate-shell
 			unar
 			webcord
 		];
@@ -128,6 +127,7 @@ in
 		(path + "/starship.nix")
 		(path + "/tealdeer.nix")
 		(path + "/tmux.nix")
+		(path + "/translate-shell.nix")
 		(path + "/vim.nix")
 		(path + "/wezterm/default.nix")
 		(path + "/window-managers/wayland/hyprland/default.nix")
@@ -161,6 +161,7 @@ in
 	starship.enable = true;
 	tealdeer.enable = true;
 	tmux.enable = true;
+	translate-shell.enable = true;
 	vim.enable = true;
 	wezterm.enable = true;
 	yazi.enable = true;
