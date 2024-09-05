@@ -43,7 +43,7 @@ in
 		initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device = "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
 	};
 
-	locate = { enable = true; pruneNixStore = false; };
+	locate = { enable = true; pruneNixStore = false; extraPrunePaths = ["/var/local"]; };
 	networkmanager.enable = true;
 	pipewire.enable = true;
 	plymouth.enable = false;
