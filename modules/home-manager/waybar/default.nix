@@ -46,6 +46,7 @@ in
 					height = height;
 					spacing = spacing;
 					output = output;
+					reload_style_on_change = true;
 					modules-left = [
 						"idle_inhibitor"
 						"hyprland/workspaces"
