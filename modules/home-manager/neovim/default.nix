@@ -36,6 +36,14 @@ in
 			opts = settings.opts;
 			plugins = plugins.nixvim;
 			keymaps = keymaps;
+
+			extraPlugins = with pkgs.vimPlugins; [
+				render-markdown
+			];
+
+			extraConfigLua = ''
+				require('render-markdown').setup({})
+			'';
 		};
 
 		programs.neovim = lib.mkIf (config.neovim.nixvim.enable == false) {
