@@ -132,6 +132,7 @@ in
 		(path + "/wezterm/default.nix")
 		(path + "/window-managers/wayland/hyprland/default.nix")
 		(path + "/window-managers/x11/awesome/default.nix")
+		(path + "/window-managers/x11/i3/default.nix")
 		(path + "/yazi.nix")
 		(path + "/yt-dlp.nix")
 		(path + "/ytfzf.nix")
@@ -153,6 +154,7 @@ in
 	git.enable = true;
 	htop.enable = true;
 	hyprland.enable = true;
+	i3.enable = true;
 	imv.enable = true;
 	kitty.enable = true;
 	mpd.enable = true;

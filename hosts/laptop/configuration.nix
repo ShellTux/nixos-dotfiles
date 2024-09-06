@@ -16,6 +16,7 @@ in
 	]) ++ (let path = ../../modules/nixos; in [
 		(path + "/awesome.nix")
 		(path + "/hyprland.nix")
+		(path + "/i3.nix")
 		(path + "/locate.nix")
 		(path + "/networkmanager/default.nix")
 		(path + "/pipewire.nix")
@@ -256,6 +257,7 @@ in
 
 	awesome.enable = true;
 	hyprland.enable = true;
+	i3.enable = true;
 
 	# This value determines the NixOS release from which the default
 	# settings for stateful data, like file locations and database versions
