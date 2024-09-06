@@ -133,6 +133,7 @@ in
 		(path + "/window-managers/wayland/hyprland/default.nix")
 		(path + "/yazi.nix")
 		(path + "/yt-dlp.nix")
+		(path + "/ytfzf.nix")
 		(path + "/zathura.nix")
 		(path + "/zellij/default.nix")
 	] ++ [
@@ -166,6 +167,7 @@ in
 	wezterm.enable = true;
 	yazi.enable = true;
 	yt-dlp.enable = true;
+	ytfzf.enable = true;
 	zathura.enable = true;
 	zellij.enable = true;
 	zsh.enable = true;
