@@ -14,6 +14,7 @@ in
 	]) ++ (with inputs.sops-nix.nixosModules; [
 		sops
 	]) ++ (let path = ../../modules/nixos; in [
+		(path + "/awesome.nix")
 		(path + "/hyprland.nix")
 		(path + "/locate.nix")
 		(path + "/networkmanager/default.nix")
@@ -253,6 +254,7 @@ in
 		};
 	};
 
+	awesome.enable = true;
 	hyprland.enable = true;
 
 	# This value determines the NixOS release from which the default

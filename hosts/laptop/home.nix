@@ -131,6 +131,7 @@ in
 		(path + "/vim.nix")
 		(path + "/wezterm/default.nix")
 		(path + "/window-managers/wayland/hyprland/default.nix")
+		(path + "/window-managers/x11/awesome/default.nix")
 		(path + "/yazi.nix")
 		(path + "/yt-dlp.nix")
 		(path + "/ytfzf.nix")
@@ -140,6 +141,7 @@ in
 		inputs.nixvim.homeManagerModules.nixvim
 	];
 
+	awesome.enable = true;
 	bash.enable = true;
 	bat.enable = true;
 	btop.enable = true;
