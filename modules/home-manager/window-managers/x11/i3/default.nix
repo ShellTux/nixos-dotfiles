@@ -39,7 +39,7 @@ in
 					"XF86MonBrightnessUp" = "exec ${brightnessScript}/bin/brightness 5 +";
 
 					"${modifier}+Return" = "exec ${terminal}";
-					"${modifier}+p" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
+					"${modifier}+p" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun -show-icons";
 					"${modifier}+Shift+p" = "exec ${pkgs.rofi}/bin/rofi -show window";
 				};
 
