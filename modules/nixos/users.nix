@@ -1,6 +1,7 @@
-{ pkgs, username }:
+{ pkgs, settings, ... }:
 let
 	keys = [ ];
+	username = settings.user.username;
 in
 {
 	users = {

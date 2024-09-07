@@ -35,22 +35,33 @@
 
 	outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, ... }@inputs:
 	let
-		system = "x86_64-linux";
-		specialArgs = { inherit inputs; };
+		settings = {
+			system = {
+				arch = "x86_64-linux";
+				hostname = "LuisGoisNixOS";
+				timezone = "Europe/Lisbon";
+				locale = "pt_PT.UTF-8";
+			};
+			user = {
+				username = "luisgois";
+			};
+		};
+
+		specialArgs = { inherit inputs settings; };
 		extraSpecialArgs = {
-			inherit inputs;
+			inherit inputs settings;
 			isServer = false;
 			isDarwin = false;
 			isLinux = true;
 		};
 		mkNixosConfig = configFile: nixpkgs.lib.nixosSystem {
-			inherit system specialArgs;
+			inherit specialArgs;
 			modules = [ configFile ];
 		};
 		mkHomeManagerConfig = configFile: system: home-manager.lib.homeManagerConfiguration {
 			inherit extraSpecialArgs;
-			pkgs = nixpkgs.legacyPackages.${system};
-			pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+			pkgs = nixpkgs.legacyPackages.${settings.system.arch};
+			pkgs-stable = nixpkgs-stable.legacyPackages.${settings.system.arch};
 			modules = [ configFile ];
 		};
 	in
@@ -61,8 +72,8 @@
 			nixos-virtual-machine = mkNixosConfig ./hosts/virtual-machine/configuration.nix;
 		};
 		homeConfigurations = {
-			desktop = mkHomeManagerConfig ./hosts/desktop/home.nix system;
-			laptop = mkHomeManagerConfig ./hosts/laptop/home.nix system;
+			desktop = mkHomeManagerConfig ./hosts/desktop/home.nix settings.system.arch;
+			laptop = mkHomeManagerConfig ./hosts/laptop/home.nix settings.system.arch;
 		};
 	};
 }

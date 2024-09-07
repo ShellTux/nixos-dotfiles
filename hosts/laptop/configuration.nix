@@ -1,8 +1,4 @@
-{ inputs, pkgs, config, ... }:
-let
-	username = "luisgois";
-	hostname = "LuisGoisNixOS";
-in
+{ inputs, pkgs, config, settings, ... }:
 {
 	imports = [
 		# Include the results of the hardware scan.
@@ -23,7 +19,7 @@ in
 		(path + "/plymouth.nix")
 		(path + "/sddm/default.nix")
 		(path + "/sudo.nix")
-		(import (path + "/users.nix") { inherit pkgs username; })
+		(path + "/users.nix")
 	]);
 
 	sops = {
@@ -55,7 +51,7 @@ in
 
 	# Enable networking
 	networking = {
-		hostName = hostname;
+		hostName = settings.system.hostname;
 		networkmanager.enable = true;
 		#proxy.default = "http://user:password@proxy:port/";
 		#proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -247,11 +243,12 @@ in
 
 	home-manager = {
 		extraSpecialArgs = {
-			inherit inputs username;
+			inherit inputs;
+			username = settings.user.username;
 			users = config.users.users;
 		};
 		users = {
-			${username} = import ./home.nix;
+			${settings.user.username} = import ./home.nix;
 		};
 	};
 
