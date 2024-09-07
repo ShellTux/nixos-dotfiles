@@ -20,6 +20,7 @@
 		(path + "/sddm/default.nix")
 		(path + "/sudo.nix")
 		(path + "/users.nix")
+		(path + "/wireshark.nix")
 	]);
 
 	sops = {
@@ -47,6 +48,7 @@
 	plymouth.enable = false;
 	sddm.enable = true;
 	sudo.enable = true;
+	wireshark.enable = true;
 
 
 	# Enable networking
