@@ -1,6 +1,8 @@
 { pkgs, lib, config, ... }:
 let
 	terminal = "${pkgs.kitty}/bin/kitty";
+	brightnessScript = import ../../brightness.nix { inherit pkgs; };
+	volumeScript = import ../../volume.nix { inherit pkgs; };
 in 
 {
 	options.i3.enable = lib.mkEnableOption "Enable i3 module";
@@ -22,11 +24,20 @@ in
 				};
 
 				keybindings = lib.mkOptionDefault {
-					# "XF86AudioMute" = "exec amixer set Master toggle";
-					# "XF86AudioLowerVolume" = "exec amixer set Master 4%-";
-					# "XF86AudioRaiseVolume" = "exec amixer set Master 4%+";
-					# "XF86MonBrightnessDown" = "exec brightnessctl set 4%-";
-					# "XF86MonBrightnessUp" = "exec brightnessctl set 4%+";
+					# Volume
+					"XF86AudioMute" = "exec ${volumeScript}/bin/volume toggle-mute";
+					"XF86AudioLowerVolume" = "exec ${volumeScript}/bin/volume 5 -";
+					"XF86AudioRaiseVolume" = "exec ${volumeScript}/bin/volume 5 +";
+
+					# Music
+					"XF86AudioPlay" = "exec ${pkgs.mpc-cli}/bin/mpc toggle";
+					"XF86AudioPrev" = "exec ${pkgs.mpc-cli}/bin/mpc prev";
+					"XF86AudioNext" = "exec ${pkgs.mpc-cli}/bin/mpc next";
+
+					# Brightness
+					"XF86MonBrightnessDown" = "exec ${brightnessScript}/bin/brightness 5 -";
+					"XF86MonBrightnessUp" = "exec ${brightnessScript}/bin/brightness 5 +";
+
 					"${modifier}+Return" = "exec ${terminal}";
 					"${modifier}+p" = "exec ${pkgs.rofi}/bin/rofi -modi drun -show drun";
 					"${modifier}+Shift+p" = "exec ${pkgs.rofi}/bin/rofi -show window";
