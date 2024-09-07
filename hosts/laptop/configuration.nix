@@ -154,6 +154,8 @@
 		};
 
 		fail2ban.enable = true;
+
+		automatic-timezoned.enable = true;
 	};
 
 	# Configure console keymap

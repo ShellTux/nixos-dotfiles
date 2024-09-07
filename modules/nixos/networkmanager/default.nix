@@ -1,7 +1,4 @@
-{ lib, config, pkgs, ...}:
-let
-	dispatcherScripts = import ./dispatcher-scripts/default.nix { inherit pkgs; };
-in
+{ lib, config, ...}:
 {
 	options = {
 		networkmanager.enable = lib.mkEnableOption "Enable networkmanager module";
@@ -10,7 +7,6 @@ in
 	config = lib.mkIf config.networkmanager.enable {
 		networking.networkmanager = {
 			enable = true;
-			inherit dispatcherScripts;
 
 			# appendNameservers = [
 			# 	"1.1.1.1"
