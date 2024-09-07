@@ -122,6 +122,7 @@ in
 		(path + "/ncmpcpp.nix")
 		(path + "/neovim/default.nix")
 		(path + "/newsboat.nix")
+		(path + "/rofi/default.nix")
 		(path + "/shell/default.nix")
 		(path + "/ssh.nix")
 		(path + "/starship.nix")
@@ -162,6 +163,7 @@ in
 	ncmpcpp.enable = true;
 	neovim.enable = true;
 	newsboat.enable = true;
+	rofi.enable = true;
 	ssh.enable = true;
 	starship.enable = true;
 	tealdeer.enable = true;
