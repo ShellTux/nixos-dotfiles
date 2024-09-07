@@ -143,8 +143,8 @@ binds {
 			syncthing
 			wofi
 
-			(import ./brightness.nix { inherit pkgs; })
-			(import ./volume.nix { inherit pkgs; })
+			(import ../../brightness.nix { inherit pkgs; })
+			(import ../../volume.nix { inherit pkgs; })
 			(import ./wallpaper.nix { inherit pkgs; })
 		];
 	};

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-	brightnessScript = import ../brightness.nix { inherit pkgs; };
-	volumeScript = import ../volume.nix { inherit pkgs; };
+	brightnessScript = import ../../../brightness.nix { inherit pkgs; };
+	volumeScript = import ../../../volume.nix { inherit pkgs; };
 	rofi = pkgs.rofi.override {
 		plugins = with pkgs; [
 			rofi-calc
