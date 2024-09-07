@@ -22,7 +22,7 @@ in
 	exec = [
 		''${wallpaperScript}/bin/wallpaperd daemon''
 		''${pkgs.syncthingtray}/bin/syncthingtray --single-instance --wait''
-		''pkill waybar ; ${pkgs.waybar}/bin/waybar''
+		''pkill waybar ; while true; do ${pkgs.waybar}/bin/waybar; sleep 1; done''
 	];
 
 	env = [
