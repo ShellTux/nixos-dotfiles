@@ -44,7 +44,6 @@
 	networkmanager.enable = true;
 	pipewire.enable = true;
 	plymouth.enable = false;
-	sddm.enable = true;
 	sudo.enable = true;
 	wireshark.enable = true;
 
