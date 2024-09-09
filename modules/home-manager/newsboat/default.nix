@@ -1,23 +1,6 @@
 { lib, config, pkgs, ... }:
 let
 	cfg = config.newsboat;
-	tags = {
-		hidden = "!";
-
-		archLinux = {
-			main = "ArchLinux";
-			packages = "ArchLinuxPackages";
-			development = "ArchLinuxDevelopment";
-		};
-		CVE = "CVE";
-		git = "git";
-		github = "github";
-		linux = "linux";
-		news = "news";
-		security = "security";
-		ShellTux = "ShellTux";
-		youtube = "youtube";
-	};
 	macro = key: macroBrowser: ''macro ${key} set browser "${macroBrowser} %u" ; open-in-browser ; set browser "${config.programs.newsboat.browser} %u"'';
 in 
 {
@@ -65,80 +48,8 @@ in
 			autoReload = true;
 			reloadTime = 15;
 
-			queries = {
-				"Unread Articles" = ''unread = "yes"'';
-				"Old News" = "age > 1";
-
-				"ShellTux" = ''tags # "ShellTux"'';
-				"CVE" = ''tags # "CVE"'';
-
-				" Arch Linux" = lib.mkIf cfg.feeds.enableArchLinuxFeeds ''tags # "ArchLinux"'';
-				" Packages" = lib.mkIf cfg.feeds.enableArchLinuxFeeds ''tags # "ArchLinuxPackages"'';
-				" Development" = lib.mkIf cfg.feeds.enableArchLinuxFeeds ''tags # "ArchLinuxDevelopment"'';
-			};
-
-			urls = [
-			{
-				tags = with tags; [ ShellTux git github ];
-				title = " ShellTux";
-				url = "https://github.com/ShellTux.atom";
-			}
-			{
-				url = "https://shelltux.github.io/blog/index.xml";
-			}
-			{
-				tags = with tags; [ linux ];
-				title = " DistroWatch";
-				url = "https://distrowatch.com/news/dw.xml";
-			}
-			# 󰒃 Security and Vulnerabilities {{{
-			{
-				tags = with tags; [ security CVE ];
-				title = "󰒃 Latest CVE Feed";
-				url = "https://cvefeed.io/rssfeed/latest.xml";
-			}
-			{
-				tags = with tags; [ security CVE ];
-				title = "󰒃 Latest High and Critical Severity CVE Feed";
-				url = "https://cvefeed.io/rssfeed/severity/high.xml";
-			}
-			# }}}
-			#  Arch Linux {{{
-			# TODO: Enable/Disable according to feeds.enableArchLinuxFeeds
-			{
-				tags = with tags; [ archLinux.main hidden ];
-				url = "https://archlinux.org/feeds/releases/";
-			}
-			{
-				tags = with tags; [ archLinux.main hidden ];
-				url = "https://archlinux.org/feeds/news/";
-			}
-			{
-				tags = with tags; [ archLinux.packages hidden ];
-				url = "https://archlinux.org/feeds/packages/all/stable-repos/";
-			}
-			{
-				tags = with tags; [ archLinux.packages hidden ];
-				url = "https://archlinux.org/feeds/packages/added/all/stable-repos/";
-			}
-			{
-				tags = with tags; [ archLinux.packages hidden ];
-				url = "https://archlinux.org/feeds/packages/removed/all/stable-repos/";
-			}
-			{
-				tags = with tags; [ archLinux.packages hidden ];
-				url = "https://aur.archlinux.org/rss";
-			}
-			{
-				tags = with tags; [ archLinux.development hidden ];
-				url = "https://gitlab.archlinux.org/groups/archlinux/packaging/packages/-/issues?format=atom";
-			}
-			{
-				tags = with tags; [ archLinux.development hidden ];
-				url = "https://gitlab.archlinux.org/archlinux/aurweb/-/issues?format=atom";
-			}
-			# }}}
-			];
+			queries = (import ./queries.crypt.nix { inherit lib cfg; });
+			urls = (import ./urls.crypt.nix { });
 
 			extraConfig = lib.mkMerge [
 				"download-timeout ${toString cfg.downloadTimeout}"

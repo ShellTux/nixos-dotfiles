@@ -121,7 +121,7 @@ in
 		(path + "/mpv.nix")
 		(path + "/ncmpcpp.nix")
 		(path + "/neovim/default.nix")
-		(path + "/newsboat.nix")
+		(path + "/newsboat/default.nix")
 		(path + "/rofi/default.nix")
 		(path + "/shell/default.nix")
 		(path + "/ssh.nix")
