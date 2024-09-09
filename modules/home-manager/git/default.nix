@@ -25,21 +25,28 @@ in
 					defaultBranch = "main";
 				};
 			};
-			aliases = {
+			aliases = rec {
 				branch-delete = "branch --delete";
 				br = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
 				ci = "commit";
 				co = "checkout";
+				co- = "!git -c interactive.diffFilter='less --tabs=4 -RFX' checkout";
 				conflict = "diff --name-only --diff-filter=U";
+				cop = "co --patch";
+				cop- = "co- --patch";
 				cp = "cherry-pick";
+				d- = "${d}-";
 				dc = "diff-copy";
 				d = "diff";
 				diff-copy = ''!git diff-staged | ([ "$XDG_SESSION_TYPE" = "x11" ] && ${pkgs.xclip}/bin/xclip -selection clipboard || ${pkgs.wl-clipboard}/bin/wl-copy)'';
+				diff- = "!git -c interactive.diffFilter='less --tabs=4 -RFX' diff";
 				diff-last = "!git diff HEAD~1 HEAD";
 				diff-staged = "diff --staged";
+				diff-staged- = "diff- --staged";
 				diff-summary = "diff --stat";
 				diff-word = "diff --word-diff --color-words";
 				dl = "diff-last";
+				dst- = "${dst}-";
 				dst = "diff-staged";
 				dsu = "diff-summary";
 				dw = "diff-word";
@@ -58,6 +65,8 @@ in
 				put = "push --set-upstream origin";
 				serve = "daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/";
 				showconfig = "config --list";
+				# FIX: Mismatch between input and output. See this: https://github.com/so-fancy/diff-so-fancy/issues/296
+				sp- = "!git -c interactive.diffFilter='less --tabs=4 -RFX' sp";
 				sp = "stage --patch";
 				s = "status --short";
 				stats = "show --stat";
