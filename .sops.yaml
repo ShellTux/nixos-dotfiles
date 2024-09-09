@@ -17,9 +17,9 @@
 # # nix shell nixpkgs#age -c age-keygen -y /var/lib/sops-nix/age/keys.txt
 
 keys:
-  - &primary age1g5ncmvyekpar00f4qeq2sht2yhkarz53svp309eqakxp9r4jnqzqdvsdya
+  - &primary age17snftqddz8wyf47smg9tfv8xjv2kesj9kq90jvua2vsurtn9nu5sd2xslr
 creation_rules:
-  - path_regex: secrets/secrets.yaml$
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
       - *primary
