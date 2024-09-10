@@ -109,9 +109,11 @@ in
 		(path + "/bat.nix")
 		(path + "/btop.nix")
 		(path + "/direnv.nix")
+		(path + "/dua.nix")
 		(path + "/eza.nix")
 		(path + "/fd.nix")
 		(path + "/firefox.nix")
+		(path + "/fselect.nix")
 		(path + "/fzf.nix")
 		(path + "/git/default.nix")
 		(path + "/htop.nix")
@@ -148,9 +150,11 @@ in
 	bat.enable = true;
 	btop.enable = true;
 	direnv.enable = true;
+	dua.enable = true;
 	eza.enable = true;
 	fd.enable = true;
 	firefox.enable = true;
+	fselect.enable = true;
 	fzf.enable = true;
 	git.enable = true;
 	htop.enable = true;
