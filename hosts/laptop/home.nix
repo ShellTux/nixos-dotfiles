@@ -19,24 +19,6 @@ in
 		username = username;
 		homeDirectory = users.${username}.home;
 
-		packages = with pkgs; [
-			ani-cli
-			anki
-			ffmpeg-full
-			gtkhash
-			jellyfin-media-player
-			libqalculate
-			mediainfo
-			nemo
-			nvtopPackages.intel
-			procs
-			qbittorrent
-			slack
-			stremio
-			unar
-			webcord
-		];
-
 		sessionVariables = {
 			EDITOR = "nvim";
 		};
@@ -106,31 +88,46 @@ in
 	};
 
 	imports = let path = ../../modules/home-manager; in [
+		(path + "/ani-cli.nix")
+		(path + "/anki.nix")
 		(path + "/bat.nix")
 		(path + "/btop.nix")
 		(path + "/direnv.nix")
+		(path + "/discord.nix")
 		(path + "/dua.nix")
 		(path + "/eza.nix")
 		(path + "/fd.nix")
+		(path + "/ffmpeg.nix")
 		(path + "/firefox.nix")
 		(path + "/fselect.nix")
 		(path + "/fzf.nix")
 		(path + "/git/default.nix")
+		(path + "/gtkhash.nix")
 		(path + "/htop.nix")
 		(path + "/imv.nix")
+		(path + "/jellyfin-media-player.nix")
 		(path + "/kitty.nix")
+		(path + "/mediainfo.nix")
 		(path + "/mpd/default.nix")
 		(path + "/mpv.nix")
 		(path + "/ncmpcpp.nix")
+		(path + "/nemo.nix")
 		(path + "/neovim/default.nix")
 		(path + "/newsboat/default.nix")
+		(path + "/nvtop.nix")
+		(path + "/procs.nix")
+		(path + "/qalculate.nix")
+		(path + "/qbittorrent.nix")
 		(path + "/rofi/default.nix")
 		(path + "/shell/default.nix")
+		(path + "/slack.nix")
 		(path + "/ssh.nix")
 		(path + "/starship.nix")
+		(path + "/stremio.nix")
 		(path + "/tealdeer.nix")
 		(path + "/tmux.nix")
 		(path + "/translate-shell.nix")
+		(path + "/unar.nix")
 		(path + "/vim.nix")
 		(path + "/wezterm/default.nix")
 		(path + "/window-managers/wayland/hyprland/default.nix")
@@ -145,34 +142,49 @@ in
 		inputs.nixvim.homeManagerModules.nixvim
 	];
 
+	ani-cli.enable = true;
+	anki.enable = true;
 	awesome.enable = true;
 	bash.enable = true;
 	bat.enable = true;
 	btop.enable = true;
 	direnv.enable = true;
+	discord = { enable = true; flavours = [ "webcord-vencord" "vesktop" ]; };
 	dua.enable = true;
 	eza.enable = true;
 	fd.enable = true;
+	ffmpeg = { enable = true; package = pkgs.ffmpeg-full; };
 	firefox.enable = true;
 	fselect.enable = true;
 	fzf.enable = true;
 	git.enable = true;
+	gtkhash.enable = true;
 	htop.enable = true;
 	hyprland.enable = true;
 	i3.enable = true;
 	imv.enable = true;
+	jellyfin-media-player.enable = true;
 	kitty.enable = true;
+	mediainfo.enable = true;
 	mpd.enable = true;
 	mpv.enable = true;
 	ncmpcpp.enable = true;
+	nemo.enable = true;
 	neovim.enable = true;
 	newsboat.enable = true;
+	nvtop = { enable = true; backend = [ "intel" ]; };
+	procs.enable = true;
+	qalculate.enable = true;
+	qbittorrent.enable = true;
 	rofi.enable = true;
+	slack.enable = true;
 	ssh.enable = true;
 	starship.enable = true;
+	stremio.enable = true;
 	tealdeer.enable = true;
 	tmux.enable = true;
 	translate-shell.enable = true;
+	unar.enable = true;
 	vim.enable = true;
 	wezterm.enable = true;
 	yazi.enable = true;
