@@ -1,0 +1,35 @@
+{ ... }:
+{
+	imports = [
+		./ani-cli.nix
+		./bat.nix
+		./bat.nix
+		./btop.nix
+		./dua.nix
+		./dua.nix
+		./eza.nix
+		./eza.nix
+		./fd.nix
+		./ffmpeg.nix
+		./fselect.nix
+		./fzf.nix
+		./git/default.nix
+		./htop.nix
+		./mediainfo.nix
+		./ncmpcpp.nix
+		./neovim/default.nix
+		./newsboat/default.nix
+		./nvtop.nix
+		./procs.nix
+		./qalculate.nix
+		./tealdeer.nix
+		./tmux.nix
+		./translate-shell.nix
+		./unar.nix
+		./vim.nix
+		./yazi.nix
+		./yt-dlp.nix
+		./ytfzf.nix
+		./zellij/default.nix
+	];
+}
