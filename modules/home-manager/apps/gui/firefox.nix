@@ -14,7 +14,7 @@ let
 	};
 in
 {
-	options.firefox = {
+	options.apps.gui.firefox = {
 		enable = lib.mkEnableOption "Enable firefox module";
 
 		enableFf2mpv = lib.mkOption {
@@ -24,7 +24,7 @@ in
 		};
 	};
 
-	config = lib.mkIf config.firefox.enable {
+	config = lib.mkIf config.apps.gui.firefox.enable {
 		programs.firefox = {
 			enable = true;
 
@@ -36,7 +36,7 @@ in
 			];
 
 			nativeMessagingHosts = with pkgs; [
-				(lib.mkIf config.firefox.enableFf2mpv ff2mpv)
+				(lib.mkIf config.apps.gui.firefox.enableFf2mpv ff2mpv)
 			];
 
 			policies = {
@@ -64,7 +64,7 @@ in
 				extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
 					bitwarden
 					darkreader
-					(lib.mkIf config.firefox.enableFf2mpv ff2mpv)
+					(lib.mkIf config.apps.gui.firefox.enableFf2mpv ff2mpv)
 					return-youtube-dislikes
 					search-by-image
 					sponsorblock

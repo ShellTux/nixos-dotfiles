@@ -3,9 +3,9 @@ let
 	imvDesktop = [ "imv.desktop" ];
 in 
 {
-	options.imv.enable = lib.mkEnableOption "Enable imv module";
+	options.apps.gui.imv.enable = lib.mkEnableOption "Enable imv module";
 
-	config = lib.mkIf config.imv.enable {
+	config = lib.mkIf config.apps.gui.imv.enable {
 		programs.imv = {
 			enable = true;
 

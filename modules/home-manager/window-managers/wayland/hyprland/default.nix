@@ -15,10 +15,7 @@ let
     settings = import ./settings/default.nix { inherit pkgs; };
 in
 {
-	imports = let path = ../../..; in [
-		(path + "/waybar/default.nix")
-		(path + "/dunst.nix")
-	] ++ [
+	imports = [
 		./pyprland/default.nix
 	];
 
@@ -28,8 +25,6 @@ in
 	};
 
 	config = lib.mkIf config.hyprland.enable {
-		waybar.enable = true;
-		dunst.enable = true;
 		pyprland.enable = true;
 
 		wayland.windowManager.hyprland =  {
@@ -111,9 +106,7 @@ binds {
 				};
 			};
 
-			dunst = {
-				enable = true;
-			};
+			dunst.enable = true;
 
 			gammastep = {
 				enable = true;

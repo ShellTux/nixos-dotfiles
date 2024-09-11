@@ -1,10 +1,8 @@
-{ pkgs, lib, config, inputs, ... }:
+{ lib, config, ... }:
 {
-	options = {
-		zathura.enable = lib.mkEnableOption "Enable zathura module";
-	};
+	options.apps.gui.zathura.enable = lib.mkEnableOption "Enable zathura module";
 
-	config = lib.mkIf config.zathura.enable {
+	config = lib.mkIf config.apps.gui.zathura.enable {
 		programs.zathura = {
 			enable = true;
 

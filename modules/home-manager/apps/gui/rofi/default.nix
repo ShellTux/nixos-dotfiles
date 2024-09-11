@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 {
-	options.rofi.enable = lib.mkEnableOption "Enable rofi module";
+	options.apps.gui.rofi.enable = lib.mkEnableOption "Enable rofi module";
 
-	config = lib.mkIf config.rofi.enable {
+	config = lib.mkIf config.apps.gui.rofi.enable {
 		programs.rofi = {
 			enable = true;
 

@@ -8,7 +8,7 @@ let
 		else null;
 in 
 {
-	options.discord = {
+	options.apps.gui.discord = {
 		enable = lib.mkEnableOption "Enable discord module";
 
 		flavours = lib.mkOption {
@@ -22,7 +22,7 @@ in
 		};
 	};
 
-	config = lib.mkIf config.discord.enable {
-		home.packages = lib.lists.forEach (config.discord.flavours) (getPackage);
+	config = lib.mkIf config.apps.gui.discord.enable {
+		home.packages = lib.lists.forEach (config.apps.gui.discord.flavours) (getPackage);
 	};
 }

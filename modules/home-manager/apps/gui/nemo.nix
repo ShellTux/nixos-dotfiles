@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }:
 {
-	options.nemo = {
+	options.apps.gui.nemo = {
 		enable = lib.mkEnableOption "Enable nemo module";
 		# TODO: add enable options for nemo extensions
 
@@ -11,7 +11,7 @@
 		};
 	};
 
-	config = lib.mkIf config.nemo.enable {
+	config = lib.mkIf config.apps.gui.nemo.enable {
 		home.packages = with pkgs; [
 			nemo-emblems
 			nemo-fileroller
@@ -31,7 +31,7 @@
 				(bookmark "Vídeos" "${config.xdg.userDirs.videos}")
 			]);
 
-			mimeApps.defaultApplications = lib.mkIf config.nemo.defaultApplication {
+			mimeApps.defaultApplications = lib.mkIf config.apps.gui.nemo.defaultApplication {
 				"inode/directory" = "nemo.desktop";
 			};
 		};

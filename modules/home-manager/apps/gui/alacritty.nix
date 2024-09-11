@@ -1,10 +1,8 @@
 { lib, config, ... }:
 {
-	options = {
-		alacritty.enable = lib.mkEnableOption "Enable alacritty module";
-	};
+	options.apps.gui.alacritty.enable = lib.mkEnableOption "Enable alacritty module";
 
-	config = lib.mkIf config.alacritty.enable {
+	config = lib.mkIf config.apps.gui.alacritty.enable {
 		programs.alacritty = {
 			enable = true;
 

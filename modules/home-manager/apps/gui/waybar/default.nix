@@ -32,11 +32,9 @@ let
 	wireplumber = import ./modules/wireplumber.nix { inherit pkgs; };
 in
 {
-	options = {
-		waybar.enable = lib.mkEnableOption "Enable waybar module";
-	};
+	options.apps.gui.waybar.enable = lib.mkEnableOption "Enable waybar module";
 
-	config = lib.mkIf config.waybar.enable {
+	config = lib.mkIf config.apps.gui.waybar.enable {
 		programs.waybar = {
 			enable = true;
 

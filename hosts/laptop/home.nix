@@ -88,87 +88,76 @@ in
 	};
 
 	imports = let path = ../../modules/home-manager; in [
-		(path + "/anki.nix")
 		(path + "/apps/default.nix")
 		(path + "/direnv.nix")
-		(path + "/discord.nix")
-		(path + "/firefox.nix")
-		(path + "/gtkhash.nix")
-		(path + "/imv.nix")
-		(path + "/jellyfin-media-player.nix")
-		(path + "/kitty.nix")
 		(path + "/mpd/default.nix")
-		(path + "/mpv.nix")
-		(path + "/nemo.nix")
-		(path + "/qbittorrent.nix")
-		(path + "/rofi/default.nix")
 		(path + "/shell/default.nix")
-		(path + "/slack.nix")
 		(path + "/ssh.nix")
 		(path + "/starship.nix")
-		(path + "/stremio.nix")
-		(path + "/wezterm/default.nix")
 		(path + "/window-managers/wayland/hyprland/default.nix")
 		(path + "/window-managers/x11/awesome/default.nix")
 		(path + "/window-managers/x11/i3/default.nix")
-		(path + "/zathura.nix")
 	] ++ [
 		inputs.nixvim.homeManagerModules.nixvim
 	];
 
-	apps.cli = {
-		ani-cli.enable = true;
-		bat.enable = true;
-		btop.enable = true;
-		dua.enable = true;
-		eza.enable = true;
-		fd.enable = true;
-		ffmpeg = { enable = true; package = pkgs.ffmpeg-full; };
-		fselect.enable = true;
-		fzf.enable = true;
-		git.enable = true;
-		htop.enable = true;
-		mediainfo.enable = true;
-		ncmpcpp.enable = true;
-		neovim.enable = true;
-		newsboat.enable = true;
-		nvtop = { enable = true; backend = [ "intel" ]; };
-		procs.enable = true;
-		qalculate.enable = true;
-		tealdeer.enable = true;
-		tmux.enable = true;
-		translate-shell.enable = true;
-		unar.enable = true;
-		vim.enable = true;
-		yazi.enable = true;
-		yt-dlp.enable = true;
-		ytfzf.enable = true;
-		zellij.enable = true;
+	apps = {
+		cli = {
+			ani-cli.enable = true;
+			bat.enable = true;
+			btop.enable = true;
+			dua.enable = true;
+			eza.enable = true;
+			fd.enable = true;
+			ffmpeg = { enable = true; package = pkgs.ffmpeg-full; };
+			fselect.enable = true;
+			fzf.enable = true;
+			git.enable = true;
+			htop.enable = true;
+			mediainfo.enable = true;
+			ncmpcpp.enable = true;
+			neovim.enable = true;
+			newsboat.enable = true;
+			nvtop = { enable = true; backend = [ "intel" ]; };
+			procs.enable = true;
+			qalculate.enable = true;
+			tealdeer.enable = true;
+			tmux.enable = true;
+			translate-shell.enable = true;
+			unar.enable = true;
+			vim.enable = true;
+			yazi.enable = true;
+			yt-dlp.enable = true;
+			ytfzf.enable = true;
+			zellij.enable = true;
+		};
+		gui = {
+			anki.enable = true;
+			discord = { enable = true; flavours = [ "webcord-vencord" "vesktop" ]; };
+			firefox.enable = true;
+			gtkhash.enable = true;
+			imv.enable = true;
+			jellyfin-media-player.enable = true;
+			kitty.enable = true;
+			mpv.enable = true;
+			nemo.enable = true;
+			qbittorrent.enable = true;
+			rofi.enable = true;
+			slack.enable = true;
+			stremio.enable = true;
+			wezterm.enable = true;
+			zathura.enable = true;
+		};
 	};
 
-	anki.enable = true;
 	awesome.enable = true;
 	bash.enable = true;
 	direnv.enable = true;
-	discord = { enable = true; flavours = [ "webcord-vencord" "vesktop" ]; };
-	firefox.enable = true;
-	gtkhash.enable = true;
 	hyprland.enable = true;
 	i3.enable = true;
-	imv.enable = true;
-	jellyfin-media-player.enable = true;
-	kitty.enable = true;
 	mpd.enable = true;
-	mpv.enable = true;
-	nemo.enable = true;
-	qbittorrent.enable = true;
-	rofi.enable = true;
-	slack.enable = true;
 	ssh.enable = true;
 	starship.enable = true;
-	stremio.enable = true;
-	wezterm.enable = true;
-	zathura.enable = true;
 	zsh.enable = true;
 
 	nixpkgs.config.allowUnfreePredicate = pkg:

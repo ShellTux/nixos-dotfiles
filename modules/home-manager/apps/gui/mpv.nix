@@ -1,10 +1,8 @@
 { lib, config, ... }:
 {
-	options = {
-		mpv.enable = lib.mkEnableOption "Enable mpv module";
-	};
+	options.apps.gui.mpv.enable = lib.mkEnableOption "Enable mpv module";
 
-	config = lib.mkIf config.mpv.enable {
+	config = lib.mkIf config.apps.gui.mpv.enable {
 		programs.mpv = {
 			enable = true;
 
