@@ -1,8 +1,6 @@
 { pkgs, lib, config, ... }:
 {
-	options = {
-		dunst.enable = lib.mkEnableOption "Enable dunst module";
-	};
+	options.dunst.enable = lib.mkEnableOption "Enable dunst module";
 
 	config = lib.mkIf config.dunst.enable {
 		services.dunst = {

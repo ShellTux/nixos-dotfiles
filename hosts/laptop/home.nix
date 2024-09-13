@@ -90,6 +90,7 @@ in
 	imports = let path = ../../modules/home-manager; in [
 		(path + "/apps/default.nix")
 		(path + "/direnv.nix")
+		(path + "/dunst.nix")
 		(path + "/mpd/default.nix")
 		(path + "/shell/default.nix")
 		(path + "/ssh.nix")
@@ -153,6 +154,7 @@ in
 	awesome.enable = true;
 	bash.enable = true;
 	direnv.enable = true;
+	dunst.enable = true;
 	hyprland.enable = true;
 	i3.enable = true;
 	mpd.enable = true;
