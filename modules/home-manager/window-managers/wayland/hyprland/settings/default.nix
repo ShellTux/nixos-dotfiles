@@ -1,6 +1,15 @@
 { pkgs }:
 let
 	wallpaperScript = import ../wallpaper.nix { inherit pkgs; };
+	waybarLoop = pkgs.writeShellApplication {
+		name = "WAYBAR-LOOP";
+
+		runtimeInputs = with pkgs; [
+			waybar
+		];
+
+		text = builtins.readFile ./waybar-loop.sh;
+	};
 
 	decoration = import ./decoration.nix { };
 	input = import ./input.nix { };
@@ -22,7 +31,7 @@ in
 	exec = [
 		''${wallpaperScript}/bin/wallpaperd daemon''
 		''${pkgs.syncthingtray}/bin/syncthingtray --single-instance --wait''
-		''pkill waybar ; while true; do ${pkgs.waybar}/bin/waybar; sleep 1; done''
+		''${waybarLoop}/bin/WAYBAR-LOOP''
 	];
 
 	env = let
