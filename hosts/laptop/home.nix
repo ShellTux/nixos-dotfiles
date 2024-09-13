@@ -146,6 +146,7 @@ in
 			rofi.enable = true;
 			slack.enable = true;
 			stremio.enable = true;
+			waybar.enable = true;
 			wezterm.enable = true;
 			zathura.enable = true;
 		};
