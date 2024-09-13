@@ -213,6 +213,7 @@
 			ncdu
 			neofetch
 			neovim
+			ntfs3g
 			sl
 			sops
 			spice-vdagent
