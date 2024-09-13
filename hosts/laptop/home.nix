@@ -92,6 +92,7 @@ in
 		(path + "/direnv.nix")
 		(path + "/dunst.nix")
 		(path + "/mpd/default.nix")
+		(path + "/polkit.nix")
 		(path + "/shell/default.nix")
 		(path + "/ssh.nix")
 		(path + "/starship.nix")
@@ -160,6 +161,7 @@ in
 	hyprland.enable = true;
 	i3.enable = true;
 	mpd.enable = true;
+	polkit.enable = true;
 	ssh.enable = true;
 	starship.enable = true;
 	zsh.enable = true;

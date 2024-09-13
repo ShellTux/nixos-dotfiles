@@ -25,9 +25,12 @@ in
 		''pkill waybar ; while true; do ${pkgs.waybar}/bin/waybar; sleep 1; done''
 	];
 
-	env = [
-		"XCURSOR_SIZE,72"
-		"HYPRCURSOR_SIZE,24"
+	env = let
+		envVar = env: value: "${env}, ${value}";
+	in [
+		(envVar "GDK_BACKEND" "wayland,x11")
+		(envVar "HYPRCURSOR_SIZE" "24")
+		(envVar "XCURSOR_SIZE" "72")
 	];
 	gestures = {
 		workspace_swipe = "on";
