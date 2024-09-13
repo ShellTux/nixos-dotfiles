@@ -121,6 +121,7 @@ in
 			newsboat.enable = true;
 			nvtop = { enable = true; backend = [ "intel" ]; };
 			procs.enable = true;
+			progress.enable = true;
 			qalculate.enable = true;
 			tealdeer.enable = true;
 			tmux.enable = true;

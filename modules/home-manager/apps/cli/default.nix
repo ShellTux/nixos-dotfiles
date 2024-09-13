@@ -21,6 +21,7 @@
 		./newsboat/default.nix
 		./nvtop.nix
 		./procs.nix
+		./progress.nix
 		./qalculate.nix
 		./tealdeer.nix
 		./tmux.nix
