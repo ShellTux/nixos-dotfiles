@@ -17,6 +17,7 @@ in
 	(float "file-roller")
 	(float "gcolor3")
 	(float "Lxappearance")
+	(float "nannou")
 	(float "nm-connection-editor")
 	(float "notification")
 	(float "org.kde.polkit-kde-authentication-agent-1")
