@@ -91,6 +91,7 @@ in
 		(path + "/apps/default.nix")
 		(path + "/direnv.nix")
 		(path + "/dunst.nix")
+		(path + "/emails/default.nix")
 		(path + "/mpd/default.nix")
 		(path + "/polkit.nix")
 		(path + "/shell/default.nix")
@@ -118,6 +119,7 @@ in
 			htop.enable = true;
 			mediainfo.enable = true;
 			ncmpcpp.enable = true;
+			neomutt.enable = true;
 			neovim.enable = true;
 			newsboat.enable = true;
 			nvtop = { enable = true; backend = [ "intel" ]; };

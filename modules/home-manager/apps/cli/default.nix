@@ -17,6 +17,7 @@
 		./htop.nix
 		./mediainfo.nix
 		./ncmpcpp.nix
+		./neomutt.nix
 		./neovim/default.nix
 		./newsboat/default.nix
 		./nvtop.nix

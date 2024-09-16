@@ -28,7 +28,12 @@
 		defaultSopsFormat = "yaml";
 		age.keyFile = "/var/lib/sops-nix/age/keys.txt";
 
-		secrets = { };
+		secrets = {
+			"Email/Gmail/Work/password" = {
+				owner = config.users.users."${settings.user.username}".name;
+				group = config.users.users."${settings.user.username}".group;
+			};
+		};
 	};
 
 	boot = {
@@ -246,6 +251,7 @@
 	home-manager = {
 		extraSpecialArgs = {
 			inherit inputs;
+			secrets = config.sops.secrets;
 			username = settings.user.username;
 			users = config.users.users;
 		};
