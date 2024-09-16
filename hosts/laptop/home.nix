@@ -19,6 +19,10 @@ in
 		username = username;
 		homeDirectory = users.${username}.home;
 
+		packages = with pkgs; [
+			(callPackage ../../pkgs/pkillfam { })
+		];
+
 		sessionVariables = {
 			EDITOR = "nvim";
 		};
