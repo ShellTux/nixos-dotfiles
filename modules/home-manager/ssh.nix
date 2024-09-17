@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, secrets, ... }:
 let
 	inherit (config.home) homeDirectory;
 	sshDir = "${homeDirectory}/.ssh";
@@ -17,7 +17,11 @@ in
 			matchBlocks = {
 				"github.com" = {
 					user = "git";
-					identityFile = "${sshDir}/github";
+					identityFile = [ secrets."Ssh/Github/Private-key".path ];
+				};
+				"gitlab.com" = {
+					user = "git";
+					identityFile = [ secrets."Ssh/Gitlab/Private-key".path ];
 				};
 			};
 		};

@@ -33,6 +33,14 @@
 				owner = config.users.users."${settings.user.username}".name;
 				group = config.users.users."${settings.user.username}".group;
 			};
+			"Ssh/Github/Private-key" = {
+				owner = config.users.users."${settings.user.username}".name;
+				group = config.users.users."${settings.user.username}".group;
+			};
+			"Ssh/Gitlab/Private-key" = {
+				owner = config.users.users."${settings.user.username}".name;
+				group = config.users.users."${settings.user.username}".group;
+			};
 		};
 	};
 
