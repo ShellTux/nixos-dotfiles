@@ -28,19 +28,17 @@
 		defaultSopsFormat = "yaml";
 		age.keyFile = "/var/lib/sops-nix/age/keys.txt";
 
-		secrets = {
-			"Email/Gmail/Work/password" = {
+		secrets = let
+			userSettings = {
 				owner = config.users.users."${settings.user.username}".name;
 				group = config.users.users."${settings.user.username}".group;
 			};
-			"Ssh/Github/Private-key" = {
-				owner = config.users.users."${settings.user.username}".name;
-				group = config.users.users."${settings.user.username}".group;
-			};
-			"Ssh/Gitlab/Private-key" = {
-				owner = config.users.users."${settings.user.username}".name;
-				group = config.users.users."${settings.user.username}".group;
-			};
+		in 
+		{
+			"Email/Gmail/Work/password" = userSettings;
+			"Email/Dei/password" = userSettings;
+			"Ssh/Github/Private-key" = userSettings;
+			"Ssh/Gitlab/Private-key" = userSettings;
 		};
 	};
 

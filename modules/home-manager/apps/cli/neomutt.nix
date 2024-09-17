@@ -41,13 +41,19 @@
 			mimeApps.defaultApplications."x-scheme-handler/mailto" = "neomutt.desktop";
 		};
 
-		accounts.email.accounts.gmail-work = {
-			neomutt.enable = true;
-			mbsync = {
-				enable = true;
+		accounts.email.accounts = let
+			defaultNeomuttConfig = {
+				neomutt.enable = true;
+				mbsync = {
+					enable = true;
 
-				create = "maildir";
+					create = "maildir";
+				};
 			};
+		in 
+		{
+			gmail-work = defaultNeomuttConfig;
+			dei = defaultNeomuttConfig;
 		};
 	};
 }
