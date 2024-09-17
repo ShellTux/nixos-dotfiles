@@ -1,11 +1,13 @@
 { lib, config, secrets, ... }:
-let
-	inherit (config.home) homeDirectory;
-	sshDir = "${homeDirectory}/.ssh";
-in
 {
-	options = {
-		ssh.enable = lib.mkEnableOption "Enable ssh module";
+	options.ssh = {
+		enable = lib.mkEnableOption "Enable ssh module";
+
+		enableSshAgent = lib.mkOption {
+			description = "Whether to enable ssh agent.";
+			type = lib.types.bool;
+			default = true;
+		};
 	};
 
 	config = lib.mkIf config.ssh.enable {
@@ -25,5 +27,7 @@ in
 				};
 			};
 		};
+
+		services.ssh-agent.enable = config.ssh.enableSshAgent;
 	};
 }
