@@ -92,10 +92,10 @@ in
 	};
 
 	imports = let path = ../../modules/home-manager; in [
+		(path + "/accounts")
 		(path + "/apps/default.nix")
 		(path + "/direnv.nix")
 		(path + "/dunst.nix")
-		(path + "/emails/default.nix")
 		(path + "/mpd/default.nix")
 		(path + "/polkit.nix")
 		(path + "/shell/default.nix")
@@ -160,6 +160,7 @@ in
 		};
 	};
 
+	accounts.enable = true;
 	awesome.enable = true;
 	bash.enable = true;
 	direnv.enable = true;
