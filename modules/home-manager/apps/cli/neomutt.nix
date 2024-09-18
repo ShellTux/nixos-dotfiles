@@ -51,7 +51,7 @@
 				};
 			};
 		in 
-		{
+		lib.mkIf config.accounts.email.enable {
 			gmail-work = defaultNeomuttConfig;
 			dei = defaultNeomuttConfig;
 		};
