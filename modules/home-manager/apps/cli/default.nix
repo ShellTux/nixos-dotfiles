@@ -15,6 +15,7 @@
 		./fzf.nix
 		./git/default.nix
 		./htop.nix
+		./khal.nix
 		./mediainfo.nix
 		./ncmpcpp.nix
 		./neomutt.nix

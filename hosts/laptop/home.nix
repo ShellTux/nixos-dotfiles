@@ -121,6 +121,7 @@ in
 			fzf.enable = true;
 			git.enable = true;
 			htop.enable = true;
+			khal.enable = true;
 			mediainfo.enable = true;
 			ncmpcpp.enable = true;
 			neomutt.enable = true;
