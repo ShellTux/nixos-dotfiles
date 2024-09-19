@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, config, inputs, ... }:
 let
 	plugins = import ./plugins { inherit pkgs lib ;};
 	keymaps = import ./keymaps.nix { };
@@ -6,6 +6,10 @@ let
 	colorschemes = import ./colorschemes.nix { };
 in
 {
+	imports = with inputs.nixvim.homeManagerModules; [
+		nixvim
+	];
+
 	options.apps.cli.neovim = {
 		enable = lib.mkEnableOption "Enable neovim module";
 		nixvim.enable = lib.mkEnableOption "Enable neovim configuration through nixvim" // {

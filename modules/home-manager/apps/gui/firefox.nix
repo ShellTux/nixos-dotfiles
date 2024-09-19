@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, username, ... }:
+{ pkgs, lib, config, inputs, ... }:
 let
 	lock-false = {
 		Value = false;
@@ -60,7 +60,7 @@ in
 				};
 			};
 
-			profiles.${username} = {
+			profiles.${config.home.username} = {
 				extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
 					bitwarden
 					darkreader

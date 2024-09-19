@@ -1,27 +1,15 @@
-{ inputs, lib, pkgs, config, username, users, ... }:
+{ lib, pkgs, ... }:
 let
-  genCdAliases = len:
-    let
-      strRepeat0 = str: acc: n: if n == 0 then str else strRepeat0 (acc + str) acc (n - 1);
-      strRepeat = str: n: strRepeat0 str str n;
-      alias = strRepeat "." len;
-      pathStr = strRepeat "../" len;
-
-      genCdAliases0 = depth: attrs:
-        if depth <= 1 then attrs
-        else (genCdAliases0 (depth - 1) attrs) //
-          { ${builtins.substring 0 depth alias} = ("cd " + builtins.substring 0 ((depth - 1) * 3) pathStr); };
-    in
-    genCdAliases0 len {};
-in
+	username = "luisgois";
+in 
 {
 	home = {
 		username = username;
-		homeDirectory = users.${username}.home;
+		homeDirectory = "/home/${username}";
 
-		packages = with pkgs; [
-			(callPackage ../../pkgs/pkillfam { })
-		];
+		# packages = with pkgs; [
+		# 	(callPackage ../../pkgs/pkillfam { })
+		# ];
 
 		sessionVariables = {
 			EDITOR = "nvim";
@@ -31,10 +19,10 @@ in
 			"$HOME/.local/bin"
 		];
 
-		file.".face.icon".source = builtins.fetchurl {
-			url = "https://avatars.githubusercontent.com/u/115948079?v=4";
-			sha256 = "a948791457c13ff836a81195c785e4f41c85b1204b19b9764424f8bc0b506a5d";
-		};
+		# file.".face.icon".source = builtins.fetchurl {
+		# 	url = "https://avatars.githubusercontent.com/u/115948079?v=4";
+		# 	sha256 = "a948791457c13ff836a81195c785e4f41c85b1204b19b9764424f8bc0b506a5d";
+		# };
 
 		shellAliases = lib.mkMerge [
 		{
@@ -78,34 +66,12 @@ in
 			upper = "tr \"[:lower:]\" \"[:upper:]\"";
 			watch = "watch --color --interval 1";
 		}
-		(genCdAliases 20)
-		];
-
-		# This value determines the Home Manager release that your configuration is
-		# compatible with. This helps avoid breakage when a new Home Manager release
-		# introduces backwards incompatible changes.
-		#
-		# You should not change this value, even if you update Home Manager. If you do
-		# want to update the value, then make sure to first check the Home Manager
-		# release notes.
-		stateVersion = "24.05"; # Please read the comment before changing.
+		# (genCdAliases 20)
+			];
 	};
 
-	imports = let path = ../../modules/home-manager; in [
-		(path + "/accounts")
-		(path + "/apps")
-		(path + "/direnv.nix")
-		(path + "/dunst.nix")
-		(path + "/mpd")
-		(path + "/polkit.nix")
-		(path + "/shell")
-		(path + "/ssh.nix")
-		(path + "/starship.nix")
-		(path + "/window-managers/wayland/hyprland")
-		(path + "/window-managers/x11/awesome")
-		(path + "/window-managers/x11/i3")
-	] ++ [
-		inputs.nixvim.homeManagerModules.nixvim
+	imports = [
+		./common.nix
 	];
 
 	apps = {
@@ -179,29 +145,6 @@ in
 		"codeium"
 		"slack"
 	];
-
-	xdg = {
-		enable = true;
-
-		userDirs = let
-			homeDirectory = config.home.homeDirectory;
-		in {
-			enable = true;
-
-			createDirectories = true;
-
-			desktop = "${homeDirectory}/Área de Trabalho";
-			documents = "${homeDirectory}/Documentos";
-			download = "${homeDirectory}/Transferências";
-			music = "${homeDirectory}/Música";
-			pictures = "${homeDirectory}/Imagens";
-			publicShare = "${homeDirectory}/Público";
-			templates = "${homeDirectory}/Modelos";
-			videos = "${homeDirectory}/Vídeos";
-		};
-
-		configFile."user-dirs.locale".text = "pt_PT";
-	};
 
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;

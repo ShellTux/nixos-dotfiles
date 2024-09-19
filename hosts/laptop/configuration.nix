@@ -3,9 +3,8 @@
 	imports = [
 		# Include the results of the hardware scan.
 		./hardware-configuration.nix
-	] ++ (with inputs.home-manager.nixosModules; [
-		home-manager
-	]) ++ (with inputs.nixvim.nixosModules; [
+		./home
+	] ++ (with inputs.nixvim.nixosModules; [
 		nixvim
 	]) ++ (with inputs.sops-nix.nixosModules; [
 		sops
@@ -19,7 +18,6 @@
 		(path + "/plymouth.nix")
 		(path + "/sddm")
 		(path + "/sudo.nix")
-		(path + "/users.nix")
 		(path + "/wireshark.nix")
 	]);
 
@@ -253,18 +251,6 @@
 	#   enable = true;
 	#   enableSSHSupport = true;
 	# };
-
-	home-manager = {
-		extraSpecialArgs = {
-			inherit inputs;
-			secrets = config.sops.secrets;
-			username = settings.user.username;
-			users = config.users.users;
-		};
-		users = {
-			${settings.user.username} = import ./home.nix;
-		};
-	};
 
 	awesome.enable = true;
 	hyprland.enable = true;
