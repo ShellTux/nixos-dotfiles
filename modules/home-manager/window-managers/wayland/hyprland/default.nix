@@ -12,11 +12,11 @@ let
 	};
     };
 
-    settings = import ./settings/default.nix { inherit pkgs; };
+    settings = import ./settings { inherit pkgs; };
 in
 {
 	imports = [
-		./pyprland/default.nix
+		./pyprland
 	];
 
 	options = {

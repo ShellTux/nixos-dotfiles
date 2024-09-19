@@ -12,12 +12,12 @@
 		./mpv.nix
 		./nemo.nix
 		./qbittorrent.nix
-		./rofi/default.nix
+		./rofi
 		./slack.nix
 		./stremio.nix
 		./syncthing.nix
-		./waybar/default.nix
-		./wezterm/default.nix
+		./waybar
+		./wezterm
 		./zathura.nix
 	];
 }

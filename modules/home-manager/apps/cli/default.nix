@@ -13,14 +13,14 @@
 		./ffmpeg.nix
 		./fselect.nix
 		./fzf.nix
-		./git/default.nix
+		./git
 		./htop.nix
 		./khal.nix
 		./mediainfo.nix
 		./ncmpcpp.nix
 		./neomutt.nix
-		./neovim/default.nix
-		./newsboat/default.nix
+		./neovim
+		./newsboat
 		./nvtop.nix
 		./procs.nix
 		./progress.nix
@@ -33,6 +33,6 @@
 		./yazi.nix
 		./yt-dlp.nix
 		./ytfzf.nix
-		./zellij/default.nix
+		./zellij
 	];
 }

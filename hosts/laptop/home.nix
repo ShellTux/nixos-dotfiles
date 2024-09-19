@@ -93,17 +93,17 @@ in
 
 	imports = let path = ../../modules/home-manager; in [
 		(path + "/accounts")
-		(path + "/apps/default.nix")
+		(path + "/apps")
 		(path + "/direnv.nix")
 		(path + "/dunst.nix")
-		(path + "/mpd/default.nix")
+		(path + "/mpd")
 		(path + "/polkit.nix")
-		(path + "/shell/default.nix")
+		(path + "/shell")
 		(path + "/ssh.nix")
 		(path + "/starship.nix")
-		(path + "/window-managers/wayland/hyprland/default.nix")
-		(path + "/window-managers/x11/awesome/default.nix")
-		(path + "/window-managers/x11/i3/default.nix")
+		(path + "/window-managers/wayland/hyprland")
+		(path + "/window-managers/x11/awesome")
+		(path + "/window-managers/x11/i3")
 	] ++ [
 		inputs.nixvim.homeManagerModules.nixvim
 	];

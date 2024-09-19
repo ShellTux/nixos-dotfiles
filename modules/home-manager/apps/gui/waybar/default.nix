@@ -13,10 +13,10 @@ let
 	clock = import ./modules/clock.nix { };
 	clock-date = import ./modules/clock-date.nix { };
 	cpu = import ./modules/cpu.nix { };
-	custom = import ./modules/custom/default.nix { inherit pkgs; };
+	custom = import ./modules/custom { inherit pkgs; };
 	disk = import ./modules/disk.nix { };
 	disk-home = import ./modules/disk-home.nix { };
-	hyprland = import ./modules/hyprland/default.nix { inherit pkgs; };
+	hyprland = import ./modules/hyprland { inherit pkgs; };
 	idle_inhibitor = import ./modules/idle_inhibitor.nix { };
 	keyboard-state = import ./modules/keyboard-state.nix { };
 	memory = import ./modules/memory.nix { };
@@ -24,10 +24,10 @@ let
 	network = import ./modules/network.nix { };
 	network-traffic = import ./modules/network-traffic.nix { };
 	pulseaudio = import ./modules/pulseaudio.nix { inherit pkgs; };
-	sway = import ./modules/sway/default.nix { };
+	sway = import ./modules/sway { };
 	temperature = import ./modules/temperature.nix { };
 	tray = import ./modules/tray.nix { };
-	wlr = import ./modules/wlr/default.nix { };
+	wlr = import ./modules/wlr { };
 	user = import ./modules/user.nix { };
 	wireplumber = import ./modules/wireplumber.nix { inherit pkgs; };
 in

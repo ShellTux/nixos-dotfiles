@@ -2,8 +2,8 @@
 {
 	imports = [
 		./bash.nix
-		./zsh/default.nix
+		./zsh
 
-		./scripts/default.nix
+		./scripts
 	];
 }

@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }:
 let
-	plugins = import ./plugins/default.nix { inherit pkgs lib ;};
+	plugins = import ./plugins { inherit pkgs lib ;};
 	keymaps = import ./keymaps.nix { };
 	settings = import ./settings.nix { };
 	colorschemes = import ./colorschemes.nix { };
