@@ -7,9 +7,9 @@ in
 		username = username;
 		homeDirectory = "/home/${username}";
 
-		# packages = with pkgs; [
-		# 	(callPackage ../../pkgs/pkillfam { })
-		# ];
+		packages = with pkgs; [
+			(callPackage ../../pkgs/pkillfam { })
+		];
 
 		sessionVariables = {
 			EDITOR = "nvim";
