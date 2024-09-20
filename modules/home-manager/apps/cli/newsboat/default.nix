@@ -41,15 +41,16 @@ in
 		};
 	};
 
+	imports = [
+		./urls.crypt.nix
+	];
+
 	config = {
 		programs.newsboat = lib.mkIf cfg.enable {
 			enable = true;
 
 			autoReload = true;
 			reloadTime = 15;
-
-			queries = (import ./queries.crypt.nix { inherit lib cfg; });
-			urls = (import ./urls.crypt.nix { });
 
 			extraConfig = lib.mkMerge [
 				"download-timeout ${toString cfg.downloadTimeout}"
