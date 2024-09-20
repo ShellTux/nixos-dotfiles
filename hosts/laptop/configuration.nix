@@ -166,8 +166,11 @@
 
 	# Configure console keymap
 	console.keyMap = "pt-latin1";
-	# Enable sound with pipewire.
-	hardware.pulseaudio.enable = false;
+	hardware = {
+		# Enable sound with pipewire.
+		pulseaudio.enable = false;
+		opentabletdriver.enable = true;
+	};
 	security.rtkit.enable = true;
 	# TODO: Enable this for nixvim (Telescope man-pages) https://github.com/nix-community/nixvim/issues/1517
 	documentation.man.generateCaches = true;
