@@ -44,7 +44,6 @@ in
 		smartcase      = true;
 		syntax         = "enabled";
 		termguicolors  = true;
-		textwidth      = 80;
 		wildignore     = "*.o,*.a,__pycache__";
 		wildmenu       = true;
 		wrap           = false;
