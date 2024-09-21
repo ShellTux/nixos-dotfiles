@@ -18,6 +18,7 @@
 		./syncthing.nix
 		./waybar
 		./wezterm
+		./xournalpp.nix
 		./zathura.nix
 	];
 }

@@ -123,6 +123,7 @@ in
 			stremio.enable = true;
 			waybar.enable = true;
 			wezterm.enable = true;
+			xournalpp.enable = true;
 			zathura.enable = true;
 		};
 	};
