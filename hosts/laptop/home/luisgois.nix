@@ -8,7 +8,7 @@ in
 		homeDirectory = "/home/${username}";
 
 		packages = with pkgs; [
-			(callPackage ../../pkgs/pkillfam { })
+			(callPackage ../../../pkgs/pkillfam { })
 		];
 
 		sessionVariables = {
