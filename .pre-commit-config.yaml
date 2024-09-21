@@ -3,5 +3,5 @@ repos:
     hooks:
       - id: gitleaks
         name: Detect Git Secrets Leaks
-        entry: gitleaks detect --verbose
+        entry: gitleaks protect --staged --verbose
         language: system
