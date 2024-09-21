@@ -1,0 +1,7 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: Detect Git Secrets Leaks
+        entry: gitleaks detect --verbose
+        language: system
