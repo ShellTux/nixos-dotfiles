@@ -102,6 +102,7 @@ in
 	(workspace 8 "Steam")
 	(workspace 8 "SummertimeSaga") # 😉
 	(workspace 9 "discord")
+	(workspace 9 "Slack")
 	(workspace 9 "WebCord")
 	(workspace 9 "zoom")
 
