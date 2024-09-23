@@ -10,7 +10,7 @@ in
 			enable = lib.mkOption {
 				description = "MIME default application configuration";
 				type = lib.types.bool;
-				default = false;
+				default = true;
 			};
 
 			mimeTypes = lib.mkOption {
@@ -79,7 +79,7 @@ in
 		};
 
 		xdg.mimeApps.defaultApplications = lib.mkIf cfg.defaultApplication.enable (
-				lib.genAttrs cfg.defaultApplication.mimeTypes (_: "zathura.desktop")
+				lib.genAttrs cfg.defaultApplication.mimeTypes (_: "org.pwmt.zathura.desktop")
 				);
 	};
 }

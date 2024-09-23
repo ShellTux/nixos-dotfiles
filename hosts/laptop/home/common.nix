@@ -45,6 +45,8 @@
 		};
 
 		configFile."user-dirs.locale".text = "pt_PT";
+
+		mimeApps.enable = true;
 	};
 
 	# Let Home Manager install and manage itself.
