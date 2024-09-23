@@ -12,6 +12,7 @@
 		(path + "/awesome.nix")
 		(path + "/hyprland.nix")
 		(path + "/i3.nix")
+		(path + "/libvirt.nix")
 		(path + "/locate.nix")
 		(path + "/networkmanager")
 		(path + "/pipewire.nix")
@@ -50,6 +51,7 @@
 		kernelPackages = pkgs.linuxPackages_latest;
 	};
 
+	libvirt.enable = true;
 	locate = { enable = true; pruneNixStore = false; extraPrunePaths = ["/var/local"]; };
 	networkmanager.enable = true;
 	pipewire.enable = true;
