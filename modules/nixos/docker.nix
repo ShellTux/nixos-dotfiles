@@ -1,6 +1,10 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 {
 	options.docker.enable = lib.mkEnableOption "Enable docker module";
 
-	config.virtualisation.docker.enable = lib.mkIf config.docker.enable true;
+	config = lib.mkIf config.docker.enable {
+		virtualisation.docker.enable = true;
+
+		environment.systemPackages = with pkgs; [ docker-client ];
+	};
 }

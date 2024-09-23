@@ -10,6 +10,7 @@
 		sops
 	]) ++ (let path = ../../modules/nixos; in [
 		(path + "/awesome.nix")
+		(path + "/docker.nix")
 		(path + "/hyprland.nix")
 		(path + "/i3.nix")
 		(path + "/libvirt.nix")
@@ -51,6 +52,7 @@
 		kernelPackages = pkgs.linuxPackages_latest;
 	};
 
+	docker.enable = true;
 	libvirt.enable = true;
 	locate = { enable = true; pruneNixStore = false; extraPrunePaths = ["/var/local"]; };
 	networkmanager.enable = true;
