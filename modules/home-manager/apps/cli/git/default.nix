@@ -6,6 +6,10 @@ in
 	# TODO: Add option to choose between delta, diff-so-fancy, difftastic
 	options.apps.cli.git.enable = lib.mkEnableOption "Enable git module";
 
+	imports = [
+		./excludesFiles.nix
+	];
+
 	config = lib.mkIf config.apps.cli.git.enable {
 		programs.git = {
 			enable = true;
@@ -14,9 +18,6 @@ in
 			extraConfig = {
 				core = {
 					editor = "nvim";
-					excludesFile = [
-						# ./ignore
-					];
 					autocrlf = "input";
 				};
 				init = {
