@@ -8,6 +8,7 @@ in
 
 	imports = [
 		./excludesFiles.nix
+		./includes
 	];
 
 	config = lib.mkIf config.apps.cli.git.enable {
