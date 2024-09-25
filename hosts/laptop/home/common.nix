@@ -49,6 +49,17 @@
 		mimeApps.enable = true;
 	};
 
+	nix = {
+		settings = {
+			experimental-features = [ "nix-command" "flakes" ];
+			auto-optimise-store = true;
+		};
+		gc = {
+			automatic = true;
+			options = "--delete-older-than 14d";
+		};
+	};
+
 	# Let Home Manager install and manage itself.
 	programs.home-manager.enable = true;
 }
