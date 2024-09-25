@@ -7,6 +7,7 @@ pkgs.mkShell
 	git-crypt
   	gitleaks
 	home-manager
+	pre-commit
 	sops
   ];
 }
