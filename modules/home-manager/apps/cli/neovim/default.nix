@@ -39,6 +39,7 @@ in
 
 			extraPlugins = with pkgs.vimPlugins; [
 				render-markdown
+				vim-easy-align
 			];
 
 			extraConfigLua = let
@@ -46,6 +47,13 @@ in
 			in with pkgs.vimPlugins; lib.strings.concatStrings [
 				(if (lib.elem render-markdown extraPlugins) then ''
 				 require('render-markdown').setup({})
+				 '' else "")
+				(if (lib.elem vim-easy-align extraPlugins) then ''
+				 -- Start interactive EasyAlign in visual mode (e.g. vipga)
+				 vim.api.nvim_set_keymap('x', 'ga', '<Plug>(EasyAlign)', {})
+
+				 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+				 vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
 				 '' else "")
 			];
 		};

@@ -60,6 +60,7 @@ in
 		todo-comments-nvim
 		tokyonight-nvim
 		vim-commentary
+		vim-easy-align
 		vim-surround
 		which-key-nvim
 	];
