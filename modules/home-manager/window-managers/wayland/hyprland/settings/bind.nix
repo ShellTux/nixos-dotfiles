@@ -72,7 +72,7 @@ in
 		"$mainMod ALT, S, pin, active"
 
 		# Monocle
-		"$mainMod, m, exec, hyprctl dispatch fullscreen 1"
+		"$superShift, m, exec, hyprctl dispatch fullscreen 1"
 
 	];
 
