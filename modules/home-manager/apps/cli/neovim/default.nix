@@ -41,9 +41,13 @@ in
 				render-markdown
 			];
 
-			extraConfigLua = ''
-				require('render-markdown').setup({})
-			'';
+			extraConfigLua = let
+				extraPlugins = config.programs.nixvim.extraPlugins;
+			in with pkgs.vimPlugins; lib.strings.concatStrings [
+				(if (lib.elem render-markdown extraPlugins) then ''
+				 require('render-markdown').setup({})
+				 '' else "")
+			];
 		};
 
 		programs.neovim = lib.mkIf (config.apps.cli.neovim.nixvim.enable == false) {
