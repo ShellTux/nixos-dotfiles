@@ -2,7 +2,7 @@
 plugins = [
 	"magnify",
 	"scratchpads",
-	# "shortcuts_menu",
+	"shortcuts_menu",
 	# "system_notifier",
 	"toggle_dpms"
 ]

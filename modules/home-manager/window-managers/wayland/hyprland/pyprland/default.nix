@@ -37,6 +37,8 @@
 				"$mainMod, X, exec, pypr toggle qalc"
 
 				"$mainMod, backslash, exec, pypr toggle-dpms"
+
+				"$superShift, apostrophe, exec, pypr menu"
 			];
 		};
 	};
