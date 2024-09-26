@@ -20,6 +20,7 @@ in
 	(float "nannou")
 	(float "nm-connection-editor")
 	(float "notification")
+	(float "OpenGL")
 	(float "org.kde.polkit-kde-authentication-agent-1")
 	(float "pavucontrol")
 	(float "pavucontrol-qt")
