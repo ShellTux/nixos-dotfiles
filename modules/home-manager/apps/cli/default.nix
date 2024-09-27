@@ -29,6 +29,7 @@
 		./qalculate.nix
 		./tealdeer.nix
 		./tmux.nix
+		./todoist.nix
 		./translate-shell.nix
 		./unar.nix
 		./vim.nix
