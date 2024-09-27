@@ -6,6 +6,7 @@
 		./bat.nix
 		./btop.nix
 		./calcurse.nix
+		./dooit.nix
 		./dua.nix
 		./dua.nix
 		./eza.nix
