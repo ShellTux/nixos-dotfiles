@@ -43,8 +43,9 @@ in
 			enable = true;
 
 			checkStatsInterval = 60;
-			vimKeys = true;
 			sidebar.enable = true;
+			sort = "reverse-threads";
+			vimKeys = true;
 
 			extraConfig = let
 				colorscheme = config.apps.cli.neomutt.colorscheme;
