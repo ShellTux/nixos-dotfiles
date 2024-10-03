@@ -33,26 +33,48 @@ in
 
 		colorscheme = lib.mkOption {
 			description = "Which colorscheme to pick for neomutt.";
-			type = with lib.types; (enum [ "dracula" "catppuccin" "gruvbox" ]);
-			default = "gruvbox";
+			type = lib.types.enum [ "dracula" "catppuccin" "gruvbox" "neonwolf-256" "solarized-dark-256" "vombatidae" "zenburn" ];
+			default = "solarized-dark-256";
 		};
 	};
+
+	imports = [
+		./binds.nix
+		./macros.nix
+	];
 
 	config = lib.mkIf config.apps.cli.neomutt.enable {
 		programs.neomutt = {
 			enable = true;
 
 			checkStatsInterval = 60;
-			sidebar.enable = true;
+			sidebar = {
+				enable = true;
+				format = "%B%?F? [%F]?%* %?N?%N/?%S";
+			};
 			sort = "reverse-threads";
 			vimKeys = true;
+			settings = {
+				include = "yes";
+				forward_format = ''"Fwd: %s"'';
+				query_command = ''"${pkgs.abook}/bin/abook --mutt-query '%s'"'';
+				timeout = "5";
+				wait_key = "no";
+			};
 
 			extraConfig = let
 				colorscheme = config.apps.cli.neomutt.colorscheme;
+				findAllMailboxes = (import ./findAllMailboxes.nix { inherit pkgs; });
 			in lib.mkMerge [
 			(lib.mkIf (colorscheme == "catppuccin") "source ${neomutt.colorschemes.catppuccin}/neomuttrc")
 			(lib.mkIf (colorscheme == "dracula") "source ${neomutt.colorschemes.dracula}/dracula.muttrc")
 			(lib.mkIf (colorscheme == "gruvbox") "source ${neomutt.colorschemes.gruvbox}/colors-gruvbox-shuber.muttrc")
+			(lib.mkIf (colorscheme == "neonwolf-256") "source ${pkgs.neomutt}/share/doc/neomutt/colorschemes/neonwolf-256.neomuttrc")
+			(lib.mkIf (colorscheme == "solarized-dark-256") "source ${pkgs.neomutt}/share/doc/neomutt/colorschemes/solarized-dark-256.neomuttrc")
+			(lib.mkIf (colorscheme == "vombatidae") "source ${pkgs.neomutt}/share/doc/neomutt/colorschemes/vombatidae.neomuttrc")
+			(lib.mkIf (colorscheme == "zenburn") "source ${pkgs.neomutt}/share/doc/neomutt/colorschemes/zenburn.neomuttrc")
+			"auto_view text/html"
+			''named-mailboxes `${findAllMailboxes}/bin/find-mailboxes.sh "${config.accounts.email.maildirBasePath}"`''
 			];
 		};
 

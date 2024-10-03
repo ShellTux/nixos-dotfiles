@@ -20,7 +20,7 @@
 		./khal.nix
 		./mediainfo.nix
 		./ncmpcpp.nix
-		./neomutt.nix
+		./neomutt
 		./neovim
 		./newsboat
 		./nvtop.nix
