@@ -1,14 +1,11 @@
-{}:
+{ config, ... }:
 {
-	enable = true;
-
-	settings = {
+	programs.nixvim.plugins.codesnap.settings = {
 		breadcrumbs_separator = "/";
 		has_breadcrumbs = true;
 		has_line_number = false;
 		mac_window_bar = true;
-		# TODO: Change directory according to nixos configuration
-		save_path = "~/Imagens/CodeSnapScreenshots";
+		save_path = config.xdg.userDirs.pictures;
 		title = "CodeSnap.nvim";
 		watermark = "";
 	};

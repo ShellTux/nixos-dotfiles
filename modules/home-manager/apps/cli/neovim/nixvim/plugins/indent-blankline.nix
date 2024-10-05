@@ -1,8 +1,6 @@
-{}:
+{ ... }:
 {
-	enable = true;
-
-	settings = {
+	programs.nixvim.plugins.indent-blankline.settings = {
 		exclude = {
 			buftypes = [
 				"terminal"
@@ -22,17 +20,6 @@
 				"yaml"
 			];
 		};
-		indent = {
-			tab_char = "";
-			# highlight = [
-			# 	"RainbowRed"
-			# 	"RainbowYellow"
-			# 	"RainbowBlue"
-			# 	"RainbowOrange"
-			# 	"RainbowGreen"
-			# 	"RainbowViolet"
-			# 	"RainbowCyan"
-			# ];
-		};
+		indent.tab_char = "";
 	};
 }

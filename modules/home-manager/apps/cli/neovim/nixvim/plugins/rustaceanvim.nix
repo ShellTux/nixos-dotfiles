@@ -1,8 +1,6 @@
-{}:
+{ ... }:
 {
-	enable = true;
-
-	settings.server = {
+	programs.nixvim.plugins.rustaceanvim.settings.server = {
 		default_settings.rust-analyzer = {
 			installCargo = true;
 			installRustc = true;

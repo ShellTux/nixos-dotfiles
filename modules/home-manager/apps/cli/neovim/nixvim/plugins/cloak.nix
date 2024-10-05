@@ -1,8 +1,6 @@
-{}:
+{ ... }:
 {
-	enable = true;
-
-	settings = {
+	programs.nixvim.plugins.cloak.settings = {
 		enabled = true;
 
 		cloak_character = "*";

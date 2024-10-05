@@ -1,8 +1,6 @@
-{}:
+{ ... }:
 {
-	enable = true;
-
-	settings.options = {
+	programs.nixvim.plugins.bufferline.settings.options = {
 		diagnostics = "nvim_lsp";
 		diagnosticsIndicator = ''
 			function(count, level, diagnostics_dict, context)

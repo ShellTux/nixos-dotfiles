@@ -1,8 +1,6 @@
-{}:
+{ ... }:
 {
-	enable = true;
-
-	keymaps = {
+	programs.nixvim.plugins.telescope.keymaps = {
 		"<leader>pb" = {
 			action = "buffers";
 			options.desc = "Telescope Buffers";
