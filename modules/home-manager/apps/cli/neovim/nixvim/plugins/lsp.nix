@@ -5,8 +5,6 @@
 			diagnostic = {
 				"g]" = "goto_next";
 				"g[" = "goto_prev";
-				# "g}" = "goto_next error";
-				# "g{" = "goto_prev error";
 			};
 
 			extra = [
@@ -59,6 +57,16 @@
 				action.__raw = "require('telescope.builtin').lsp_dynamic_workspace_symbols";
 				key = "<leader>ws";
 				options.desc = "[W]orkspace [S]ymbols";
+			}
+			{
+				action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>";
+				key = "g}";
+				options.desc = "[G]oto next error";
+			}
+			{
+				action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>";
+				key = "g{";
+				options.desc = "[G]oto previous error";
 			}
 			];
 
