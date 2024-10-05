@@ -1,7 +1,10 @@
 { ... }:
 {
 	programs.nixvim.plugins.lsp = {
-		keymaps = {
+		keymaps = let
+			cmd = command: "<CMD>${command}<ENTER>";
+			cmdLua = command: (cmd "lua ${command}");
+		in {
 			diagnostic = {
 				"g]" = "goto_next";
 				"g[" = "goto_prev";
@@ -9,22 +12,22 @@
 
 			extra = [
 			{
-				action = "<CMD>LspStop<Enter>";
+				action = cmd "LspStop";
 				key = "<leader>Lsto";
 				options.desc = "Lsp Stop";
 			}
 			{
-				action = "<CMD>LspStart<Enter>";
+				action = cmd "LspStart";
 				key = "<leader>Lsta";
 				options.desc = "Lsp Start";
 			}
 			{
-				action = "<CMD>LspRestart<Enter>";
+				action = cmd "LspRestart";
 				key = "<leader>Lr";
 				options.desc = "Lsp Restart";
 			}
 			{
-				action = "<CMD>LspInfo<Enter>";
+				action = cmd "LspInfo";
 				key = "<leader>Li";
 				options.desc = "Lsp Info";
 			}
@@ -59,12 +62,12 @@
 				options.desc = "[W]orkspace [S]ymbols";
 			}
 			{
-				action = "<cmd>lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>";
+				action = cmdLua "vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })";
 				key = "g}";
 				options.desc = "[G]oto next error";
 			}
 			{
-				action = "<cmd>lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>";
+				action = cmdLua "vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })";
 				key = "g{";
 				options.desc = "[G]oto previous error";
 			}
