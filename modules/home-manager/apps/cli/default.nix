@@ -1,6 +1,7 @@
 { ... }:
 {
 	imports = [
+		./aerc
 		./ani-cli.nix
 		./bat.nix
 		./bat.nix

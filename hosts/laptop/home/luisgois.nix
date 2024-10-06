@@ -76,6 +76,7 @@ in
 
 	apps = {
 		cli = {
+			aerc.enable = true;
 			ani-cli.enable = true;
 			bat.enable = true;
 			btop.enable = true;
