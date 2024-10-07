@@ -28,13 +28,17 @@
 					"image/*" = "${pkgs.imv}/bin/imv -";
 				};
 				ui = {
-					index-format = "%-20.20D %-17.17n %Z %s";
-					timestamp-format = "2006-01-02 03:04 PM";
-
-					mouse-enabled = true;
-					sidebar-width = 25;
-					spinner = "[ ⡿ ],[ ⣟ ],[ ⣯ ],[ ⣷ ],[ ⣾ ],[ ⣽ ],[ ⣻ ],[ ⢿ ]";
+					border-char-horizontal = "━";
+					border-char-vertical   = "┃";
+					index-format           = "%-20.20D %-17.17n %Z %s";
+					mouse-enabled          = true;
+					sidebar-width          = 25;
+					spinner                = "[ ⡿ ],[ ⣟ ],[ ⣯ ],[ ⣷ ],[ ⣾ ],[ ⣽ ],[ ⣻ ],[ ⢿ ]";
+					this-day-time-format   = ''"           15:04"'';
+					this-year-time-format  = "Mon Jan 02 15:04";
+					timestamp-format       = "2006-01-02 15:04";
 				};
+				triggers.email-received = ''exec notify-send "New email from %n" "%s"'';
 			};
 		};
 
