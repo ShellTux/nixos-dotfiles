@@ -1,10 +1,7 @@
 { lib, pkgs, ... }:
-let
-	username = "luisgois";
-in 
 {
-	home = {
-		username = username;
+	home = rec {
+		username = "luisgois";
 		homeDirectory = "/home/${username}";
 
 		packages = with pkgs; [
