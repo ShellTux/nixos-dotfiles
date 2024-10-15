@@ -4,7 +4,7 @@ pkgs.writeShellApplication {
 
 	runtimeInputs = with pkgs; [
 		bat
-		findutils
+		fd
 		fzf
 	];
 
