@@ -42,6 +42,7 @@ in
 	(float "title:wlogout")
 	(float "viewnior")
 	(float "Viewnior")
+	(float "xdg-desktop-portal-gtk")
 
 # }}}
 
