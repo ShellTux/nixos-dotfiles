@@ -70,6 +70,7 @@ in
 					sponsorblock
 					tridactyl
 					ublock-origin
+					vimium
 					xbrowsersync
 				];
 
