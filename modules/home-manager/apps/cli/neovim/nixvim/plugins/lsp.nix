@@ -99,13 +99,13 @@
 			dockerls.enable = true;
 			gopls.enable = true;
 			jsonls.enable = true;
-			lua-ls.enable = true;
+			lua_ls.enable = true;
 			marksman.enable = true;
-			nil-ls = { enable = true; settings.nix.flake.autoArchive = true; };
+			nil_ls = { enable = true; settings.nix.flake.autoArchive = true; };
 			pyright.enable = true;
-			rust-analyzer = { enable = true; installCargo = true; installRustc = true; };
+			rust_analyzer = { enable = true; installCargo = true; installRustc = true; };
 			texlab.enable = true;
-			tsserver.enable = true;
+			ts_ls.enable = true;
 			yamlls.enable = true;
 			zls.enable = true;
 		};

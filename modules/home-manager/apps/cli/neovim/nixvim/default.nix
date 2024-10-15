@@ -14,14 +14,14 @@
 		};
 
 		extraPlugins = with pkgs.vimPlugins; [
-			render-markdown
+			render-markdown-nvim
 			vim-easy-align
 		];
 
 		extraConfigLua = let
 			extraPlugins = config.programs.nixvim.extraPlugins;
 		in with pkgs.vimPlugins; lib.mkMerge [
-			(if (lib.elem render-markdown extraPlugins) then "require('render-markdown').setup({})" else "")
+			(if (lib.elem render-markdown-nvim extraPlugins) then "require('render-markdown').setup({})" else "")
 			(if (lib.elem vim-easy-align extraPlugins) then ''
 			 -- Start interactive EasyAlign in visual mode (e.g. vipga)
 			 vim.api.nvim_set_keymap('x', 'ga', '<Plug>(EasyAlign)', {})

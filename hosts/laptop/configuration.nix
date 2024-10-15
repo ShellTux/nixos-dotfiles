@@ -91,9 +91,6 @@
 		extraHosts = builtins.readFile ./hosts;
 	};
 
-	# Set your time zone.
-	time.timeZone = "Europe/Lisbon";
-
 	i18n = {
 		defaultLocale = "pt_PT.UTF-8";
 

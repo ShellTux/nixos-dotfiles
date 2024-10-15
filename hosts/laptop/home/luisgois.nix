@@ -106,7 +106,7 @@
 			zellij.enable = true;
 		};
 		gui = {
-			anki.enable = true;
+			# TODO: Enable anki (python3.12-qt6 derivation dependency error)
 			discord = { enable = true; flavours = [ "webcord-vencord" "vesktop" ]; };
 			firefox.enable = true;
 			gtkhash.enable = true;

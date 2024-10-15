@@ -1,7 +1,8 @@
-{ pkgs, lib, ... }:
+{ ... }:
 {
 	imports = [
 		./bufferline.nix
+		./chadtree.nix
 		./cloak.nix
 		./cmp.nix
 		./codeium-vim.nix
@@ -38,7 +39,7 @@
 		nvim-autopairs.enable = true;
 		nvim-snippets.enable = true;
 		# rustaceanvim.enable = true;
-		surround.enable = true;
+		vim-surround.enable = true;
 		telescope.enable = true;
 		tmux-navigator.enable = true;
 		todo-comments.enable = true;
