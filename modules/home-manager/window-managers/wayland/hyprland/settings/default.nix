@@ -39,7 +39,7 @@ in
 	in [
 		(envVar "GDK_BACKEND" "wayland,x11")
 		(envVar "HYPRCURSOR_SIZE" "24")
-		(envVar "XCURSOR_SIZE" "72")
+		(envVar "XCURSOR_SIZE" "36")
 	];
 	gestures = {
 		workspace_swipe = "on";
