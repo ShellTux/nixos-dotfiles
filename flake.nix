@@ -47,6 +47,8 @@
 			};
 		};
 
+		pkgs = nixpkgs.legacyPackages.${settings.system.arch};
+
 		specialArgs = { inherit inputs settings; };
 		extraSpecialArgs = {
 			inherit inputs settings;
@@ -74,6 +76,17 @@
 		homeConfigurations = {
 			desktop = mkHomeManagerConfig ./hosts/desktop/home.nix settings.system.arch;
 			laptop = mkHomeManagerConfig ./hosts/laptop/home.nix settings.system.arch;
+		};
+
+		devShells.x86_64-linux.default = pkgs.mkShell {
+			nativeBuildInputs = with pkgs; [
+				git
+				git-crypt
+				gitleaks
+				home-manager
+				pre-commit
+				sops
+			];
 		};
 	};
 }
