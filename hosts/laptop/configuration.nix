@@ -39,6 +39,7 @@
 			"Email/Dei/password" = userSettings;
 			"Ssh/Github/Private-key" = userSettings;
 			"Ssh/Gitlab/Private-key" = userSettings;
+			"Ssh/Git.Dei/Private-key" = userSettings;
 			"Rss/Changedetection/url" = userSettings;
 		};
 	};

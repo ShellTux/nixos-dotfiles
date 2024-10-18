@@ -25,6 +25,10 @@
 					user = "git";
 					identityFile = [ secrets."Ssh/Gitlab/Private-key".path ];
 				};
+				"git.dei.uc.pt" = {
+					user = "git";
+					identityFile = [ secrets."Ssh/Git.Dei/Private-key".path ];
+				};
 			};
 		};
 
