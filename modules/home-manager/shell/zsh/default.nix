@@ -32,6 +32,15 @@ in
 			};
 			dotDir = ".config/zsh";
 			enableCompletion = true;
+			completionInit = lib.mkMerge [
+				"zstyle ':completion:*' menu select"
+				"zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate"
+				"zstyle ':completion:*' glob 'NUMERIC == 2'"
+				"zstyle ':completion:*' matcher-list '+m:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=* r:|=*'"
+				"zstyle ':completion:*' max-errors 3 not-numeric"
+				"zstyle ':completion:*' prompt '%e'"
+				"autoload -U compinit && compinit"
+			];
 			history = {
 				expireDuplicatesFirst = true;
 				ignoreAllDups = true;
