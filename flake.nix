@@ -87,6 +87,11 @@
 				pre-commit
 				sops
 			];
+
+			shellHook = ''
+				printf '\033[32m%s\033[0m\n' 'Installing Pre-commit hooks'
+				pre-commit install
+			'';
 		};
 	};
 }
