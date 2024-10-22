@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, settings, ... }:
+{ inputs, pkgs, config, settings, lib, ... }:
 {
 	imports = [
 		# Include the results of the hardware scan.
@@ -107,6 +107,8 @@
 			LC_TIME = "pt_PT.UTF-8";
 		};
 	};
+
+	time.timeZone = lib.mkForce settings.system.timezone;
 
 
 	# List services that you want to enable:
