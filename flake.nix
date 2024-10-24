@@ -83,7 +83,7 @@
 				git
 				git-crypt
 				gitleaks
-				home-manager
+				nixfmt
 				pre-commit
 				sops
 			];
