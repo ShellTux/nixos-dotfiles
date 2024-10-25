@@ -1,4 +1,4 @@
-{ pkgs }:
+{ lib, pkgs }:
 let
 	wallpaperScript = import ../wallpaper.nix { inherit pkgs; };
 	waybarLoop = pkgs.writeShellApplication {
@@ -11,7 +11,7 @@ let
 		text = builtins.readFile ./waybar-loop.sh;
 	};
 
-	decoration = import ./decoration.nix { };
+	decoration = import ./decoration.nix { inherit lib; };
 	input = import ./input.nix { };
 	windowrule = import ./windowrule.nix { };
 in
@@ -47,8 +47,8 @@ in
 	};
 	general = {
 		border_size = 3;
-		"col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-		"col.inactive_border" = "rgba(595959aa)";
+		"col.active_border" = lib.mkDefault "rgba(33ccffee) rgba(00ff99ee) 45deg";
+		"col.inactive_border" = lib.mkDefault "rgba(595959aa)";
 		gaps_in = 5;
 		gaps_out = 20;
 		layout = "master";

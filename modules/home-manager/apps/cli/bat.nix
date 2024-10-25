@@ -8,7 +8,7 @@
 
 			config = {
 				pager = "less --RAW-CONTROL-CHARS";
-				theme = "TwoDark";
+				theme = lib.mkDefault "TwoDark";
 				map-syntax = [
 					"*.ino:C++"
 					".ignore:Git Ignore"

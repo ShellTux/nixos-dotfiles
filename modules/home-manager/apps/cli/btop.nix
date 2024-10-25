@@ -7,8 +7,8 @@
 			enable = true;
 
 			settings = {
-				color_theme = "onedark";
-				theme_background = true;
+				color_theme = lib.mkDefault "onedark";
+				theme_background = lib.mkDefault true;
 				update_ms = 200;
 				proc_sorting = "cpu lazy";
 			};

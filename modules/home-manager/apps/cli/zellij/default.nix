@@ -38,7 +38,7 @@
 				vimTmuxNavigatorKeybinds = true;
 				whichKeyEnabled = true;
 				replaceVimWindowNavigationKeybinds = true;
-				theme = "tokyo-night";
+				theme = lib.mkDefault "tokyo-night";
 
 				keybinds =
 				let

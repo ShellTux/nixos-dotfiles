@@ -10,7 +10,7 @@
 				rofi-calc
 				rofi-emoji
 			];
-			theme = "tokyonight";
+			theme = lib.mkDefault "tokyonight";
 			# TODO: use terminal defined in settings
 			terminal = "${pkgs.kitty}/bin/kitty";
 

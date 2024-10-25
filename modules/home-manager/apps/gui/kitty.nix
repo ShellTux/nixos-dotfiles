@@ -8,17 +8,17 @@
 
 			font = {
 				# TODO: make sure to install fonts
-				name = "JetBrains Mono";
-				size = 12;
+				name = lib.mkDefault "JetBrains Mono";
+				size = lib.mkDefault 12;
 			};
 
 			settings = {
 				cursor_shape = "block";
 				cursor_text_color = "background";
-				background_opacity = "0.8";
-				dim_opacity = "0.75";
-				selection_foreground = "#000000";
-				selection_background = "#fffacd";
+				background_opacity = lib.mkDefault "0.8";
+				dim_opacity = lib.mkDefault "0.75";
+				selection_foreground = lib.mkDefault "#000000";
+				selection_background = lib.mkDefault "#fffacd";
 				update_check_interval = 0;
 				shell_integration = "no-cursor";
 				# Nerd Fonts Version: 3.2.1

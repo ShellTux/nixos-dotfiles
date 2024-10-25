@@ -126,6 +126,8 @@
 		};
 	};
 
+	styles.stylix.enable = true;
+
 	accounts.enable = true;
 	awesome.enable = true;
 	bash.enable = true;

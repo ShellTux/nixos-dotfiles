@@ -15,7 +15,7 @@
 				global = {
 					alignment = "left";
 					always_run_script = true;
-					background = "#285577";
+					background = lib.mkDefault "#285577";
 					# browser = "/usr/bin/xdg-open";
 					class = "Dunst";
 					close_all = "ctrl+shift+space";
@@ -27,12 +27,12 @@
 					ellipsize = "middle";
 					enable_recursive_icon_lookup = false;
 					follow = "none";
-					font = "Droid Sans 12";
+					font = lib.mkDefault "Droid Sans 12";
 					# force_xinerama = false;
 					# force_xwayland = false;
-					foreground = "#ffffff";
+					foreground = lib.mkDefault "#ffffff";
 					format = "<u><span size='x-large' font_desc='Cantarell,mplus Nerd Font 9' weight='bold' foreground='#f9f9f9'>%s</span></u>\n%b\n<b>App</b>: %a\n";
-					frame_color = "#aaaaaa";
+					frame_color = lib.mkDefault "#aaaaaa";
 					frame_width = 3;
 					fullscreen = "delay";
 					gap_size = 10;
@@ -44,7 +44,7 @@
 					icon_corner_radius = 20;
 					# icon_path = ".local/share/icons/svg/status/:.local/share/icons/png/status:/usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/HighContrast/48x48/status:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/";
 					icon_position = "left";
-					icon_theme = "Adwaita";
+					icon_theme = lib.mkDefault "Adwaita";
 					# idle_threshold = "120";
 					ignore_dbusclose = false;
 					ignore_newline = "no";
@@ -67,7 +67,7 @@
 					progress_bar_min_width = 150;
 					progress_bar = true;
 					scale = 0;
-					separator_color = "auto";
+					separator_color = lib.mkDefault "auto";
 					separator_height = 2;
 					show_age_threshold = 60;
 					show_indicators = "yes";
@@ -84,8 +84,8 @@
 
 				
 				urgency_low = {
-					background = "#222222";
-					foreground = "#888888";
+					background = lib.mkDefault "#222222";
+					foreground = lib.mkDefault "#888888";
 					timeout = 5;
 					# script = ~/.local/bin/dunst-espeak-low;
 				};
@@ -95,9 +95,9 @@
 				};
 
 				urgency_critical = {
-					background = "#900000";
-					foreground = "#ffffff";
-					frame_color = "#ff0000";
+					background = lib.mkDefault "#900000";
+					foreground = lib.mkDefault "#ffffff";
+					frame_color = lib.mkDefault "#ff0000";
 					timeout = 0;
 					default_icon = "critical";
 					# script = ~/.local/bin/dunst-espeak-critical;

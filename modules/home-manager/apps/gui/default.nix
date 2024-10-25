@@ -15,6 +15,7 @@
 		./rofi
 		./slack.nix
 		./stremio.nix
+		./stylix
 		./syncthing.nix
 		./waybar
 		./wezterm

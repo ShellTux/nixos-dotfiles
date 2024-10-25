@@ -31,6 +31,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		stylix.url = "github:danth/stylix";
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-stable, nixos-hardware, home-manager, ... }@inputs:

@@ -12,7 +12,7 @@ let
 	};
     };
 
-    settings = import ./settings { inherit pkgs; };
+    settings = import ./settings { inherit lib pkgs; };
 in
 {
 	imports = [

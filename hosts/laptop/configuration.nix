@@ -19,6 +19,7 @@
 		(path + "/pipewire.nix")
 		(path + "/plymouth.nix")
 		(path + "/sddm")
+		(path + "/stylix")
 		(path + "/sudo.nix")
 		(path + "/wireshark.nix")
 	]);
@@ -62,6 +63,7 @@
 	sudo.enable = true;
 	wireshark.enable = true;
 
+	styles.stylix.enable = true;
 
 	# Enable networking
 	networking = {
