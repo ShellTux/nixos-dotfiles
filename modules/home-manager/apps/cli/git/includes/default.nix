@@ -1,7 +1,7 @@
 { ... }:
 {
-	imports = [
-		./gitlab.nix
-		./git.dei.crypt.nix
-	];
+  imports = [
+    ./gitlab.nix
+    ./git.dei.crypt.nix
+  ];
 }

@@ -1,6 +1,6 @@
-{}:
+{ }:
 {
-	format = "✌️ {}";
-	max-length = 8;
-	tooltip = false;
+  format = "✌️ {}";
+  max-length = 8;
+  tooltip = false;
 }

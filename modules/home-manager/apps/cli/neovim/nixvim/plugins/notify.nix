@@ -1,7 +1,7 @@
 { ... }:
 {
-	programs.nixvim.plugins.notify = {
-		enable = true;
-		backgroundColour = "#000000";
-	};
+  programs.nixvim.plugins.notify = {
+    enable = true;
+    backgroundColour = "#000000";
+  };
 }

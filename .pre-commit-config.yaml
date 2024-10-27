@@ -5,3 +5,14 @@ repos:
         name: Detect Git Secrets Leaks
         entry: gitleaks protect --staged --verbose
         language: system
+      - id: nixfmt
+        name: Format Nix (nixfmt)
+        types: [nix]
+        language: system
+        require_serial: true
+        entry: sh -c 'command -v nix && nix "$@" $(fd --type=file --extension=nix) || echo "skipping nixfmt"' nix
+        args:
+          - --experimental-features
+          - nix-command flakes
+          - --accept-flake-config
+          - fmt

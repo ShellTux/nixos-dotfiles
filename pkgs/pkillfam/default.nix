@@ -1,6 +1,6 @@
 { pkgs, ... }:
 pkgs.writeShellApplication {
-	name = "pkillfam";
+  name = "pkillfam";
 
-	text = builtins.readFile ./pkillfam.sh;
+  text = builtins.readFile ./pkillfam.sh;
 }

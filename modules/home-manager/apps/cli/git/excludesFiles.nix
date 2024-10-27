@@ -1,8 +1,8 @@
 { ... }:
 {
-	programs.git.extraConfig.core.excludesFile = [
-		"~/.config/git/ignore"
-	];
+  programs.git.extraConfig.core.excludesFile = [
+    "~/.config/git/ignore"
+  ];
 
-	home.file.".config/git/ignore".source = ./ignore;
+  home.file.".config/git/ignore".source = ./ignore;
 }

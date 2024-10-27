@@ -1,7 +1,7 @@
 { ... }:
 {
-	imports = [
-		./cli
-		./gui
-	];
+  imports = [
+    ./cli
+    ./gui
+  ];
 }

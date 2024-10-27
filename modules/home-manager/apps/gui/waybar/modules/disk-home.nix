@@ -1,6 +1,6 @@
-{}:
+{ }:
 {
-	interval = 30;
-	format = " {path}: {percentage_used}%";
-	path = "/home";
+  interval = 30;
+  format = " {path}: {percentage_used}%";
+  path = "/home";
 }

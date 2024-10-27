@@ -1,12 +1,12 @@
 { pkgs }:
 pkgs.writeShellApplication {
-	name = "wallpaperd";
+  name = "wallpaperd";
 
-	runtimeInputs = with pkgs; [
-		coreutils
-		findutils
-		swww
-	];
+  runtimeInputs = with pkgs; [
+    coreutils
+    findutils
+    swww
+  ];
 
-	text = builtins.readFile ./wallpaper.sh;
+  text = builtins.readFile ./wallpaper.sh;
 }

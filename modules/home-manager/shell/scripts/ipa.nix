@@ -1,11 +1,11 @@
 { pkgs }:
 pkgs.writeShellApplication {
-	name = "ipa";
+  name = "ipa";
 
-	runtimeInputs = with pkgs; [
-		coreutils
-		gnugrep
-	];
+  runtimeInputs = with pkgs; [
+    coreutils
+    gnugrep
+  ];
 
-	text = builtins.readFile ./ipa.sh;
+  text = builtins.readFile ./ipa.sh;
 }

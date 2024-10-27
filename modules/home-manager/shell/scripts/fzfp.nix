@@ -1,12 +1,12 @@
 { pkgs }:
 pkgs.writeShellApplication {
-	name = "fzfp";
+  name = "fzfp";
 
-	runtimeInputs = with pkgs; [
-		bat
-		fd
-		fzf
-	];
+  runtimeInputs = with pkgs; [
+    bat
+    fd
+    fzf
+  ];
 
-	text = builtins.readFile ./fzfp.sh;
+  text = builtins.readFile ./fzfp.sh;
 }

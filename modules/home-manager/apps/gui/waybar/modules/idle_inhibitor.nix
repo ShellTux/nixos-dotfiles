@@ -1,8 +1,8 @@
-{}:
+{ }:
 {
-	format = "{icon}";
-	format-icons = {
-		activated = "";
-		deactivated = "";
-	};
+  format = "{icon}";
+  format-icons = {
+    activated = "";
+    deactivated = "";
+  };
 }

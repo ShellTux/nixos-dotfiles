@@ -1,12 +1,12 @@
 { pkgs }:
 pkgs.writeShellApplication {
-	name = "nix-path";
+  name = "nix-path";
 
-	runtimeInputs = with pkgs; [
-		coreutils
-		eza
-		nix
-	];
+  runtimeInputs = with pkgs; [
+    coreutils
+    eza
+    nix
+  ];
 
-	text = builtins.readFile ./nix-path.sh;
+  text = builtins.readFile ./nix-path.sh;
 }

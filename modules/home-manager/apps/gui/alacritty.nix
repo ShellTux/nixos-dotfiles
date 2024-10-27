@@ -1,50 +1,50 @@
 { lib, config, ... }:
 {
-	options.apps.gui.alacritty.enable = lib.mkEnableOption "Enable alacritty module";
+  options.apps.gui.alacritty.enable = lib.mkEnableOption "Enable alacritty module";
 
-	config = lib.mkIf config.apps.gui.alacritty.enable {
-		programs.alacritty = {
-			enable = true;
+  config = lib.mkIf config.apps.gui.alacritty.enable {
+    programs.alacritty = {
+      enable = true;
 
-			settings = {
-				window.dimensions = {
-					lines = 3;
-					columns = 200;
-				};
-				keyboard.bindings = [
-				{
-					key = "Return";
-					mods = "Control|Shift";
-					action = "SpawnNewInstance";
-				}
-				{
-					key = "Plus";
-					mods = "Control";
-					action = "IncreaseFontSize";
-				}
-				{
-					key = "NumpadAdd";
-					mods = "Control";
-					action = "IncreaseFontSize";
-				}
-				{
-					key = "Minus";
-					mods = "Control";
-					action = "DecreaseFontSize";
-				}
-				{
-					key = "NumpadSubtract";
-					mods = "Control";
-					action = "DecreaseFontSize";
-				}
-				{
-					key = "Key0";
-					mods = "Control";
-					action = "ResetFontSize";
-				}
-				];
-			};
-		};
+      settings = {
+        window.dimensions = {
+          lines = 3;
+          columns = 200;
+        };
+        keyboard.bindings = [
+          {
+            key = "Return";
+            mods = "Control|Shift";
+            action = "SpawnNewInstance";
+          }
+          {
+            key = "Plus";
+            mods = "Control";
+            action = "IncreaseFontSize";
+          }
+          {
+            key = "NumpadAdd";
+            mods = "Control";
+            action = "IncreaseFontSize";
+          }
+          {
+            key = "Minus";
+            mods = "Control";
+            action = "DecreaseFontSize";
+          }
+          {
+            key = "NumpadSubtract";
+            mods = "Control";
+            action = "DecreaseFontSize";
+          }
+          {
+            key = "Key0";
+            mods = "Control";
+            action = "ResetFontSize";
+          }
+        ];
+      };
+    };
 
-	};
+  };
 }

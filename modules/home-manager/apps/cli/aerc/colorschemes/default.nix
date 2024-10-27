@@ -1,4 +1,4 @@
 { ... }:
 {
-	programs.aerc.stylesets.catppuccin-mocha = builtins.readFile ./catppuccin-mocha;
+  programs.aerc.stylesets.catppuccin-mocha = builtins.readFile ./catppuccin-mocha;
 }

@@ -1,16 +1,16 @@
 { pkgs }:
 pkgs.writeShellApplication {
-	name = "fshow";
+  name = "fshow";
 
-	runtimeInputs = with pkgs; [
-		bash
-		coreutils
-		diff-so-fancy
-		findutils
-		fzf
-		git
-		gnugrep
-	];
+  runtimeInputs = with pkgs; [
+    bash
+    coreutils
+    diff-so-fancy
+    findutils
+    fzf
+    git
+    gnugrep
+  ];
 
-	text = builtins.readFile ./fshow.sh;
+  text = builtins.readFile ./fshow.sh;
 }
