@@ -21,9 +21,25 @@ in
 
 		colorscheme = lib.mkOption {
 			description = "Pick one of the colorschemes provided by newsboat";
-			type = lib.types.str;
-			default = "gruvbox";
-			example = "nord";
+			type = lib.types.enum [
+				"commander"
+				"cyanism"
+				"greenscreen"
+				"gruvbox"
+				"inkpot"
+				"kinda-maia"
+				"light"
+				"nord"
+				"plain"
+				"psychedelic"
+				"schleichfahrt"
+				"simple"
+				"solarized-dark"
+				"solarized-light"
+				"universal-color"
+			];
+			default = "nord";
+			example = "gruvbox";
 		};
 
 		enableVimKeybindings = lib.mkOption {
