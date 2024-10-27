@@ -29,6 +29,7 @@
 			 -- Start interactive EasyAlign for a motion/text object (e.g. gaip)
 			 vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
 			 '' else "")
+			(builtins.readFile ./random_colorscheme.lua)
 		];
 	};
 }
