@@ -34,6 +34,7 @@
 					mouse-enabled          = true;
 					sidebar-width          = 25;
 					spinner                = "[ ⡿ ],[ ⣟ ],[ ⣯ ],[ ⣷ ],[ ⣾ ],[ ⣽ ],[ ⣻ ],[ ⢿ ]";
+					styleset-name          = "nord";
 					this-day-time-format   = ''"           15:04"'';
 					this-year-time-format  = "Mon Jan 02 15:04";
 					timestamp-format       = "2006-01-02 15:04";
