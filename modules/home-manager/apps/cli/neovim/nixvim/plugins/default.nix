@@ -12,6 +12,7 @@
 		./lastplace.nix
 		./lsp.nix
 		./luasnip.nix
+		./notify.nix
 		./nvim-snippets.nix
 		./rustaceanvim.nix
 		./telescope.nix
@@ -35,7 +36,6 @@
 		luasnip.enable = true;
 		markdown-preview.enable = true;
 		noice.enable = true;
-		notify.enable = true;
 		nvim-autopairs.enable = true;
 		nvim-snippets.enable = true;
 		# rustaceanvim.enable = true;
