@@ -1,0 +1,36 @@
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  screenkey = pkgs.vimUtils.buildVimPlugin {
+    name = "screenkey.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "NStefan002";
+      repo = "screenkey.nvim";
+      rev = "v2.4.1";
+      hash = "sha256-RTUkG77gM6b1PKv5AqB0/U4satHwQ+q5kJYM3U/mkAw=";
+    };
+  };
+in
+{
+  config.programs.nixvim = {
+    extraPlugins = [ screenkey ];
+    globals.screenkey_statusline_component = true;
+    keymaps = [
+      {
+        action = "<cmd>Screenkey toggle<CR>";
+        key = "<leader>sc";
+        options = {
+          silent = true;
+          desc = "Toggle Screenkey";
+        };
+      }
+    ];
+    plugins.lualine.settings.sections.lualine_c = [
+      "function() return require('screenkey').get_keys() end"
+    ];
+  };
+}

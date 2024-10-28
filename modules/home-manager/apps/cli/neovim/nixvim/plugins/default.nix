@@ -15,6 +15,7 @@
     ./notify.nix
     ./nvim-snippets.nix
     ./rustaceanvim.nix
+    ./screenkey.nix
     ./telescope.nix
   ];
 
