@@ -78,7 +78,6 @@
         home-manager.lib.homeManagerConfiguration {
           inherit extraSpecialArgs;
           pkgs = nixpkgs.legacyPackages.${settings.system.arch};
-          pkgs-stable = nixpkgs-stable.legacyPackages.${settings.system.arch};
           modules = [ configFile ];
         };
     in
