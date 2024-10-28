@@ -91,8 +91,8 @@
         nixos-virtual-machine = mkNixosConfig ./hosts/virtual-machine/configuration.nix;
       };
       homeConfigurations = {
-        desktop = mkHomeManagerConfig ./hosts/desktop/home.nix settings.system.arch;
-        laptop = mkHomeManagerConfig ./hosts/laptop/home.nix settings.system.arch;
+        luisgois = mkHomeManagerConfig ./home/users/luisgois/home.nix settings.system.arch;
+        user = mkHomeManagerConfig ./home/users/user/home.nix settings.system.arch;
       };
 
       devShells.x86_64-linux.default = pkgs.mkShell {

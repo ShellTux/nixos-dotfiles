@@ -11,7 +11,7 @@
 
   imports =
     let
-      path = ../../../modules/home-manager;
+      path = ../../modules/home-manager;
     in
     [
       (path + "/accounts")

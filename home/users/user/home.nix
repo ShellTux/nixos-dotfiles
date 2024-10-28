@@ -1,15 +1,12 @@
-{ lib, pkgs, ... }:
-let
-  username = "user";
-in
+{ ... }:
 {
-  home = {
-    username = username;
+  home = rec {
+    username = "user";
     homeDirectory = "/home/${username}";
   };
 
   imports = [
-    ./common.nix
+    ../common.nix
   ];
 
   # Let Home Manager install and manage itself.

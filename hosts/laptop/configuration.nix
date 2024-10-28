@@ -11,7 +11,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./home
+      ../../home
     ]
     ++ (with inputs.nixvim.nixosModules; [
       nixvim
@@ -69,6 +69,11 @@
     };
     initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device = "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
     kernelPackages = pkgs.linuxPackages_latest;
+  };
+
+  users = {
+    luisgois.enable = true;
+    user.enable = true;
   };
 
   docker.enable = true;
