@@ -25,6 +25,7 @@
       in
       [
         (path + "/awesome.nix")
+        (path + "/boot")
         (path + "/docker.nix")
         (path + "/hyprland.nix")
         (path + "/i3.nix")
@@ -32,7 +33,6 @@
         (path + "/locate.nix")
         (path + "/networkmanager")
         (path + "/pipewire.nix")
-        (path + "/plymouth.nix")
         (path + "/sddm")
         (path + "/stylix")
         (path + "/sudo.nix")
@@ -64,9 +64,10 @@
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      backend = "grub";
       efi.canTouchEfiVariables = true;
     };
+    plymouth.enable = true;
     initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device = "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
     kernelPackages = pkgs.linuxPackages_latest;
   };
@@ -85,7 +86,6 @@
   };
   networkmanager.enable = true;
   pipewire.enable = true;
-  plymouth.enable = false;
   sudo.enable = true;
   wireshark.enable = true;
 
