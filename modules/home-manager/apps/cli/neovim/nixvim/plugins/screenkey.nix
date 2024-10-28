@@ -28,6 +28,14 @@ in
           desc = "Toggle Screenkey";
         };
       }
+      {
+        action = "<cmd>Screenkey toggle_statusline_component<CR>";
+        key = "<leader>scc";
+        options = {
+          silent = true;
+          desc = "Toggle Screenkey status line";
+        };
+      }
     ];
     plugins.lualine.settings.sections.lualine_c = [
       { __raw = "function() return require('screenkey').get_keys() end"; }
