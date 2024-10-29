@@ -59,6 +59,11 @@
         "Ssh/Gitlab/Private-key" = userSettings;
         "Ssh/Git.Dei/Private-key" = userSettings;
         "Rss/Changedetection/url" = userSettings;
+        "Rss/Es2024-pl3/AssignedIssues/url" = userSettings;
+        "Rss/Es2024-pl3/Issues/url" = userSettings;
+        "Rss/Es2024-pl3/Activity/url" = userSettings;
+        "Rss/Es2024-pl3/MergeRequests/url" = userSettings;
+        "Rss/Es2024-pl3/Commits/url" = userSettings;
       };
   };
 
