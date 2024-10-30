@@ -7,6 +7,8 @@
     packages = with pkgs; [
       (callPackage ../../../pkgs/pkillfam { })
       (callPackage ../../../pkgs/help { })
+      (callPackage ../../../pkgs/mktouch { })
+      (callPackage ../../../pkgs/mkcd { })
     ];
 
     sessionVariables = {
