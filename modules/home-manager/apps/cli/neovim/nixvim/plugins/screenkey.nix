@@ -36,7 +36,8 @@ in
       }
     ];
     plugins.lualine.settings.sections.lualine_c = [
-      { __raw = "function() return require('screenkey').get_keys() end"; }
+      "filename"
+      { __raw = "function() return ' ' .. require('screenkey').get_keys() end"; }
     ];
   };
 }
