@@ -6,6 +6,7 @@
 
     packages = with pkgs; [
       (callPackage ../../../pkgs/pkillfam { })
+      (callPackage ../../../pkgs/help { })
     ];
 
     sessionVariables = {
