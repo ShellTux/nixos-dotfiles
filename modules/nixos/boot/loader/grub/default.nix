@@ -6,5 +6,6 @@
     extraEntries = lib.mkMerge [
       (builtins.readFile ./40_custom)
     ];
+    efiSupport = true;
   };
 }
