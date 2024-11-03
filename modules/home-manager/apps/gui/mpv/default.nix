@@ -1,5 +1,9 @@
 { lib, config, ... }:
 {
+  imports = [
+    ./plugins
+  ];
+
   options.apps.gui.mpv.enable = lib.mkEnableOption "Enable mpv module";
 
   config = lib.mkIf config.apps.gui.mpv.enable {

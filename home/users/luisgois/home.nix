@@ -134,7 +134,19 @@
       imv.enable = true;
       jellyfin-media-player.enable = true;
       kitty.enable = true;
-      mpv.enable = true;
+      mpv = {
+        enable = true;
+
+        plugins = {
+          uosc.enable = true;
+          videoclip.enable = true;
+          quality-menu.enable = true;
+          webtorrent-mpv-hook.enable = true;
+          thumbfast.enable = true;
+          mpv-playlistmanager.enable = true;
+        };
+
+      };
       nemo.enable = true;
       qbittorrent.enable = true;
       rofi.enable = true;

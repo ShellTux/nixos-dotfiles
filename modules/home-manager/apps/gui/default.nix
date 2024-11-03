@@ -9,7 +9,7 @@
     ./imv.nix
     ./jellyfin-media-player.nix
     ./kitty.nix
-    ./mpv.nix
+    ./mpv
     ./nemo.nix
     ./qbittorrent.nix
     ./rofi
