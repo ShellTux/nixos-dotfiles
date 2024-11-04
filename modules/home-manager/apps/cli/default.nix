@@ -28,6 +28,7 @@
     ./procs.nix
     ./progress.nix
     ./qalculate.nix
+    ./silicon.nix
     ./tealdeer.nix
     ./tmux.nix
     ./todoist.nix

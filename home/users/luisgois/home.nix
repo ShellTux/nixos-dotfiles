@@ -67,7 +67,6 @@
         rmdir = "rmdir --verbose --parents";
         rm = "rm --verbose --one-file-system --interactive=once";
         shred = "shred --verbose";
-        silicon = ''silicon --theme OneHalfDark --font "FiraCode Nerd Font"'';
         sshfs = ''sshfs -o "compression=yes,reconnect"'';
         upper = "tr \"[:lower:]\" \"[:upper:]\"";
         watch = "watch --color --interval 1";
@@ -110,6 +109,7 @@
       procs.enable = true;
       progress.enable = true;
       qalculate.enable = true;
+      silicon.enable = true;
       tealdeer.enable = true;
       tmux.enable = true;
       translate-shell.enable = true;
