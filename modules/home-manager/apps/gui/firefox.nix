@@ -83,6 +83,7 @@ in
         settings = {
           "browser.search.defaultenginename" = "DuckDuckGo";
           "browser.search.order.1" = "DuckDuckGo";
+          "browser.zoom.siteSpecific" = false;
 
           "signon.rememberSignons" = false;
           "widget.use-xdg-desktop-portal.file-picker" = 1;
