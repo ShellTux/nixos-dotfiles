@@ -11,7 +11,7 @@
     ./indent-blankline.nix
     ./lastplace.nix
     ./lsp.nix
-    ./lualine.nix
+    ./lualine
     ./luasnip.nix
     ./notify.nix
     ./nvim-snippets.nix
@@ -34,6 +34,7 @@
     lastplace.enable = true;
     lsp.enable = true;
     lsp-format.enable = true;
+    lualine.enable = true;
     luasnip.enable = true;
     markdown-preview.enable = true;
     noice.enable = true;
