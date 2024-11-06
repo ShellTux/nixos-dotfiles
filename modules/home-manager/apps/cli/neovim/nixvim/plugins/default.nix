@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./auto-save.nix
     ./bufferline.nix
     ./chadtree.nix
     ./cloak.nix
