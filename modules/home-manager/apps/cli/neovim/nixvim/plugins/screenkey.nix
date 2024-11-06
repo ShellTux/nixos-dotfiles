@@ -1,8 +1,11 @@
 {
   pkgs,
+  lib,
+  config,
   ...
 }:
 let
+  cfg = config.programs.nixvim.plugins.screenkey;
   screenkey = pkgs.vimUtils.buildVimPlugin {
     name = "screenkey.nvim";
     src = pkgs.fetchFromGitHub {
@@ -14,10 +17,12 @@ let
   };
 in
 {
+  options.programs.nixvim.plugins.screenkey.enable = lib.mkEnableOption "Wether to enable screenkey.nvim";
+
   config.programs.nixvim = {
-    extraPlugins = [ screenkey ];
-    globals.screenkey_statusline_component = true;
-    keymaps = [
+    extraPlugins = lib.mkIf cfg.enable [ screenkey ];
+    globals.screenkey_statusline_component = lib.mkIf cfg.enable true;
+    keymaps = lib.mkIf cfg.enable [
       {
         action = "<cmd>Screenkey toggle<CR>";
         key = "<leader>sc";
@@ -35,7 +40,8 @@ in
         };
       }
     ];
-    plugins.lualine.settings.sections.lualine_c = [
+
+    plugins.lualine.settings.sections.lualine_c = lib.mkIf cfg.enable [
       "filename"
       { __raw = "function() return ' ' .. require('screenkey').get_keys() end"; }
     ];
