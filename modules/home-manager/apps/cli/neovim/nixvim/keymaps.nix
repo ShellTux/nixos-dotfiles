@@ -43,11 +43,11 @@
     }
     {
       action = "<cmd>tabmove -1<cr>";
-      key = "<C-S-PageDown>";
+      key = "<C-S-PageUp>";
     }
     {
       action = "<cmd>tabmove +1<cr>";
-      key = "<C-S-PageUp>";
+      key = "<C-S-PageDown>";
     }
     {
       action = "<cmd>nohlsearch<cr>";
