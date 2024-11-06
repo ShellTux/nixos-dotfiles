@@ -20,6 +20,12 @@ in
   options.programs.nixvim.plugins.screenkey.enable = lib.mkEnableOption "Wether to enable screenkey.nvim";
 
   config.programs.nixvim = {
+    extraConfigLua = lib.mkIf cfg.enable (
+      lib.mkMerge [
+        "vim.cmd[[set winbar=%{%v:lua.require('screenkey').get_keys()%}]]"
+        "require('screenkey').setup({ win_opts = { width=70 }})"
+      ]
+    );
     extraPlugins = lib.mkIf cfg.enable [ screenkey ];
     globals.screenkey_statusline_component = lib.mkIf cfg.enable true;
     keymaps = lib.mkIf cfg.enable [
@@ -39,11 +45,6 @@ in
           desc = "Toggle Screenkey status line";
         };
       }
-    ];
-
-    plugins.lualine.settings.sections.lualine_c = lib.mkIf cfg.enable [
-      "filename"
-      { __raw = "function() return ' ' .. require('screenkey').get_keys() end"; }
     ];
   };
 }
