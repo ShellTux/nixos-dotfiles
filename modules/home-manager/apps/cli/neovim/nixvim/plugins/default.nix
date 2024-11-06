@@ -42,7 +42,7 @@
     nvim-autopairs.enable = true;
     nvim-snippets.enable = true;
     # rustaceanvim.enable = true;
-    vim-surround.enable = true;
+    screenkey.enable = true;
     telescope.enable = true;
     tmux-navigator.enable = true;
     todo-comments.enable = true;
@@ -50,6 +50,7 @@
     treesitter.enable = true;
     twilight.enable = true;
     undotree.enable = true;
+    vim-surround.enable = true;
     vimtex.enable = true;
     which-key.enable = true;
   };
