@@ -12,7 +12,7 @@
     ./indent-blankline.nix
     ./lastplace.nix
     ./lsp.nix
-    ./lualine
+    ./lualine.nix
     ./luasnip.nix
     ./notify.nix
     ./nvim-snippets.nix
