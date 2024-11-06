@@ -31,7 +31,7 @@ in
     keymaps = lib.mkIf cfg.enable [
       {
         action = "<cmd>Screenkey toggle<CR>";
-        key = "<leader>sc";
+        key = "<leader>skt";
         options = {
           silent = true;
           desc = "Toggle Screenkey";
@@ -39,7 +39,7 @@ in
       }
       {
         action = "<cmd>Screenkey toggle_statusline_component<CR>";
-        key = "<leader>scc";
+        key = "<leader>skst";
         options = {
           silent = true;
           desc = "Toggle Screenkey status line";
