@@ -38,7 +38,16 @@ in
         };
       }
       {
-        action = "<cmd>Screenkey toggle_statusline_component<CR>";
+        action.__raw = ''
+          function()
+          	vim.cmd([[Screenkey toggle_statusline_component]])
+          	if vim.g.screenkey_statusline_component then
+          		vim.cmd([[set winbar=%{%v:lua.require(\'screenkey\').get_keys()%}]])
+          	else
+          		vim.cmd([[set winbar=]])
+          	end
+          end
+        '';
         key = "<leader>skst";
         options = {
           silent = true;
