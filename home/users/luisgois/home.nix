@@ -9,6 +9,7 @@
       (callPackage ../../../pkgs/help { })
       (callPackage ../../../pkgs/mktouch { })
       (callPackage ../../../pkgs/mkcd { })
+      (callPackage ../../../pkgs/open { })
     ];
 
     sessionVariables = {
@@ -57,7 +58,6 @@
         nix-shell = ''nix-shell --command "$SHELL"'';
         mv = "mv --verbose";
         np = "nano --nowrap PKGBUILD";
-        open = "xdg-open";
         port = "netstat --tcp --udp --listening --all --numeric --program --wide";
         procs = "procs --watch-interval=.5 --watch";
         progress = "progress --wait-delay .5 --monitor-continuously";
