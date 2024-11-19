@@ -121,6 +121,7 @@
       zellij.enable = true;
     };
     gui = {
+      blender.enable = true;
       # TODO: Enable anki (python3.12-qt6 derivation dependency error)
       discord = {
         enable = true;

@@ -3,6 +3,7 @@
   imports = [
     ./alacritty.nix
     ./anki.nix
+    ./blender.nix
     ./discord.nix
     ./firefox.nix
     ./gtkhash.nix
