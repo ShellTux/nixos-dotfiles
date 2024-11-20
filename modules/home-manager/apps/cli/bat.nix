@@ -34,9 +34,14 @@
       ];
     };
 
-    home.shellAliases = {
-      bathelp = "bat --plain --language=help";
-      man = "batman";
+    home = {
+      shellAliases = {
+        bathelp = "bat --plain --language=help";
+      };
+      sessionVariables = {
+        MANPAGER = "sh -c 'col --no-backspaces --spaces | bat --language man --plain'";
+        MANROFFOPT = "-c";
+      };
     };
   };
 }
