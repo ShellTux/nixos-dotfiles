@@ -24,6 +24,7 @@
         set incsearch
         set linebreak
         set scrolloff=999
+        set secure
         set termguicolors
         set wildmenu
         syntax enable
