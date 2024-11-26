@@ -9,8 +9,9 @@ in
     programs.imv = {
       enable = true;
 
-      settings = {
-        options.overlay = true;
+      settings.options = {
+        overlay = true;
+        overlay_text = ''[$imv_current_index/$imv_file_count] [$imv_widthx$imv_height] [$imv_scale%] [$imv_scaling_mode] $(basename "$imv_current_file")'';
       };
     };
 
