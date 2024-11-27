@@ -12,7 +12,7 @@
     enableBellPrompt = lib.mkOption {
       description = "Whether to ring the terminal bell at the sudo prompt.";
       type = lib.types.bool;
-      default = true;
+      default = false;
     };
 
     enableInsults = lib.mkOption {
