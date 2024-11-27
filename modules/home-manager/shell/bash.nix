@@ -47,6 +47,12 @@
         "autocd"
       ];
       initExtra = lib.mkMerge [
+        ''
+          function mkcd {
+          	mkdir --parents "$1"
+          	cd "$1"
+          }
+        ''
         "${pkgs.fastfetch}/bin/fastfetch"
       ];
     };

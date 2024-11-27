@@ -66,6 +66,11 @@ in
       initExtra = lib.mkMerge [
         (lib.mkIf config.zsh.enablePowerlevel10k "source ${./p10k.zsh}")
         (lib.mkIf config.zsh.enablePowerlevel10k "source ${./p10k.glyphs.zsh}")
+        ''
+          function mkcd() {
+          	mkdir --parents "$1" && cd "$1"
+          }
+        ''
         "${pkgs.fastfetch}/bin/fastfetch"
       ];
       localVariables = {
