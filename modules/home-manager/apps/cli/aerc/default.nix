@@ -22,8 +22,7 @@
         filters = {
           "text/plain" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
           "text/calendar" = "${pkgs.gawk}/bin/awk --file ${pkgs.aerc}/libexec/aerc/filters/calendar";
-          # "text/html" = "${pkgs.aerc}/libexec/aerc/filters/html | ${pkgs.aerc}/libexec/aerc/filters/colorize"; # Requires w3m, dante
-          "text/html" = "${pkgs.w3m}/bin/w3m -T text/html -cols $(tput cols) -dump -o display_image=false -o display_link_number=true";
+          "text/html" = "${pkgs.aerc}/libexec/aerc/filters/html | ${pkgs.aerc}/libexec/aerc/filters/colorize";
           "text/*" = ''${pkgs.bat}/bin/bat --force-colorization --paging=never --file-name="$AERC_FILENAME "'';
           "message/delivery-status" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
           "message/rfc822" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
