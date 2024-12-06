@@ -278,13 +278,16 @@
     ];
   };
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    jetbrains-mono
-    noto-fonts-cjk
-
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-  ];
+  fonts.packages =
+    with pkgs;
+    [
+      font-awesome
+      jetbrains-mono
+      noto-fonts-cjk-sans
+    ]
+    ++ (with pkgs.nerd-fonts; [
+      symbols-only
+    ]);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

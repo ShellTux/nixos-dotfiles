@@ -60,7 +60,7 @@ in
           no_fade_in = false;
         };
 
-        background = [
+        background = lib.mkForce [
           {
             path = "screenshot";
             blur_passes = 3;
@@ -68,7 +68,7 @@ in
           }
         ];
 
-        input-field = [
+        input-field = lib.mkForce [
           {
             size = "200, 50";
             position = "0, -80";
