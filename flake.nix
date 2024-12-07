@@ -59,6 +59,17 @@
         };
       };
 
+      nix-fmt = pkgs.writeShellApplication {
+        name = "nix-fmt";
+
+        runtimeInputs = [ pkgs.fd ];
+
+        text = ''
+          # shellcheck disable=SC2046
+          nix fmt $(fd --type=file --extension=nix)
+        '';
+      };
+
       pkgs = nixpkgs.legacyPackages.${settings.system.arch};
 
       specialArgs = {
@@ -102,6 +113,7 @@
           git
           git-crypt
           gitleaks
+          nix-fmt
           nixfmt-rfc-style
           pre-commit
           sops
