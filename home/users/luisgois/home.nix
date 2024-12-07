@@ -111,6 +111,7 @@
       qalculate.enable = true;
       silicon.enable = true;
       tealdeer.enable = true;
+      tgpt.enable = true;
       tmux.enable = true;
       translate-shell.enable = true;
       unar.enable = true;

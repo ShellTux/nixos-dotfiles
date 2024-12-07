@@ -30,6 +30,7 @@
     ./qalculate.nix
     ./silicon.nix
     ./tealdeer.nix
+    ./tgpt.nix
     ./tmux.nix
     ./todoist.nix
     ./translate-shell.nix
