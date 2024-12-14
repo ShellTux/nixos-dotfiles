@@ -15,6 +15,10 @@
     };
   };
 
+  imports = [
+    ./ssh.crypt.nix
+  ];
+
   config = lib.mkIf config.ssh.enable {
     programs.ssh = {
       enable = true;

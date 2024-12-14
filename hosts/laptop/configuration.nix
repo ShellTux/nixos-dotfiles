@@ -58,6 +58,7 @@
         "Ssh/Github/Private-key" = userSettings;
         "Ssh/Gitlab/Private-key" = userSettings;
         "Ssh/Git.Dei/Private-key" = userSettings;
+        "Ssh/Gitea/Private-key" = userSettings;
         "Rss/Changedetection/url" = userSettings;
         "Rss/Es2024-pl3/AssignedIssues/url" = userSettings;
         "Rss/Es2024-pl3/Issues/url" = userSettings;
