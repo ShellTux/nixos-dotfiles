@@ -43,8 +43,8 @@ in
       incsearch = true;
       linebreak = false;
       listchars = "tab:>-,trail:•,nbsp:~";
-      mouse = "nvia";
       list = true;
+      mouse = "";
       number = true;
       relativenumber = false;
       scrolloff = 999;
