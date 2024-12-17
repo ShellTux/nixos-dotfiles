@@ -1,6 +1,7 @@
-{ ... }:
+{ lib, ... }:
 {
   programs.nixvim.plugins.codeium-vim.settings = {
+    enabled = lib.mkForce false;
     filetypes_disabled_by_default = true;
     filetypes = {
       bash = true;
