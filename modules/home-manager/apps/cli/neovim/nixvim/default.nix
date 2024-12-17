@@ -45,6 +45,8 @@
             ""
         )
         (builtins.readFile ./random_colorscheme.lua)
+
+        "vim.cmd[[highlight ExtraWhitespace ctermbg=red guibg=red]]"
       ];
   };
 }

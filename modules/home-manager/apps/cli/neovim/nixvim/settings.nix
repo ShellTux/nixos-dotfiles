@@ -41,8 +41,9 @@ in
       ignorecase = true;
       incsearch = true;
       linebreak = false;
-      listchars = "tab:> ,trail:•,nbsp:~";
+      listchars = "tab:>-,trail:•,nbsp:~";
       mouse = "nvia";
+      list = true;
       number = true;
       relativenumber = false;
       scrolloff = 999;
@@ -69,6 +70,10 @@ in
       kickstart-highlight-yank = {
         clear = true;
       };
+    };
+
+    match = {
+      ExtraWhitespace = "\\s\\+$";
     };
   };
 }
