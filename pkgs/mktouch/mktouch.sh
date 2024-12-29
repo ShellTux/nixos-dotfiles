@@ -28,7 +28,7 @@ done
 for arg
 do
 	file="$arg"
-        test -f "$file" || continue
+        echo "$file" | grep --quiet '^-' && continue
 
 	mkdir --parents "$(dirname "$file")"
         $verbose && echo touch "$file"
