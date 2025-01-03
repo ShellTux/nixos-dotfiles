@@ -94,6 +94,7 @@
       };
       fselect.enable = true;
       fzf.enable = true;
+      gdb.enable = true;
       git.enable = true;
       htop.enable = true;
       khal.enable = true;

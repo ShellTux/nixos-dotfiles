@@ -16,6 +16,7 @@
     ./ffmpeg.nix
     ./fselect.nix
     ./fzf.nix
+    ./gdb
     ./git
     ./htop.nix
     ./khal.nix
