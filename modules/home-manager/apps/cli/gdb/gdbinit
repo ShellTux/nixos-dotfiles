@@ -3,15 +3,6 @@ set history save on
 # Use intel assembly syntax instead of AT&T syntax.
 set disassembly-flavor intel
 
-# Disable annoying pagination
-set pagination off
-set height 0
-set width 0
-
-# Disable confirmation and verbose output.
-set confirm off
-set verbose off
-
 # Fancy prompt.
 set prompt \033[32m(gdb) \033[0m
 
