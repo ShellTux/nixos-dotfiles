@@ -74,7 +74,8 @@
       efi.canTouchEfiVariables = true;
     };
     plymouth.enable = true;
-    initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device = "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
+    initrd.luks.devices."luks-37b20623-ff7f-4fdb-a6bf-73891a5a1eb7".device =
+      "/dev/disk/by-uuid/37b20623-ff7f-4fdb-a6bf-73891a5a1eb7";
     kernelPackages = pkgs.linuxPackages_latest;
   };
 

@@ -23,7 +23,8 @@
           "text/plain" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
           "text/calendar" = "${pkgs.gawk}/bin/awk --file ${pkgs.aerc}/libexec/aerc/filters/calendar";
           "text/html" = "${pkgs.aerc}/libexec/aerc/filters/html | ${pkgs.aerc}/libexec/aerc/filters/colorize";
-          "text/*" = ''${pkgs.bat}/bin/bat --force-colorization --paging=never --file-name="$AERC_FILENAME "'';
+          "text/*" =
+            ''${pkgs.bat}/bin/bat --force-colorization --paging=never --file-name="$AERC_FILENAME "'';
           "message/delivery-status" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
           "message/rfc822" = "${pkgs.aerc}/libexec/aerc/filters/colorize";
           "application/x-sh" = "${pkgs.bat}/bin/bat --force-colorization --paging=never --language sh";

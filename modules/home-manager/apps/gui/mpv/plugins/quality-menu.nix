@@ -9,7 +9,8 @@ let
 in
 {
 
-  options.apps.gui.mpv.plugins.quality-menu.enable = lib.mkEnableOption "Enable mpv script quality-menu module";
+  options.apps.gui.mpv.plugins.quality-menu.enable =
+    lib.mkEnableOption "Enable mpv script quality-menu module";
 
   config.programs.mpv = lib.mkIf cfg.enable {
     scripts = with pkgs.mpvScripts; [

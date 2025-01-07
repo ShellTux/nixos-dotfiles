@@ -9,7 +9,8 @@ let
 in
 {
 
-  options.apps.gui.mpv.plugins.videoclip.enable = lib.mkEnableOption "Enable mpv script videoclip module";
+  options.apps.gui.mpv.plugins.videoclip.enable =
+    lib.mkEnableOption "Enable mpv script videoclip module";
 
   config.programs.mpv = lib.mkIf cfg.enable {
     scripts = with pkgs.mpvScripts; [

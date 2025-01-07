@@ -17,7 +17,8 @@ let
   };
 in
 {
-  options.programs.nixvim.plugins.screenkey.enable = lib.mkEnableOption "Wether to enable screenkey.nvim";
+  options.programs.nixvim.plugins.screenkey.enable =
+    lib.mkEnableOption "Wether to enable screenkey.nvim";
 
   config.programs.nixvim = {
     extraConfigLua = lib.mkIf cfg.enable (

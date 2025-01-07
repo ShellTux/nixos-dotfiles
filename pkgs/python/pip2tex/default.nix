@@ -71,10 +71,8 @@ buildPythonPackage rec {
     description = "Using a ViT to convert images of equations into LaTeX code";
     homepage = "https://github.com/lukas-blecher/LaTeX-OCR";
     license = licenses.mit;
-    maintainers =
-      with maintainers;
-      [
-      ];
+    maintainers = with maintainers; [
+    ];
     # Adjust the `done` and `conflicts` as needed to match your package's behavior
     conflicts = [ "python-pix2tex" ];
     replaces = [

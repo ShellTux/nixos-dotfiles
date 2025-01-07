@@ -9,7 +9,8 @@ let
 in
 {
 
-  options.apps.gui.mpv.plugins.mpv-cheatsheet.enable = lib.mkEnableOption "Enable mpv script mpv-cheatsheet module";
+  options.apps.gui.mpv.plugins.mpv-cheatsheet.enable =
+    lib.mkEnableOption "Enable mpv script mpv-cheatsheet module";
 
   config.programs.mpv = lib.mkIf cfg.enable {
     scripts = with pkgs.mpvScripts; [

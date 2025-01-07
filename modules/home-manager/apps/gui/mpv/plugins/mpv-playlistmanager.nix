@@ -9,7 +9,8 @@ let
 in
 {
 
-  options.apps.gui.mpv.plugins.mpv-playlistmanager.enable = lib.mkEnableOption "Enable mpv script mpv-playlistmanager module";
+  options.apps.gui.mpv.plugins.mpv-playlistmanager.enable =
+    lib.mkEnableOption "Enable mpv script mpv-playlistmanager module";
 
   config.programs.mpv = lib.mkIf cfg.enable {
     scripts = with pkgs.mpvScripts; [
