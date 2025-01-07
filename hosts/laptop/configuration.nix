@@ -168,20 +168,8 @@
     # Enable CUPS to print documents.
     printing.enable = true;
 
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
-    };
+    pulseaudio.enable = false;
+    pipewire.enable = true;
 
     openssh = {
       enable = true;
@@ -206,8 +194,6 @@
   # Configure console keymap
   console.keyMap = "pt-latin1";
   hardware = {
-    # Enable sound with pipewire.
-    pulseaudio.enable = false;
     opentabletdriver.enable = true;
   };
   security.rtkit.enable = true;
