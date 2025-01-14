@@ -84,6 +84,7 @@
       aerc.enable = true;
       ani-cli.enable = true;
       bat.enable = true;
+      bc.enable = true;
       btop.enable = true;
       dua.enable = true;
       eza.enable = true;
