@@ -17,6 +17,7 @@
         cursor_text_color = "background";
         background_opacity = lib.mkDefault "0.8";
         dim_opacity = lib.mkDefault "0.75";
+        disable_ligatures = "cursor";
         selection_foreground = lib.mkDefault "#000000";
         selection_background = lib.mkDefault "#fffacd";
         update_check_interval = 0;
