@@ -6,6 +6,7 @@
     ./blender.nix
     ./discord.nix
     ./firefox.nix
+    ./ghostty
     ./gtkhash.nix
     ./imv.nix
     ./jellyfin-media-player.nix
