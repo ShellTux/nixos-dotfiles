@@ -73,6 +73,9 @@ in
     # Monocle
     "$superShift, m, exec, hyprctl dispatch fullscreen 1"
 
+    # Zoom
+    "$mainMod, Plus, exec, ${pkgs.woomer}/bin/woomer"
+
   ];
 
   bindm = [
