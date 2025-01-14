@@ -1,0 +1,9 @@
+auto-update = off
+cursor-style = bar
+font-size = 16
+# gtk-single-instance = false
+gtk-titlebar = false
+mouse-hide-while-typing = true
+resize-overlay = never
+term = xterm-ghostty
+window-decoration = false
