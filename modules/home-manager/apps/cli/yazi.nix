@@ -213,7 +213,7 @@ in
             {
               on = [ "<Space>" ];
               run = [
-                "select --state=none"
+                "toggle --state=none"
                 "arrow 1"
               ];
               desc = "Toggle the current selection state";
@@ -230,12 +230,12 @@ in
             }
             {
               on = [ "<C-a>" ];
-              run = "select_all --state=true";
-              desc = "Select all files";
+              run = "toggle_all --state=true";
+              desc = "Toggle all files";
             }
             {
               on = [ "<C-r>" ];
-              run = "select_all --state=none";
+              run = "toggle_all --state=none";
               desc = "Inverse selection of all files";
             }
 
