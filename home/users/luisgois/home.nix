@@ -10,6 +10,7 @@
       (callPackage ../../../pkgs/mktouch { })
       (callPackage ../../../pkgs/open { })
       (callPackage ../../../pkgs/vman { })
+      (callPackage ../../../pkgs/gf { })
     ];
 
     sessionVariables = {
