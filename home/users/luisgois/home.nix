@@ -4,14 +4,18 @@
     username = "luisgois";
     homeDirectory = "/home/${username}";
 
-    packages = with pkgs; [
-      (callPackage ../../../pkgs/pkillfam { })
-      (callPackage ../../../pkgs/help { })
-      (callPackage ../../../pkgs/mktouch { })
-      (callPackage ../../../pkgs/open { })
-      (callPackage ../../../pkgs/vman { })
-      (callPackage ../../../pkgs/gf { })
-    ];
+    packages =
+      let
+        inherit (pkgs) callPackage;
+      in
+      [
+        (callPackage ../../../pkgs/pkillfam { })
+        (callPackage ../../../pkgs/help { })
+        (callPackage ../../../pkgs/mktouch { })
+        (callPackage ../../../pkgs/open { })
+        (callPackage ../../../pkgs/vman { })
+        (callPackage ../../../pkgs/gf { })
+      ];
 
     sessionVariables = {
       EDITOR = "nvim";
