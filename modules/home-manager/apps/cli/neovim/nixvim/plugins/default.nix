@@ -8,6 +8,7 @@
     ./cmp.nix
     ./codeium-vim.nix
     ./codesnap.nix
+    ./colorizer.nix
     ./gitsigns.nix
     ./indent-blankline.nix
     ./lastplace.nix
