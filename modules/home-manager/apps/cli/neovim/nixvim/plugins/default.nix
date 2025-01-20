@@ -14,6 +14,7 @@
     ./lsp.nix
     ./lualine.nix
     ./luasnip.nix
+    ./noice.nix
     ./notify.nix
     ./nvim-snippets.nix
     ./rustaceanvim.nix
