@@ -2,14 +2,6 @@
 {
   programs.nixvim.keymaps = [
     {
-      action = "<cmd>make<CR>";
-      key = "<C-m>";
-      options = {
-        silent = true;
-        desc = "make";
-      };
-    }
-    {
       action = "<cmd>vertical resize -2<cr>";
       key = "<Left>";
       options = {
