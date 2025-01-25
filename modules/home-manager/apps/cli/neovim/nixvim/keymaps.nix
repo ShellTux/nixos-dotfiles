@@ -71,5 +71,17 @@
       key = "<leader>e";
       options.desc = "CHADTree Open";
     }
+    {
+      mode = "n";
+      key = "]q";
+      action = "<CMD>cnext<CR>";
+      options.desc = "Next quickfix";
+    }
+    {
+      mode = "n";
+      key = "[q";
+      action = "<CMD>cprev<CR>";
+      options.desc = "Previous quickfix";
+    }
   ];
 }
