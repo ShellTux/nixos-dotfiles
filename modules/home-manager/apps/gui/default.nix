@@ -5,6 +5,7 @@
     ./anki.nix
     ./blender.nix
     ./discord.nix
+    ./feh.nix
     ./firefox.nix
     ./ghostty
     ./gtkhash.nix
@@ -13,7 +14,9 @@
     ./kitty.nix
     ./mpv
     ./nemo.nix
+    ./oculante.nix
     ./qbittorrent.nix
+    ./qiv.nix
     ./rofi
     ./slack.nix
     ./stremio.nix

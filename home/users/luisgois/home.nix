@@ -138,6 +138,7 @@
           "vesktop"
         ];
       };
+      feh.enable = true;
       firefox.enable = true;
       gtkhash.enable = true;
       imv.enable = true;
@@ -157,7 +158,9 @@
 
       };
       nemo.enable = true;
+      oculante.enable = true;
       qbittorrent.enable = true;
+      qiv.enable = true;
       rofi.enable = true;
       slack.enable = true;
       stremio.enable = true;
