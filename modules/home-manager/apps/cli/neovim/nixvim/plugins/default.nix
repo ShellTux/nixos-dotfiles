@@ -21,6 +21,7 @@
     ./rustaceanvim.nix
     ./screenkey.nix
     ./telescope.nix
+    ./vim-polyglot.nix
   ];
 
   config.programs.nixvim.plugins = {
@@ -54,6 +55,7 @@
     treesitter.enable = true;
     twilight.enable = true;
     undotree.enable = true;
+    vim-polyglot.enable = true;
     vim-surround.enable = true;
     vimtex.enable = true;
     which-key.enable = true;
