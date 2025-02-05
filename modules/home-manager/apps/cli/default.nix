@@ -11,8 +11,7 @@
     ./dooit.nix
     ./dua.nix
     ./dua.nix
-    ./eza.nix
-    ./eza.nix
+    ./eza
     ./fd.nix
     ./ffmpeg.nix
     ./fselect.nix

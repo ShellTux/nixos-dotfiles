@@ -19,6 +19,8 @@
       ];
     };
 
+    xdg.configFile."eza/theme.yml".source = ./theme.yml;
+
     home.shellAliases = {
       tree = "eza --color=auto --color-scale all --icons --tree --git-ignore";
     };
