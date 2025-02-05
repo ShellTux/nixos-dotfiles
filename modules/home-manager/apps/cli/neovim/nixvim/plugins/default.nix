@@ -22,6 +22,7 @@
     ./screenkey.nix
     ./telescope.nix
     ./vim-polyglot.nix
+    ./web-devicons.nix
   ];
 
   config.programs.nixvim.plugins = {
