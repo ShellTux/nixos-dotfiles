@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   lib,
   config,
@@ -700,6 +701,19 @@ in
               run = ''shell "$SHELL" --block --confirm'';
               desc = "Open shell here";
             }
+            {
+              on = [
+                "c"
+                "m"
+              ];
+              run = "plugin chmod";
+              desc = "Chmod on selected files";
+            }
+            {
+              on = [ "T" ];
+              run = "plugin hide-preview";
+              desc = "Hide or show preview";
+            }
           ];
         };
 
@@ -1394,6 +1408,36 @@ in
           }
         ];
       };
+      theme.icon = {
+        prepend_exts = [
+          {
+            name = "asm";
+            text = "";
+            fg = "#405ba9";
+          }
+          {
+            name = "s";
+            text = "";
+            fg = "#405ba9";
+          }
+          {
+            name = "m";
+            text = "";
+            fg = "#DBAC15";
+          }
+          {
+            name = "oct";
+            text = "";
+            fg = "#DBAC15";
+          }
+        ];
+      };
+      plugins = {
+        chmod = "${inputs.yazi-plugins}/chmod.yazi";
+        git = "${inputs.yazi-plugins}/git.yazi";
+        hide-preview = "${inputs.yazi-plugins}/hide-preview.yazi";
+      };
     };
+    xdg.configFile."yazi/init.lua".source = ./init.lua;
   };
 }

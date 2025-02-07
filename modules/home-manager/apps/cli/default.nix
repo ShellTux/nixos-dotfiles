@@ -37,7 +37,7 @@
     ./translate-shell.nix
     ./unar.nix
     ./vim.nix
-    ./yazi.nix
+    ./yazi
     ./yt-dlp.nix
     ./ytfzf.nix
     ./zellij
