@@ -201,12 +201,12 @@ in
                 "g"
                 "g"
               ];
-              run = "arrow -99999999";
+              run = "arrow top";
               desc = "Move cursor to the top";
             }
             {
               on = [ "G" ];
-              run = "arrow 99999999";
+              run = "arrow bot";
               desc = "Move cursor to the bottom";
             }
 
@@ -1438,6 +1438,6 @@ in
         hide-preview = "${inputs.yazi-plugins}/hide-preview.yazi";
       };
     };
-    xdg.configFile."yazi/init.lua".source = ./init.lua;
+    xdg.configFile."yazi/main.lua".source = ./main.lua;
   };
 }
