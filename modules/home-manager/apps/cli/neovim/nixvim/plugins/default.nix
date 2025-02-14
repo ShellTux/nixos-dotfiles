@@ -32,7 +32,6 @@
     cloak.enable = true;
     colorizer.enable = true;
     cmp.enable = true;
-    codeium-vim.enable = true;
     codesnap.enable = true;
     friendly-snippets.enable = true;
     fugitive.enable = true;

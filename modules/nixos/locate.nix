@@ -25,7 +25,6 @@
     services.locate = {
       enable = true;
       package = pkgs.plocate;
-      localuser = null;
       prunePaths = [
         "/tmp"
         "/var/tmp"
