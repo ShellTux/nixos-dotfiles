@@ -1,0 +1,87 @@
+# vim: set filetype=snippets
+snippet function "Octave function"
+	function [${1:return}] = ${2:identifier}()
+	% Documentation
+	endfunction
+
+snippet function "Octave function"
+    function [${1:return}] = ${2:identifier}(${3:args})
+    % Documentation
+    ${0}
+    endfunction
+
+snippet if "Octave if statement"
+    if ${1:condition}
+        ${2:statements}
+    endif
+
+snippet ifelse "Octave if/else statement"
+    if ${1:condition}
+        ${2:statements}
+    else
+        ${3:statements}
+    endif
+
+snippet ifelseif "Octave if/elseif statement"
+    if (${1:condition})
+        ${2:statements}
+    elseif ${3:elseif-condition}
+        ${4:statements}
+    endif
+
+snippet fori "Octave for loop"
+    for ${1:i} = ${2:start}:${3:increment}:${4:end}
+        ${5:statements}
+    endfor
+
+snippet while "Octave while loop"
+    while ${1:condition}
+        ${2:statements}
+    endwhile
+
+snippet switch "Octave switch statement"
+    switch (${1:expression})
+    case ${2:value}
+        ${3:statements}
+    otherwise
+        ${4:statements}
+    endswitch
+
+snippet disp "Octave disp statement"
+    disp(${1:expression});
+
+snippet fprintf "Octave fprintf statement"
+    fprintf(${1:"format_string"}, ${2:arguments});
+
+snippet plot "Octave plot command"
+    plot(${1:x}, ${2:y});
+
+snippet subplot "Octave subplot command"
+    subplot(${1:rows}, ${2:cols}, ${3:index});
+
+snippet zeros "Octave zeros matrix"
+    zeros(${1:rows}, ${2:cols})
+
+snippet ones "Octave ones matrix"
+    ones(${1:rows}, ${2:cols})
+
+snippet eye "Octave identity matrix"
+    eye(${1:size})
+
+snippet rand "Octave random matrix"
+    rand(${1:rows}, ${2:cols})
+
+snippet help "Octave help command"
+    help ${1:command}
+
+snippet clear "Octave clear command"
+    clear ${1:variable};
+
+snippet clc "Octave clc command"
+    clc
+
+snippet tic "Octave tic command"
+    tic
+
+snippet toc "Octave toc command"
+    toc

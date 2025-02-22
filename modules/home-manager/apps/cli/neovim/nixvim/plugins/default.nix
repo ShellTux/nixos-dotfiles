@@ -14,7 +14,7 @@
     ./lastplace.nix
     ./lsp.nix
     ./lualine.nix
-    ./luasnip.nix
+    ./luasnip
     ./noice.nix
     ./notify.nix
     ./nvim-snippets.nix
