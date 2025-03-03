@@ -144,6 +144,7 @@
       imv.enable = true;
       jellyfin-media-player.enable = true;
       kitty.enable = true;
+      librewolf.enable = true;
       mpv = {
         enable = true;
 

@@ -12,6 +12,7 @@
     ./imv.nix
     ./jellyfin-media-player.nix
     ./kitty.nix
+    ./librewolf.nix
     ./mpv
     ./nemo.nix
     ./oculante.nix
