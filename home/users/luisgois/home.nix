@@ -128,7 +128,7 @@
       ytfzf.enable = true;
       zellij.enable = true;
     };
-    gui = {
+    gui = rec {
       anki.enable = true;
       blender.enable = true;
       discord = {
@@ -139,12 +139,18 @@
         ];
       };
       feh.enable = true;
-      firefox.enable = true;
+      firefox = {
+        enable = true;
+        defaultMimeApp = false;
+      };
       gtkhash.enable = true;
       imv.enable = true;
       jellyfin-media-player.enable = true;
       kitty.enable = true;
-      librewolf.enable = true;
+      librewolf = {
+        enable = true;
+        defaultMimeApp = !firefox.defaultMimeApp;
+      };
       mpv = {
         enable = true;
 

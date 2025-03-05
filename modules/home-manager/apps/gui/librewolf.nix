@@ -14,6 +14,12 @@
       type = lib.types.bool;
       default = true;
     };
+
+    defaultMimeApp = lib.mkOption {
+      description = "Whether to make librewolf the default app to open links";
+      type = lib.types.bool;
+      default = false;
+    };
   };
 
   config = lib.mkIf config.apps.gui.librewolf.enable {
@@ -77,18 +83,26 @@
           xdg-desktop-portal-gtk
         ];
       };
-      mimeApps.associations.added = {
-        "application/x-extension-htm" = [ "librewolf.desktop" ];
-        "application/x-extension-html" = [ "librewolf.desktop" ];
-        "application/x-extension-shtml" = [ "librewolf.desktop" ];
-        "application/x-extension-xht" = [ "librewolf.desktop" ];
-        "application/x-extension-xhtml" = [ "librewolf.desktop" ];
-        "application/xhtml+xml" = [ "librewolf.desktop" ];
-        "text/html" = [ "librewolf.desktop" ];
-        "x-scheme-handler/chrome" = [ "librewolf.desktop" ];
-        "x-scheme-handler/http" = [ "librewolf.desktop" ];
-        "x-scheme-handler/https" = [ "librewolf.desktop" ];
-      };
+      mimeApps =
+        let
+          mimeApp = "librewolf.desktop";
+          applications = {
+            "application/x-extension-htm" = mimeApp;
+            "application/x-extension-html" = mimeApp;
+            "application/x-extension-shtml" = mimeApp;
+            "application/x-extension-xht" = mimeApp;
+            "application/x-extension-xhtml" = mimeApp;
+            "application/xhtml+xml" = mimeApp;
+            "text/html" = mimeApp;
+            "x-scheme-handler/chrome" = mimeApp;
+            "x-scheme-handler/http" = mimeApp;
+            "x-scheme-handler/https" = mimeApp;
+          };
+        in
+        {
+          defaultApplications = (lib.mkIf config.apps.gui.librewolf.defaultMimeApp applications);
+          associations.added = (lib.mkIf (config.apps.gui.librewolf.defaultMimeApp != true) applications);
+        };
     };
   };
 }
