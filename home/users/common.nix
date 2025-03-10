@@ -56,10 +56,13 @@
   };
 
   nix = {
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    settings = {
+      experimental-features = [
+        "flakes"
+        "nix-command"
+      ];
+      extra-experimental-features = [ "pipe-operators" ];
+    };
     gc = {
       automatic = true;
       options = "--delete-older-than 14d";
