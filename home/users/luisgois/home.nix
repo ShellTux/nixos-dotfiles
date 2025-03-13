@@ -128,8 +128,13 @@
       ytfzf.enable = true;
       zellij.enable = true;
     };
-    gui = rec {
+    gui = {
       anki.enable = true;
+      browser.choices = [
+        "librewolf"
+        "floorp"
+        "firefox"
+      ];
       blender.enable = true;
       discord = {
         enable = true;
@@ -139,18 +144,10 @@
         ];
       };
       feh.enable = true;
-      firefox = {
-        enable = true;
-        defaultMimeApp = false;
-      };
       gtkhash.enable = true;
       imv.enable = true;
       jellyfin-media-player.enable = true;
       kitty.enable = true;
-      librewolf = {
-        enable = true;
-        defaultMimeApp = !firefox.defaultMimeApp;
-      };
       mpv = {
         enable = true;
 

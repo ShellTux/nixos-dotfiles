@@ -28,12 +28,6 @@ in
       type = lib.types.bool;
       default = true;
     };
-
-    defaultMimeApp = lib.mkOption {
-      description = "Whether to make firefox the default app to open links";
-      type = lib.types.bool;
-      default = true;
-    };
   };
 
   config = lib.mkIf config.apps.gui.firefox.enable {
@@ -113,36 +107,6 @@ in
           ];
         };
       };
-    };
-
-    xdg = {
-      portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-wlr
-          xdg-desktop-portal-gtk
-        ];
-      };
-      mimeApps =
-        let
-          mimeApp = "firefox.desktop";
-          applications = {
-            "application/x-extension-htm" = mimeApp;
-            "application/x-extension-html" = mimeApp;
-            "application/x-extension-shtml" = mimeApp;
-            "application/x-extension-xht" = mimeApp;
-            "application/x-extension-xhtml" = mimeApp;
-            "application/xhtml+xml" = mimeApp;
-            "text/html" = mimeApp;
-            "x-scheme-handler/chrome" = mimeApp;
-            "x-scheme-handler/http" = mimeApp;
-            "x-scheme-handler/https" = mimeApp;
-          };
-        in
-        {
-          defaultApplications = (lib.mkIf config.apps.gui.firefox.defaultMimeApp applications);
-          associations.added = (lib.mkIf (config.apps.gui.firefox.defaultMimeApp != true) applications);
-        };
     };
   };
 }

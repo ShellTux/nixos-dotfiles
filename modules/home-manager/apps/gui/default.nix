@@ -4,15 +4,14 @@
     ./alacritty.nix
     ./anki.nix
     ./blender.nix
+    ./browser
     ./discord.nix
     ./feh.nix
-    ./firefox.nix
     ./ghostty
     ./gtkhash.nix
     ./imv.nix
     ./jellyfin-media-player.nix
     ./kitty.nix
-    ./librewolf.nix
     ./mpv
     ./nemo.nix
     ./oculante.nix
