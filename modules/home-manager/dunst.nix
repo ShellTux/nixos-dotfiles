@@ -31,7 +31,7 @@
           # dmenu = "/usr/bin/dmenu -p dunst:";
           ellipsize = "middle";
           enable_recursive_icon_lookup = false;
-          follow = "none";
+          follow = "keyboard";
           font = lib.mkDefault "Droid Sans 12";
           # force_xinerama = false;
           # force_xwayland = false;
