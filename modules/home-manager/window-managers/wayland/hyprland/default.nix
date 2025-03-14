@@ -16,11 +16,10 @@ let
       night = 3000;
     };
   };
-
-  settings = import ./settings { inherit lib pkgs; };
 in
 {
   imports = [
+    ./settings
     ./pyprland
   ];
 
@@ -37,8 +36,6 @@ in
 
       systemd.enable = true;
       xwayland.enable = true;
-
-      inherit settings;
 
       extraConfig = ''
         binds {
