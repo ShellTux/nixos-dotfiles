@@ -17,6 +17,7 @@ in
     ./decoration.nix
     ./input.nix
     ./windowrule.nix
+    ./workspacerules.nix
   ];
 
   config.wayland.windowManager.hyprland.settings = {
