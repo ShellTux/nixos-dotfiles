@@ -84,6 +84,16 @@
     ../common.nix
   ];
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "codeium"
+      "slack"
+      "stremio-server"
+      "stremio"
+      "stremio-shell"
+    ];
+
   apps = {
     cli = {
       aerc.enable = true;
@@ -189,13 +199,6 @@
   ssh.enable = true;
   starship.enable = true;
   zsh.enable = true;
-
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-      "codeium"
-      "slack"
-    ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

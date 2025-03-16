@@ -5,6 +5,9 @@
   inputs,
   ...
 }:
+let
+  inherit (config.home) username;
+in
 {
   options.apps.gui.librewolf = {
     enable = lib.mkEnableOption "Enable librewolf module";
@@ -47,8 +50,8 @@
         };
 
       profiles = {
-        default = {
-          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        ${username} = {
+          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             bitwarden
             darkreader
             (lib.mkIf config.apps.gui.librewolf.enableFf2mpv ff2mpv)
@@ -68,5 +71,7 @@
         "en-US"
       ];
     };
+
+    stylix.targets.librewolf.profileNames = [ "${username}" ];
   };
 }

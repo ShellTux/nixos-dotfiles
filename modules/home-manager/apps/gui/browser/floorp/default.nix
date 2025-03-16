@@ -7,6 +7,7 @@
 }:
 let
   cfg = config.apps.gui.floorp;
+  inherit (config.home) username;
 in
 {
   options.apps.gui.floorp = {
@@ -24,11 +25,11 @@ in
       enable = true;
 
       profiles = {
-        "${config.home.username}" = {
-          name = "${config.home.username}";
+        "${username}" = {
+          name = "${username}";
           isDefault = true;
 
-          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             bitwarden
             darkreader
             (lib.mkIf config.apps.gui.firefox.enableFf2mpv ff2mpv)
@@ -52,5 +53,7 @@ in
         (lib.mkIf cfg.enableFf2mpv pkgs.ff2mpv)
       ];
     };
+
+    stylix.targets.floorp.profileNames = [ "${username}" ];
   };
 }

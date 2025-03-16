@@ -18,6 +18,8 @@ let
     Value = "";
     Status = "locked";
   };
+
+  inherit (config.home) username;
 in
 {
   options.apps.gui.firefox = {
@@ -66,8 +68,8 @@ in
         };
       };
 
-      profiles.${config.home.username} = {
-        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      profiles.${username} = {
+        extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
           bitwarden
           darkreader
           (lib.mkIf config.apps.gui.firefox.enableFf2mpv ff2mpv)
@@ -108,5 +110,7 @@ in
         };
       };
     };
+
+    stylix.targets.firefox.profileNames = [ "${username}" ];
   };
 }
