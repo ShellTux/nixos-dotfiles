@@ -2,12 +2,8 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
-let
-  inherit (config.home) username;
-in
 {
   options.apps.gui.librewolf = {
     enable = lib.mkEnableOption "Enable librewolf module";
@@ -48,30 +44,6 @@ in
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "webgl.disabled" = false;
         };
-
-      profiles = {
-        ${username} = {
-          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-            bitwarden
-            darkreader
-            (lib.mkIf config.apps.gui.librewolf.enableFf2mpv ff2mpv)
-            return-youtube-dislikes
-            search-by-image
-            sponsorblock
-            tridactyl
-            ublock-origin
-            vimium
-            xbrowsersync
-          ];
-        };
-      };
-
-      languagePacks = [
-        "pt-PT"
-        "en-US"
-      ];
     };
-
-    stylix.targets.librewolf.profileNames = [ "${username}" ];
   };
 }

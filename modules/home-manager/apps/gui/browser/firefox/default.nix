@@ -2,25 +2,8 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
-let
-  lock-false = {
-    Value = false;
-    Status = "locked";
-  };
-  lock-true = {
-    Value = true;
-    Status = "locked";
-  };
-  lock-empty-string = {
-    Value = "";
-    Status = "locked";
-  };
-
-  inherit (config.home) username;
-in
 {
   options.apps.gui.firefox = {
     enable = lib.mkEnableOption "Enable firefox module";
@@ -38,79 +21,9 @@ in
 
       package = (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { });
 
-      languagePacks = [
-        "pt-PT"
-        "en-US"
-      ];
-
       nativeMessagingHosts = with pkgs; [
         (lib.mkIf config.apps.gui.firefox.enableFf2mpv ff2mpv)
       ];
-
-      policies = {
-        DisableAccounts = true;
-        DisableFirefoxAccounts = true;
-        DisableFirefoxStudies = true;
-        DisablePocket = true;
-        DisableTelemetry = true;
-        DisplayBookmarksToolbar = "always"; # never, always, newtab
-        DisplayMenuBar = "default-off"; # default-off, "always", "never", "default-on"
-        DontCheckDefaultBrowser = true;
-        SearchBar = "unified"; # unified, separate
-
-        Preferences = {
-          "extensions.pocket.enabled" = lock-false;
-          "browser.newtabpage.pinned" = lock-empty-string;
-          "browser.topsites.contile.enabled" = lock-false;
-          "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
-        };
-      };
-
-      profiles.${username} = {
-        extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
-          bitwarden
-          darkreader
-          (lib.mkIf config.apps.gui.firefox.enableFf2mpv ff2mpv)
-          return-youtube-dislikes
-          search-by-image
-          sponsorblock
-          tridactyl
-          ublock-origin
-          vimium
-          xbrowsersync
-        ];
-
-        settings = {
-          "browser.search.defaultenginename" = "DuckDuckGo";
-          "browser.search.order.1" = "DuckDuckGo";
-          "browser.zoom.siteSpecific" = false;
-
-          "signon.rememberSignons" = false;
-          "widget.use-xdg-desktop-portal.file-picker" = 1;
-
-          #"mousewheel.default.delta_multiplier_x" = 20;
-          #"mousewheel.default.delta_multiplier_y" = 20;
-          #"mousewheel.default.delta_multiplier_z" = 20;
-
-          # Firefox 75+ remembers the last workspace it was opened on as part of its session management.
-          # This is annoying, because I can have a blank workspace, click Firefox from the launcher, and
-          # then have Firefox open on some other workspace.
-          "widget.disable-workspace-management" = true;
-        };
-
-        search = {
-          force = true;
-          default = "DuckDuckGo";
-          order = [
-            "DuckDuckGo"
-            "Google"
-          ];
-        };
-      };
     };
-
-    stylix.targets.firefox.profileNames = [ "${username}" ];
   };
 }

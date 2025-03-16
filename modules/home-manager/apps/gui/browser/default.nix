@@ -34,6 +34,7 @@ in
   };
 
   imports = [
+    ./common.nix
     ./firefox
     ./floorp
     ./librewolf
