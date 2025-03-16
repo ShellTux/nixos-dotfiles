@@ -1,4 +1,7 @@
 { lib, config, ... }:
+let
+  inherit (lib) mkForce;
+in
 {
   imports = [
     ./plugins
@@ -25,6 +28,9 @@
         # Screenshot
         screenshot-template = "%F_%P";
         screenshot-directory = "~/Imagens/MPV Screenshots";
+
+        osd-font-size = mkForce 20;
+        sub-font-size = mkForce 34;
       };
 
       profiles = {
