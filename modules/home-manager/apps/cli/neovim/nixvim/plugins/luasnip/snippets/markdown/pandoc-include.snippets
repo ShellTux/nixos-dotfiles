@@ -1,0 +1,15 @@
+# vim: filetype=snippets
+snippet include-file "Pandoc include extension: include file"
+	!include ${1:file.txt}
+
+snippet include-lines "Pandoc include extension: include line range"
+	!include\`startLine=${1:1}, endLine=${2:10}\` ${3:file.txt}
+
+snippet include-snippet "Pandoc include extension: include snippet without delimiters"
+	!include\`snippetStart="${1:<!-- Start -->}", snippetEnd="${2:<!-- End -->}"\` ${3:file.txt}
+
+snippet include-snippet-delimiters "Pandoc include extension: include snippet with delimiters"
+	!include\`snippetStart="${1:<!-- Start -->}", snippetEnd="${2:<!-- End -->}, includeSnippetDelimiters=True"\` ${3:file.txt}
+
+snippet include-snippet-delimiters "Pandoc include extension: include snippet with delimiters"
+	!include\`snippetStart="${1:<!-- Start -->}", snippetEnd="${2:<!-- End -->}, includeSnippetDelimiters=True"\` ${3:file.txt}
