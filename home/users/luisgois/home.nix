@@ -173,6 +173,7 @@
       };
       nemo.enable = true;
       oculante.enable = true;
+      prism-launcher.enable = true;
       qbittorrent.enable = true;
       qiv.enable = true;
       rofi.enable = true;

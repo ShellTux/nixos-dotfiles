@@ -8,6 +8,7 @@
     ./discord.nix
     ./feh.nix
     ./ghostty
+    ./games
     ./gtkhash.nix
     ./imv.nix
     ./jellyfin-media-player.nix
