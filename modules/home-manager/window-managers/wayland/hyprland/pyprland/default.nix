@@ -43,7 +43,7 @@
 
         "$mainMod, backslash, exec, pypr toggle-dpms"
 
-        "$superShift, apostrophe, exec, pypr menu"
+        "$mainMod SHIFT, apostrophe, exec, pypr menu"
       ];
     };
   };

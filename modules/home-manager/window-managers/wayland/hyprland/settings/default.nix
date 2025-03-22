@@ -69,9 +69,6 @@ in
 
     "$altMod" = "ALT";
     "$mainMod" = "SUPER";
-    "$superAlt" = "SUPER ALT";
-    "$superControlShift" = "SUPER CONTROL SHIFT";
-    "$superShift" = "SUPER SHIFT";
     "$TERMINAL" = "${pkgs.kitty}/bin/kitty";
     "$BROWSER" = "${pkgs.firefox}/bin/firefox";
     "$SCRATCHPAD" = "${pkgs.kitty}/bin/kitty";

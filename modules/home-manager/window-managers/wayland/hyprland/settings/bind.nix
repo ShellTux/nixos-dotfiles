@@ -15,7 +15,7 @@ in
       "$mainMod, Return, exec, $TERMINAL"
       "$mainMod, C, killactive, "
       "$mainMod, P, exec, ${pkgs.wofi}/bin/wofi --allow-images --show drun"
-      "$superShift, Q, exec, hyprctl dispatch exit"
+      "$mainMod SHIFT, Q, exec, hyprctl dispatch exit"
 
       "$mainMod, Space, togglefloating, "
       "$altMod, Tab, cyclenext, "
@@ -43,24 +43,23 @@ in
       "$mainMod, TAB, focusurgentorlast"
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      "$superShift, 1, movetoworkspace, 1"
-      "$superShift, 2, movetoworkspace, 2"
-      "$superShift, 3, movetoworkspace, 3"
-      "$superShift, 4, movetoworkspace, 4"
-      "$superShift, 5, movetoworkspace, 5"
-      "$superShift, 6, movetoworkspace, 6"
-      "$superShift, 7, movetoworkspace, 7"
-      "$superShift, 8, movetoworkspace, 8"
-      "$superShift, 9, movetoworkspace, 9"
-      "$superShift, 0, movetoworkspace, 10"
-      "$superControlShift, right, movetoworkspace, e+1"
-      "$superControlShift, left, movetoworkspace, e-1"
-      # SUPER, Tab, movetoworkspace, previous
+      "$mainMod SHIFT, 1, movetoworkspace, 1"
+      "$mainMod SHIFT, 2, movetoworkspace, 2"
+      "$mainMod SHIFT, 3, movetoworkspace, 3"
+      "$mainMod SHIFT, 4, movetoworkspace, 4"
+      "$mainMod SHIFT, 5, movetoworkspace, 5"
+      "$mainMod SHIFT, 6, movetoworkspace, 6"
+      "$mainMod SHIFT, 7, movetoworkspace, 7"
+      "$mainMod SHIFT, 8, movetoworkspace, 8"
+      "$mainMod SHIFT, 9, movetoworkspace, 9"
+      "$mainMod SHIFT, 0, movetoworkspace, 10"
+      "$mainMod CTRL SHIFT, right, movetoworkspace, e+1"
+      "$mainMod CTRL SHIFT, left, movetoworkspace, e-1"
 
       # Screenshots
       ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=output"
       "$mainMod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=window"
-      "$superShift, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=region"
+      "$mainMod SHIFT, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=region"
 
       # Emojis
       "$mainMod, period, exec, ${rofi}/bin/rofi -show emoji"
@@ -72,7 +71,7 @@ in
       "$mainMod ALT, S, pin, active"
 
       # Monocle
-      "$superShift, m, exec, hyprctl dispatch fullscreen 1"
+      "$mainMod SHIFT, m, exec, hyprctl dispatch fullscreen 1"
 
       # Zoom
       "$mainMod, Plus, exec, ${pkgs.woomer}/bin/woomer"
