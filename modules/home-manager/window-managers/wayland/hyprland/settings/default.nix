@@ -26,11 +26,10 @@ in
       "${pkgs.qpwgraph}/bin/qpwgraph --minimized"
       "${pkgs.networkmanagerapplet}/bin/nm-applet"
       "${pkgs.gammastep}/bin/gammastep-indicator"
+      "${pkgs.waybar}/bin/waybar"
     ];
     exec = [
-      ''${wallpaperScript}/bin/wallpaperd daemon''
       ''${pkgs.syncthingtray}/bin/syncthingtray --single-instance --wait''
-      ''${waybarLoop}/bin/WAYBAR-LOOP''
     ];
 
     env =
