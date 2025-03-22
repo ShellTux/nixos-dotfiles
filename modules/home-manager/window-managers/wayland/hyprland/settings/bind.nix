@@ -56,6 +56,8 @@ in
       "$mainMod CTRL SHIFT, right, movetoworkspace, e+1"
       "$mainMod CTRL SHIFT, left, movetoworkspace, e-1"
 
+      "$mainMod SHIFT, Tab, movecurrentworkspacetomonitor, +1"
+
       # Screenshots
       ", PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=output"
       "$mainMod, PRINT, exec, ${pkgs.hyprshot}/bin/hyprshot --mode=window"
