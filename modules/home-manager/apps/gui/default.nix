@@ -5,10 +5,11 @@
     ./anki.nix
     ./blender.nix
     ./browser
+    ./cursor.nix
     ./discord.nix
     ./feh.nix
-    ./ghostty
     ./games
+    ./ghostty
     ./gtkhash.nix
     ./imv.nix
     ./jellyfin-media-player.nix
