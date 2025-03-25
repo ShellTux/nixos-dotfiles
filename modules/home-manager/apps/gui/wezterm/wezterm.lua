@@ -10,12 +10,12 @@ if wezterm.config_builder then
 end
 
 local options = {
-	-- leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1000 }
-	leader = nil,
+	leader = { key = " ", mods = "CTRL", timeout_milliseconds = 1000 },
+	-- leader = nil,
 	mouse = {
 		scroll = {
 			multiplier = 5,
-		}
+		},
 	},
 	keys = {
 		{ key = "LeftArrow",  mods = "OPT", action = act.SendString("\x1bb") },
@@ -241,12 +241,10 @@ local config = {
 	--disable_default_key_bindings = true,
 	--line_height = 1,
 	font = wezterm.font_with_fallback {
-		'JetBrainsMono Nerd Font',
 		'JetBrains Mono',
-		'FiraCode Nerd Font',
+		'Symbols Nerd Font Mono',
 		'Fira Code',
 		'Source Code Pro',
-		'DengXian',
 	},
 
 	font_size = 12.0,
