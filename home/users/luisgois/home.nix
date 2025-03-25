@@ -84,10 +84,15 @@
     ../common.nix
   ];
 
+  # Hack to allow temporarily allow unfree packages
+  # nixpkgs.config.allowUnfreePredicate = _: true;
+  # nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
       "codeium"
+      "codeium-vim"
+      "codeium-nvim"
       "slack"
       "stremio-server"
       "stremio"
