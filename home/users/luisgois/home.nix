@@ -146,8 +146,8 @@
     gui = {
       anki.enable = true;
       browser.choices = [
-        "librewolf"
         "floorp"
+        "librewolf"
         "firefox"
       ];
       blender.enable = true;
