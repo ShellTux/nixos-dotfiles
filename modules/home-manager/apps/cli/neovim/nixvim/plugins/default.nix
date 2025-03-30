@@ -12,6 +12,7 @@
     ./gitsigns.nix
     ./indent-blankline.nix
     ./lastplace.nix
+    ./lsp-lines.nix
     ./lsp.nix
     ./lualine.nix
     ./luasnip
@@ -41,6 +42,7 @@
     lastplace.enable = true;
     lsp.enable = true;
     lsp-format.enable = true;
+    lsp-lines.enable = true;
     lualine.enable = true;
     luasnip.enable = true;
     markdown-preview.enable = true;
