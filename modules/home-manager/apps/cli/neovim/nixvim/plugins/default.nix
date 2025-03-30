@@ -31,9 +31,9 @@
     bufferline.enable = true;
     chadtree.enable = true;
     cloak.enable = true;
-    colorizer.enable = true;
     cmp.enable = true;
     codesnap.enable = true;
+    colorizer.enable = true;
     friendly-snippets.enable = true;
     fugitive.enable = true;
     gitsigns.enable = true;
