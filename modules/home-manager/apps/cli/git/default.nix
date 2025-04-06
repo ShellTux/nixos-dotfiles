@@ -5,6 +5,7 @@
   ...
 }:
 let
+  inherit (lib) getExe;
   fshow = import ./fshow.nix { inherit pkgs; };
 in
 {
@@ -22,13 +23,28 @@ in
       userName = "ShellTux";
       userEmail = "115948079+ShellTux@users.noreply.github.com";
       extraConfig = {
+        branch.sort = "-committerdate";
+        column.ui = "auto";
+        commit.verbose = true;
         core = {
           editor = "nvim";
           autocrlf = "input";
         };
+        diff = {
+          algorithm = "histogram";
+          colorMoved = "plain";
+          mnemonicPrefix = true;
+          renames = true;
+        };
+        help.autoCorrect = "prompt";
         init = {
           defaultBranch = "main";
         };
+        rerere = {
+          enable = true;
+          autoupdate = true;
+        };
+        tag.sort = "version:refname";
       };
       aliases = rec {
         branch-delete = "branch --delete";
@@ -59,7 +75,7 @@ in
         graph = "log --graph";
         h = "history";
         history = "!${fshow}/bin/fshow";
-        ignore = "!curl -sL https://www.toptal.com/developers/gitignore/api/$@";
+        ignore = "!${getExe pkgs.curl} -sL https://www.toptal.com/developers/gitignore/api/$@";
         last = "!git log -1 HEAD";
         lg1 = ''log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all'';
         lg2 = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
@@ -76,12 +92,12 @@ in
         s = "status --short";
         stats = "show --stat";
         st = "status";
-        summary = "!which ${pkgs.onefetch}/bin/onefetch && ${pkgs.onefetch}/bin/onefetch";
+        summary = "!which ${getExe pkgs.onefetch} && ${getExe pkgs.onefetch}";
         sw = "switch -";
         touch = "!touch $@ && git add $@";
         unstage = "reset HEAD --";
-        visit-branch = ''!xdg-open "https://`git config --get remote.origin.url | sed -E "s#(git@|git://|https?://|.git$)##g;s#:#/#"`/tree/`git branch --show-current`"'';
-        visit = ''!xdg-open "https://`git config --get remote.origin.url | sed -E "s#(git@|git://|https?://|.git$)##g;s#:#/#"`"'';
+        visit-branch = ''!${pkgs.xdg-utils}/bin/xdg-open "https://`git config --get remote.origin.url | sed -E "s#(git@|git://|https?://|.git$)##g;s#:#/#"`/tree/`git branch --show-current`"'';
+        visit = ''!${pkgs.xdg-utils}/bin/xdg-open "https://`git config --get remote.origin.url | sed -E "s#(git@|git://|https?://|.git$)##g;s#:#/#"`"'';
       };
       delta = {
         enable = false;
