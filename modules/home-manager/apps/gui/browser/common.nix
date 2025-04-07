@@ -56,19 +56,19 @@ let
 
         search = {
           force = true;
-          default = "DuckDuckGo";
+          default = "ddg";
           order = [
-            "DuckDuckGo"
+            "ddg"
             "Startpage"
-            "Google"
+            "google"
             "Searx"
             "Google Académico"
             "Swiss cows"
             "Brave Search"
-            "Qwant"
+            "qwant"
             "Gigablast"
             "Qmamu"
-            "Ecosia"
+            "ecosia"
           ];
           engines = {
             "Home Manager Options" = {
@@ -85,7 +85,7 @@ let
 
             GitHub = {
               urls = [ { template = "https://github.com/search?q={searchTerms}"; } ];
-              iconUpdateURL = "https://github.com/fluidicon.png";
+              icon = "https://github.com/fluidicon.png";
               updateInterval = 7 * 24 * 60 * 60 * 1000;
               definedAliases = [
                 "!git"
@@ -96,8 +96,8 @@ let
               ];
             };
 
-            "Wikipedia (en)".metaData.alias = "!wiki";
-            "Google".metaData = {
+            "wikipedia".metaData.alias = "!wiki";
+            "google".metaData = {
               hidden = true;
               alias = "!g";
             };
@@ -121,9 +121,9 @@ let
               ];
             };
 
-            "NixOS Wiki" = {
+            "NixOS " = {
               urls = [ { template = "https://wiki.nixos.org/index.php?search={searchTerms}"; } ];
-              iconUpdateURL = "https://wiki.nixos.org/favicon.png";
+              icon = "https://wiki.nixos.org/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [
                 "!nixos"
@@ -132,7 +132,7 @@ let
               ];
             };
 
-            "Bing".metaData.hidden = true;
+            "bing".metaData.hidden = true;
           };
         };
       };
