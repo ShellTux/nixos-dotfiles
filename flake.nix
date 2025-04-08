@@ -101,7 +101,7 @@
         };
     in
     {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
 
       nixosConfigurations = {
         nixos-desktop = mkNixosConfig ./hosts/desktop/configuration.nix;
