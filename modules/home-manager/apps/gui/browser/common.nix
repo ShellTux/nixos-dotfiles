@@ -54,87 +54,99 @@ let
           "intl.accept_languages" = "pt-PT, en-US, en";
         };
 
-        search = {
-          force = true;
-          default = "ddg";
-          order = [
-            "ddg"
-            "Startpage"
-            "google"
-            "Searx"
-            "Google Académico"
-            "Swiss cows"
-            "Brave Search"
-            "qwant"
-            "Gigablast"
-            "Qmamu"
-            "ecosia"
-          ];
-          engines = {
-            "Home Manager Options" = {
-              urls = [
-                { template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
-              ];
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [
-                "!hm"
-                "!hmo"
-                "@hmo"
-              ];
+        search =
+          let
+            Bing = "Bing";
+            DuckDuckGo = "DuckDuckGo";
+            Ecosia = "Ecosia";
+            Google = "Google";
+            Qwant = "Qwant";
+            Searx = "Searx";
+            Startpage = "Startpage";
+            Wikipedia = "Wikipedia (en)";
+          in
+          {
+            force = true;
+            default = DuckDuckGo;
+            order = [
+              DuckDuckGo
+              Startpage
+              Google
+              Searx
+              "Google Académico"
+              "Swiss cows"
+              "Brave Search"
+              Qwant
+              "Gigablast"
+              "Qmamu"
+              Ecosia
+            ];
+            engines = {
+              "Home Manager Options" = {
+                urls = [
+                  { template = "https://home-manager-options.extranix.com/?query={searchTerms}&release=master"; }
+                ];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [
+                  "!hm"
+                  "!hmo"
+                  "@hmo"
+                ];
+              };
+
+              GitHub = {
+                urls = [ { template = "https://github.com/search?q={searchTerms}"; } ];
+                icon = "https://github.com/fluidicon.png";
+                updateInterval = 7 * 24 * 60 * 60 * 1000;
+                definedAliases = [
+                  "!git"
+                  "@git"
+                  "@gh"
+                  "!github"
+                  "@github"
+                ];
+              };
+
+              ${Wikipedia}.metaData.alias = "!wiki";
+              ${Google}.metaData = {
+                hidden = true;
+                alias = "!g";
+              };
+
+              "Nix Packages" = {
+                urls = [
+                  {
+                    template = "https://search.nixos.org/packages?query={searchTerms}&type=packages";
+                  }
+                ];
+
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                definedAliases = [
+                  "!np"
+                  "!nix"
+                  "@nix"
+                  "!np"
+                  "@np"
+                  "!nixpackages"
+                  "@nixpackages"
+                ];
+              };
+
+              "NixOS Wiki" = rec {
+                urls = [ { template = "https://wiki.nixos.org/index.php?search={searchTerms}"; } ];
+                icon = "https://wiki.nixos.org/favicon.png";
+                iconUpdateURL = icon;
+                updateInterval = 24 * 60 * 60 * 1000; # every day
+                definedAliases = [
+                  "!nixos"
+                  "@nixos"
+                  "@nw"
+                ];
+              };
+
+              ${Bing}.metaData.hidden = true;
             };
-
-            GitHub = {
-              urls = [ { template = "https://github.com/search?q={searchTerms}"; } ];
-              icon = "https://github.com/fluidicon.png";
-              updateInterval = 7 * 24 * 60 * 60 * 1000;
-              definedAliases = [
-                "!git"
-                "@git"
-                "@gh"
-                "!github"
-                "@github"
-              ];
-            };
-
-            "wikipedia".metaData.alias = "!wiki";
-            "google".metaData = {
-              hidden = true;
-              alias = "!g";
-            };
-
-            "Nix Packages" = {
-              urls = [
-                {
-                  template = "https://search.nixos.org/packages?query={searchTerms}&type=packages";
-                }
-              ];
-
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = [
-                "!np"
-                "!nix"
-                "@nix"
-                "!np"
-                "@np"
-                "!nixpackages"
-                "@nixpackages"
-              ];
-            };
-
-            "NixOS " = {
-              urls = [ { template = "https://wiki.nixos.org/index.php?search={searchTerms}"; } ];
-              icon = "https://wiki.nixos.org/favicon.png";
-              updateInterval = 24 * 60 * 60 * 1000; # every day
-              definedAliases = [
-                "!nixos"
-                "@nixos"
-                "@nw"
-              ];
-            };
-
-            "bing".metaData.hidden = true;
           };
-        };
       };
     };
   };
