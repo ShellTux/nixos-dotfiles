@@ -98,6 +98,7 @@ in
         unstage = "reset HEAD --";
         visit-branch = ''!${pkgs.xdg-utils}/bin/xdg-open "https://`git config --get remote.origin.url | sed -E "s#(git@|git://|https?://|.git$)##g;s#:#/#"`/tree/`git branch --show-current`"'';
         visit = ''!${pkgs.xdg-utils}/bin/xdg-open "https://`git config --get remote.origin.url | sed -E "s#(git@|git://|https?://|.git$)##g;s#:#/#"`"'';
+        yolo = ''!git commit --message="$(curl --silent https://whatthecommit.com/index.txt)"'';
       };
       delta = {
         enable = false;
