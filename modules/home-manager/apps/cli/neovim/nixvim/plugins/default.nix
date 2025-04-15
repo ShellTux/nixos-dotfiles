@@ -18,7 +18,7 @@
     ./luasnip
     ./noice.nix
     ./notify.nix
-    ./nvim-jdtls
+    ./jdtls
     ./nvim-snippets.nix
     ./rustaceanvim.nix
     ./screenkey.nix
@@ -48,7 +48,7 @@
     markdown-preview.enable = true;
     noice.enable = true;
     nvim-autopairs.enable = true;
-    nvim-jdtls.enable = true;
+    jdtls.enable = true;
     nvim-snippets.enable = true;
     # rustaceanvim.enable = true;
     screenkey.enable = true;

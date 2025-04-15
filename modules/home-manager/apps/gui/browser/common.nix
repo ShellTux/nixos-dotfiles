@@ -56,14 +56,14 @@ let
 
         search =
           let
-            Bing = "Bing";
-            DuckDuckGo = "DuckDuckGo";
-            Ecosia = "Ecosia";
-            Google = "Google";
-            Qwant = "Qwant";
-            Searx = "Searx";
-            Startpage = "Startpage";
-            Wikipedia = "Wikipedia (en)";
+            Bing = "bing";
+            DuckDuckGo = "ddg";
+            Ecosia = "ecosia";
+            Google = "google";
+            Qwant = "qwant";
+            Searx = "searx";
+            Startpage = "startpage";
+            Wikipedia = "wikipedia";
           in
           {
             force = true;
