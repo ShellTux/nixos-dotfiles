@@ -289,6 +289,9 @@
   hyprland.enable = true;
   i3.enable = true;
 
+  # https://github.com/NixOS/nixpkgs/security/advisories/GHSA-m7pq-h9p4-8rr4
+  systemd.shutdownRamfs.enable = false;
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
