@@ -4,12 +4,10 @@
     ./aerc
     ./ani-cli.nix
     ./bat.nix
-    ./bat.nix
     ./bc.nix
     ./btop.nix
     ./calcurse.nix
     ./dooit.nix
-    ./dua.nix
     ./dua.nix
     ./eza
     ./fd.nix
