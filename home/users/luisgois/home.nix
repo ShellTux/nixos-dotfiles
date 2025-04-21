@@ -124,6 +124,7 @@
       neomutt.enable = true;
       neovim.enable = true;
       newsboat.enable = true;
+      nh.enable = true;
       nvtop = {
         enable = true;
         backend = [ "intel" ];

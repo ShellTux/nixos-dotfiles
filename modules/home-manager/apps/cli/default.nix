@@ -25,6 +25,7 @@
     ./neomutt
     ./neovim
     ./newsboat
+    ./nh
     ./nvtop.nix
     ./procs.nix
     ./progress.nix
