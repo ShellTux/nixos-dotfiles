@@ -114,6 +114,7 @@
         installRustc = true;
       };
       texlab.enable = true;
+      tinymist.enable = true;
       ts_ls.enable = true;
       yamlls.enable = true;
       zls.enable = true;
