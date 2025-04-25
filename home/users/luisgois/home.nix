@@ -73,6 +73,7 @@
         rm = "rm --verbose --one-file-system --interactive=once";
         shred = "shred --verbose";
         sshfs = ''sshfs -o "compression=yes,reconnect"'';
+        systemctl = "systemctl --lines=1000";
         upper = "tr \"[:lower:]\" \"[:upper:]\"";
         watch = "watch --color --interval 1";
       }
