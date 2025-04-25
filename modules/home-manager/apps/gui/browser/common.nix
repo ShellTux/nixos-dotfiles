@@ -37,7 +37,7 @@ let
         extensions.packages = [
           fa.bitwarden
           fa.darkreader
-          (mkIf config.apps.gui.librewolf.enableFf2mpv fa.ff2mpv)
+          fa.material-icons-for-github
           fa.return-youtube-dislikes
           fa.search-by-image
           fa.sponsorblock
@@ -45,6 +45,7 @@ let
           fa.ublock-origin
           fa.vimium
           fa.xbrowsersync
+          (mkIf config.apps.gui.librewolf.enableFf2mpv fa.ff2mpv)
         ];
 
         settings = {
