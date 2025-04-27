@@ -14,6 +14,7 @@ in
 
   imports = [
     ./excludesFiles.nix
+    ./template
     ./includes
   ];
 
@@ -27,8 +28,9 @@ in
         column.ui = "auto";
         commit.verbose = true;
         core = {
-          editor = "nvim";
           autocrlf = "input";
+          editor = "nvim";
+          whitespace = "error";
         };
         diff = {
           algorithm = "histogram";
