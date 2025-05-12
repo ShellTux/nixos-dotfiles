@@ -183,6 +183,7 @@
       prism-launcher.enable = true;
       qbittorrent.enable = true;
       qiv.enable = true;
+      rio.enable = true;
       rofi.enable = true;
       slack.enable = true;
       stremio.enable = true;

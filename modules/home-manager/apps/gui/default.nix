@@ -19,6 +19,7 @@
     ./oculante.nix
     ./qbittorrent.nix
     ./qiv.nix
+    ./rio.nix
     ./rofi
     ./slack.nix
     ./stremio.nix
