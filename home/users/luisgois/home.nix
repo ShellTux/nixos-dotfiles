@@ -161,6 +161,7 @@
         ];
       };
       feh.enable = true;
+      ghostty.enable = true;
       gtkhash.enable = true;
       imv.enable = true;
       jellyfin-media-player.enable = true;
