@@ -11,6 +11,7 @@
     ./colorizer.nix
     ./gitsigns.nix
     ./indent-blankline.nix
+    ./jdtls
     ./lastplace.nix
     ./lsp-lines.nix
     ./lsp.nix
@@ -18,7 +19,6 @@
     ./luasnip
     ./noice.nix
     ./notify.nix
-    ./jdtls
     ./nvim-snippets.nix
     ./render-markdown
     ./rustaceanvim.nix
