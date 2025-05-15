@@ -19,7 +19,6 @@
     };
 
     extraPlugins = with pkgs.vimPlugins; [
-      render-markdown-nvim
       vim-easy-align
       vim-llvm
     ];

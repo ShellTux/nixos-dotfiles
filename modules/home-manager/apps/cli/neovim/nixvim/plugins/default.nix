@@ -20,6 +20,7 @@
     ./notify.nix
     ./jdtls
     ./nvim-snippets.nix
+    ./render-markdown
     ./rustaceanvim.nix
     ./screenkey.nix
     ./telescope.nix
@@ -50,6 +51,7 @@
     nvim-autopairs.enable = true;
     jdtls.enable = true;
     nvim-snippets.enable = true;
+    render-markdown.enable = true;
     # rustaceanvim.enable = true;
     screenkey.enable = true;
     telescope.enable = true;
